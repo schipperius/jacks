@@ -1,0 +1,45 @@
+<!-- Navbar -->
+<nav class="border-bottom">
+  <div class="container py-3 d-flex align-items-center">
+
+    <!-- Left: Home| Brand -->
+    <a href="{{ '{{ site.baseurl }}/' | relative_url }}"
+       class="d-flex align-items-center link-body-emphasis text-decoration-none me-auto">
+      <span class="fs-4">Home</span>
+    </a>
+
+    <!-- Right: Nav links + theme -->
+    <div class="d-flex align-items-center gap-3">
+
+      <ul class="nav">
+        {% assign nav_pages = site.pages | where_exp: "p", "p.title" %}
+        {% for page in nav_pages %}
+          {% if page.url != '/404.html' and page.url != '/' %}
+            <li class="nav-item">
+              <a href="{{ page.url | relative_url }}"
+                 class="nav-link {% if page.url == page.url %}{% if page.url == page.url or page.url == '/404.html' %}active{% endif %}{% endif %}">
+                {{ page.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <!-- Theme dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+          Theme
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
+          <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
+          <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
