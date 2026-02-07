@@ -1,2 +1,1 @@
-# Project 1
-the Book of Jack
+# the Book of Jack
