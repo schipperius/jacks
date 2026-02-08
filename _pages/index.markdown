@@ -34,7 +34,7 @@ tags:
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3">Cracker Jack</h1>
         <p class="lead">
-          A classic sweet snack of caramel-coated popcorn mixed with roasted peanuts, known for its crunchy texture and nostalgic association with fairs and baseball games.
+          A classic sweet snack of caramel-flavoured popcorn mixed with roasted peanuts, known for its crunchy texture and nostalgic association with fairs and baseball games.
         </p>
         <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="Related links">
           <a href="#catagories/food-and-drink" class="btn btn-outline-secondary btn-lg">Food and Drink</a>

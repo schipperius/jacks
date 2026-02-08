@@ -1,50 +1,63 @@
+
 <!-- Navbar -->
 <nav class="border-bottom">
   <div class="container py-3 d-flex align-items-center">
-    <!-- Left: Home| Brand -->
-    <a href="{{ '/' | relative_url }}"
-       class="d-flex align-items-center link-body-emphasis text-decoration-none me-auto">
-      <span class="fs-4">the Book of Jack</span>
-    </a>
-    <!-- Right of Left Branding -->
-    <div class="d-flex align-items-center gap-3">
-    <div class="d-flex align-items-center gap-3">
+
+    <!-- LEFT REGION Branding and two entry points. -->
+    <div class="d-flex align-items-center gap-3 me-auto">
+      <a href="{{ '/' | relative_url }}"
+        class="nav d-flex align-items-center link-body-emphasis text-decoration-none me-auto">
+        <span class="fs-4">the Book of Jack</span>
+      </a>
+      <!-- Start Here (opens TOC offcanvas) -->
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar"
+      >
+        Start Here
+      </button>
+      
+      <!-- Jump In -->
       <a href="{{ '/jump-in/' | relative_url }}"
-         class="nav-link {% if page.url contains '/jump-in' %}active{% endif %} px-2">
+         class="nav-link px-2 {% if page.url contains '/jump-in' %}active{% endif %}">
         Jump In
       </a>
-      <a href="{{ '/start-here/' | relative_url }}"
-         class="nav-link {% if page.url contains '/start-here' %}active{% endif %} px-2">
-        Start Here
-      </a>
-
-    <!-- Right: Nav links + theme -->
-    <div class="d-flex align-items-center gap-3">
-      <a href="{{ '/jack-origins/' | relative_url }}"
-         class="nav-link {% if page.url contains '/jack-origins' %}active{% endif %} px-2">
-        Origins
-      </a>
-    <div class="d-flex align-items-center gap-3">
-      <a href="{{ '/about/' | relative_url }}"
-         class="nav-link {% if page.url contains '/about' %}active{% endif %} px-2">
-        About
-      </a>
-
-      <!-- Theme dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-          Theme
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
-        </ul>
-      </div>
-
     </div>
+
+    <!-- CENTER REGION Search -->
+    <div class="mx-auto">
+      <form class="d-flex align-items-center" role="search">
+        <input
+          class="form-control form-control-md me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search">
+        <button class="btn btn-outline-secondary btn-md" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+
+    <!-- RIGHT REGION Theme dropdown.-->
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+        Theme
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
+        <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
+        <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
+      </ul>
+    </div>
+
   </div>
 </nav>
+
+<!--Table of Contents-->
+ {% include toc.html %}

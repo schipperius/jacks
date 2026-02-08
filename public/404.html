@@ -11,56 +11,108 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <script src="/book-of-jack/assets/js/theme-toggle.js"></script>
-    <!-- Navbar -->
+    
+<!-- Navbar -->
 <nav class="border-bottom">
   <div class="container py-3 d-flex align-items-center">
-    <!-- Left: Home| Brand -->
-    <a href="/book-of-jack/"
-       class="d-flex align-items-center link-body-emphasis text-decoration-none me-auto">
-      <span class="fs-4">the Book of Jack</span>
-    </a>
-    <!-- Right of Left Branding -->
-    <div class="d-flex align-items-center gap-3">
-    <div class="d-flex align-items-center gap-3">
+
+    <!-- LEFT REGION Branding and two entry points. -->
+    <div class="d-flex align-items-center gap-3 me-auto">
+      <a href="/book-of-jack/"
+        class="nav d-flex align-items-center link-body-emphasis text-decoration-none me-auto">
+        <span class="fs-4">the Book of Jack</span>
+      </a>
+      <!-- Start Here (opens TOC offcanvas) -->
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar"
+      >
+        Start Here
+      </button>
+      
+      <!-- Jump In -->
       <a href="/book-of-jack/jump-in/"
-         class="nav-link  px-2">
+         class="nav-link px-2 ">
         Jump In
       </a>
-      <a href="/book-of-jack/start-here/"
-         class="nav-link  px-2">
-        Start Here
-      </a>
+    </div>
 
-    <!-- Right: Nav links + theme -->
-    <div class="d-flex align-items-center gap-3">
+    <!-- CENTER REGION Search -->
+    <div class="mx-auto">
+      <form class="d-flex align-items-center" role="search">
+        <input
+          class="form-control form-control-md me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search">
+        <button class="btn btn-outline-secondary btn-md" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+
+    <!-- RIGHT REGION Theme dropdown.-->
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+        Theme
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
+        <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
+        <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!--Table of Contents-->
+ <!-- Offcanvas: Table of Contents -->
+<div class="offcanvas offcanvas-start text-bg-dark"
+     tabindex="-1"
+     id="offcanvasDarkNavbar"
+     aria-labelledby="offcanvasDarkNavbarLabel">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+      Table of Contents
+    </h5>
+    <button type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item">
       <a href="/book-of-jack/jack-origins/"
          class="nav-link  px-2">
         Origins
       </a>
-    <div class="d-flex align-items-center gap-3">
+      </li>
+      <li class="nav-item">
       <a href="/book-of-jack/about/"
          class="nav-link  px-2">
         About
       </a>
-
-      <!-- Theme dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-          Theme
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
-        </ul>
-      </div>
-
-    </div>
+      </li>
+      <li class="nav-item">
+      <a href="/book-of-jack/copyright/"
+         class="nav-link  px-2">
+        Copyright
+      </a>
+      </li>
+    </ul>
   </div>
-</nav>
+</div>
+
 
     <main class="flex-grow-1">
       <div class="container py-5">
@@ -83,7 +135,7 @@
           <div class="card-body">
             <h5 class="card-title">About</h5>
             <p class="card-text text-truncate">
-              The Book of Jack began with an H2 pencil and a sheet of looseleaf paper.
+              This is a hands-on workshop for learning the tech stack behind building Jekyll sites.
 
             </p>
             <a href="/book-of-jack/about/" class="btn btn-outline-primary btn-sm">Go</a>

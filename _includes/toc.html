@@ -1,0 +1,39 @@
+<!-- Offcanvas: Table of Contents -->
+<div class="offcanvas offcanvas-start text-bg-dark"
+     tabindex="-1"
+     id="offcanvasDarkNavbar"
+     aria-labelledby="offcanvasDarkNavbarLabel">
+
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+      Table of Contents
+    </h5>
+    <button type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      <a href="{{ '/jack-origins/' | relative_url }}"
+         class="nav-link {% if page.url contains '/jack-origins' %}active{% endif %} px-2">
+        Origins
+      </a>
+      </li>
+      <li class="nav-item">
+      <a href="{{ '/about/' | relative_url }}"
+         class="nav-link {% if page.url contains '/about' %}active{% endif %} px-2">
+        About
+      </a>
+      </li>
+      <li class="nav-item">
+      <a href="{{ '/copyright/' | relative_url }}"
+         class="nav-link {% if page.url contains '/copyright' %}active{% endif %} px-2">
+        Copyright
+      </a>
+      </li>
+    </ul>
+  </div>
+</div>
