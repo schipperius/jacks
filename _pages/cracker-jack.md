@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero
 title: "Cracker Jack"
 permalink: /cracker-jack/
 node: cracker-jack
@@ -13,16 +13,7 @@ tags:
   - narrative
 ---
 
-{% assign item = site.data.gallery | where: "id", node.id | first %}
-
-{% include hero.html
-   image=item.image
-   alt=item.alt
-   caption=item.caption
-   title=item.title
-   description=item.description
-   links=item.links
-%}
+<!-- Hero section pulled in with hero layout -->
 
 <!-- OVERVIEW -->
 <section class="py-5" id="overview">

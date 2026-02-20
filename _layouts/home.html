@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% comment %}
+  Dedicated layout for Home page
+  - Pulls hero automatically from site.data.gallery
+  - Renders page content below hero
+{% endcomment %}
+
+{% assign item = site.data.gallery | where: "id", page.node | first %}
+
+{% if item %}
+  {% include home.html
+     image=item.image
+     alt=item.alt
+     caption=item.caption
+     title=item.title
+     description=item.description
+     links=item.links
+  %}
+{% endif %}
+
+<main class="container my-4 flex-fill">
+  {{ content }}
+</main>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero
 title: "Wadi el-Hol"
 permalink: /wadi-el-hol/
 node: wadi-el-hol
@@ -13,16 +13,5 @@ tags:
   - narrative
 ---
 
-<!-- start hero section -->
-{% assign item = site.data.gallery | where: "id", node.id | first %}
-
-{% include hero.html
-   image=item.image
-   alt=item.alt
-   caption=item.caption
-   title=item.title
-   description=item.description
-   links=item.links
-%}
-<!-- end hero section -->
+<!-- Hero section pulled in with hero layout -->
 

@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: home
 title: the Book of Jack
-permalink: /
-node: the-book-of-jack
+permalink: /Home/
+node: home
 
 categories: [Origins, Anthologies]
 tags:
@@ -13,16 +13,5 @@ tags:
   - narrative
 ---
 
-<!-- start hero section -->
-{% assign item = site.data.gallery | where: "id", node.id | first %}
-
-{% include cover.html
-   image=item.image
-   alt=item.alt
-   caption=item.caption
-   title=item.title
-   description=item.description
-   links=item.links
-%}
-<!-- end hero section -->
+<!-- Hero section pulled in with cover layout -->
 

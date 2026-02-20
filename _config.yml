@@ -20,7 +20,7 @@
 
 github_username: schipperius
 url: "https://schipperius.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/jacks" # the subpath of your site, if you are using GitHub pages, this is usually the repository name
+baseurl: "/book-of-jack" # the subpath of your site, if you are using GitHub pages, this is usually the repository name
 destination: ./public
 
 suptitle: the
