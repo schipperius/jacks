@@ -2,7 +2,7 @@
 layout: default
 title: the Book of Jack
 permalink: /
-id: the-book-of-jack
+node: the-book-of-jack
 
 categories: [Origins, Anthologies]
 tags:
@@ -14,7 +14,7 @@ tags:
 ---
 
 <!-- start hero section -->
-{% assign item = site.data.gallery | where: "id", page.id | first %}
+{% assign item = site.data.gallery | where: "id", node.id | first %}
 
 {% include cover.html
    image=item.image

@@ -2,7 +2,7 @@
 layout: default
 title: "Cracker Jack"
 permalink: /cracker-jack/
-id: cracker-jack
+node: cracker-jack
 
 categories: [Food and Drink, Anthologies]
 tags:
@@ -13,7 +13,16 @@ tags:
   - narrative
 ---
 
+{% assign item = site.data.gallery | where: "id", node.id | first %}
 
+{% include hero.html
+   image=item.image
+   alt=item.alt
+   caption=item.caption
+   title=item.title
+   description=item.description
+   links=item.links
+%}
 
 <!-- OVERVIEW -->
 <section class="py-5" id="overview">

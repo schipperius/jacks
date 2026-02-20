@@ -2,7 +2,7 @@
 layout: default
 title: "Wadi el-Hol"
 permalink: /wadi-el-hol/
-id: wadi-el-hol
+node: wadi-el-hol
 
 categories: [Origins, Anthologies]
 tags:
@@ -14,7 +14,7 @@ tags:
 ---
 
 <!-- start hero section -->
-{% assign item = site.data.gallery | where: "id", page.id | first %}
+{% assign item = site.data.gallery | where: "id", node.id | first %}
 
 {% include hero.html
    image=item.image
