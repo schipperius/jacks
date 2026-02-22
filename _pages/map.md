@@ -4,7 +4,7 @@ title: Geographic Archive
 permalink: /map/
 ---
 
-<div id="map" style="height: 100vh; border-radius: 12px;"></div>
+<div id="map" style="height: 80vh; border-radius: 12px;"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {

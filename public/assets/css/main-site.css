@@ -139,3 +139,5 @@ main { height: 100vh; height: -webkit-fill-available; max-height: 100vh; overflo
 
 /* Active nav link styling */
 .nav-link.active { font-weight: 600; color: var(--bs-primary); }
+
+[data-bs-theme="light"] .navbar-toggler-icon { filter: invert(1); }

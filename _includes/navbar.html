@@ -15,7 +15,7 @@
             width="40"
             height="32"
             alt="Letter J logo">
-          <span class="small fw-semibold text-body-secondary ms-2 d-none d-lg-inline">{{ site.title }}</span>
+          <span class="small fw-semibold text-body-secondary ms-2 d-none d-lg-inline">the {{ site.title }}</span>
         </a>
 
         <!-- Menu -->
@@ -31,12 +31,14 @@
         <!-- Gallery (desktop text) -->
         <a href="{{ '/gallery/' | relative_url }}"
            class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-          Gallery
+          <span class="bi bi-images"></span>
+          <span class="ms-2">Gallery</span>
         </a>
         <!-- Map (desktop text) -->
         <a href="{{ '/map/' | relative_url }}"
            class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-          Map
+          <span class="bi bi-map"></span>
+          <span class="ms-2">Map</span>
         </a>
 
       </div>
@@ -104,6 +106,11 @@
         <a href="{{ '/gallery/' | relative_url }}"
           class="btn btn-outline-secondary btn-sm">
           <i class="bi bi-images"></i>
+        </a>
+
+        <a href="{{ '/map/' | relative_url }}"
+          class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-map"></i>
         </a>
 
         <button class="btn btn-outline-secondary btn-sm">

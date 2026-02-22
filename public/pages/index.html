@@ -32,7 +32,7 @@
             width="40"
             height="32"
             alt="Letter J logo">
-          <span class="small fw-semibold text-body-secondary ms-2 d-none d-lg-inline">Book of Jack</span>
+          <span class="small fw-semibold text-body-secondary ms-2 d-none d-lg-inline">the Book of Jack</span>
         </a>
 
         <!-- Menu -->
@@ -48,12 +48,14 @@
         <!-- Gallery (desktop text) -->
         <a href="/book-of-jack/gallery/"
            class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-          Gallery
+          <span class="bi bi-images"></span>
+          <span class="ms-2">Gallery</span>
         </a>
         <!-- Map (desktop text) -->
         <a href="/book-of-jack/map/"
            class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-          Map
+          <span class="bi bi-map"></span>
+          <span class="ms-2">Map</span>
         </a>
 
       </div>
@@ -121,6 +123,11 @@
         <a href="/book-of-jack/gallery/"
           class="btn btn-outline-secondary btn-sm">
           <i class="bi bi-images"></i>
+        </a>
+
+        <a href="/book-of-jack/map/"
+          class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-map"></i>
         </a>
 
         <button class="btn btn-outline-secondary btn-sm">
@@ -245,34 +252,47 @@
 
 
 
-  <!-- Landing Page, essentially a slightly modified hero section -->
-<section class="my-5 py-4" id="home-header">
-  <div class="container col-xxl-10 px-4">
-    <div class="row text-center g-5">
-    
-      <h1 class="display-5 lh-1 mb-3">
-        Book of Jack
-      </h1>
-      <p class="lead">
-        A collection of stories and anecdotes about the character Jack, often depicted as a clever and resourceful figure in folklore and literature.
-      </p>
+  <!-- Home Page Section -->
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">the Book of Jack</h1>
+      <p class="lead text-body-secondary">A collection of stories and anecdotes about the character Jack, often depicted as a clever and resourceful figure in folklore and literature.</p>
       
-      <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="Related links">
+      
+      <div class="d-flex gap-4 justify-content-center mt-4">
         
-          <a href="#" class="btn btn-outline-secondary btn-lg d-none d-md-inline-flex"
+        <!-- Menu -->
+        <button
+          class="btn btn-outline-secondary btn-md d-none d-md-inline-flex"
+          type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbarDark">
-            <span class="navbar-toggler-icon"></span>
-            <span class="ms-2"></span>
-            Menu
-          </a>
+          <span class="navbar-toggler-icon"></span>
+          <span class="ms-2">Menu</span>
+        </button>
+        <!-- Gallery (desktop text) -->
+        <a href="/book-of-jack/gallery/"
+           class="btn btn-outline-secondary btn-md d-none d-md-inline-flex">
+          <span class="bi bi-images"></span>
+          <span class="ms-2">Gallery</span>
+        </a>
+        <!-- Map (desktop text) -->
+        <a href="/book-of-jack/map/"
+           class="btn btn-outline-secondary btn-md d-none d-md-inline-flex">
+          <span class="bi bi-map"></span>
+          <span class="ms-2">Map</span>
+        </a>
         
-      </nav>
+      </div>
       
-
     </div>
+
   </div>
 </section>
+
+
 
 
 

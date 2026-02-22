@@ -61,3 +61,6 @@
 }
 
 
+[data-bs-theme="light"] .navbar-toggler-icon {
+  filter: invert(1);
+}
