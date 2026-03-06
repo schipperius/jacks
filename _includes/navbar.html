@@ -142,32 +142,6 @@
       ========================= -->
 
   <!-- Offcanvas for mobile and tablet -->
-  <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavbarDark">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menu</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <nav class="nav flex-column">
-        {% for section in site.data.toc %}
-          {% if section.subsections %}
-            <div class="nav-item mt-3 mb-1 text-uppercase small fw-semibold text-body-secondary">
-              {{ section.section }}
-            </div>
-            {% for sub in section.subsections %}
-              <a href="#{{ sub.id }}" class="nav-link ps-4">{{ sub.title }}</a>
-            {% endfor %}
-          {% else %}
-            <div class="nav-item mt-3 mb-1 text-uppercase small fw-semibold text-body-secondary">
-              {{ section.section }}
-            </div>
-            {% for item in section.items %}
-              <a href="{{ item.url | relative_url }}" class="nav-link ps-4">{{ item.title }}</a>
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-      </nav>
-    </div>
-  </div>
+
   <!-- End Navbar -->
 

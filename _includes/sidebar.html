@@ -1,14 +1,20 @@
 <!-- Sidebar for desktop (md and up) -->
-<div class="bg-body" style="width: 260px;">
+<div class="bg-body">
   <div class="position-sticky top-0 vh-100 overflow-auto p-3">
 
     <!-- Sidebar header -->
     <div class="mb-4">
-      <div class="small text-body-secondary">Table of Contents</div>
+      <div class="text-body-secondary">Table of Contents</div>
     </div>
 
     <!-- Sidebar body -->
     <ul class="nav flex-column mb-3">
+      <li class="nav-item">
+        <a href="{{ '/' | relative_url }}"
+          class="nav-link btn-link {% if page.url contains 'north-of-thebes' %}active{% endif %}">
+          Introduction
+        </a>
+      </li>
       <li class="nav-item">
         <a href="{{ '/wadi-el-hol/' | relative_url }}"
            class="nav-link btn-link {% if page.url contains 'wadi-el-hol' %}active{% endif %}">

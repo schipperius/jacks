@@ -50,7 +50,7 @@ timeline: # Timeline Block
 <!-- _layouts/lead pulls _includes/lead -->
 
 <!-- OVERVIEW -->
-<section class="py-5" id="overview">
+<section class="stories-content py-5" id="overview">
   <div class="container col-xxl-8 px-4">
     <h2 class="h4 mb-3">Overview</h2>
       <p class="drop-cap">The term crackerjack followed a distinct geographical and cultural path, starting as a British-derived slang expression before becoming a quintessentially American brand and cultural icon.

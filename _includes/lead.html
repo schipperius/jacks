@@ -1,6 +1,6 @@
 <!-- Lead Section -->
 <section class="my-5 py-4" id="entry-header">
-  <div class="container col-xxl-10 px-4">
+  <div class="container col-xxl-12 px-4">
     <div class="row align-items-center g-5">
       
       <div class="col-lg-6">
@@ -20,12 +20,15 @@
       </div>
 
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">
+        <h3 class="display-5 fw-bold lh-1 mb-3">
           {{ include.title }}
-        </h1>
+        </h3>
 
-        <p class="lead">
+        <p class="lead text-body-secondary">
           {{ include.description }}
+        </p>
+        <p class="lead text-body-secondary">
+          {{ include.description-two }}
         </p>
 
         {% if include.links %}
