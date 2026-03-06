@@ -3,7 +3,6 @@ layout: page
 title: Content Schema
 ---
 
-
 # Template Structure
 # Global Block
 layout: lead-section # The foundation that wraps content in a specific template to ensure consistent design structure

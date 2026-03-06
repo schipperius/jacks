@@ -1,26 +1,25 @@
 ---
 # Global Block
-layout: page
+layout: story
 title: the Book of Jack
 permalink: /
 
 text: # Text Block
   description: >
-    A collection of stories about the origin and development of the alphabetic system through the lens of the letter J, the name Jack and the sounds /j/ and /dʒ/. 
+    A collection of stories about the origin and development of the alphabetic system through the lens of the letter J, the name Jack and the phonemic sound shift from /j/ to /dʒ/. 
   description-two: >
     Although the letter J was the last letter to be added to the English alphabet, this story begins almost four thousand years ago on a trade route through the Western desert of Egypt between the ancient cities of Thebes and Hut-sekhem.
   lead: >
-    Join me on an exploration of the phonetic and orthographic evolution of the English language, told through the curious history of the letter J, the ubiquity of the name Jack, and the hardening of the /j/ glide into the /dʒ/ affricate.
-  excerpt:
+  excerpt: >
 
 media:
 image:
   path: /assets/img/pages/north-of-thebes.png
-  alt: Historical reconstruction of a ccaravan on the Thebes-Farshut road traveling to Hut-sekhem. # Alternative text provides a text description of an image for screen readers ensuring compliance with accessibility standards
-  caption: Historical reconstruction of a ccaravan on the Thebes-Farshut road traveling to Hut-sekhem. # A custom variable used to store descriptive text for an image, video or table
+  alt: Historical reconstruction of a caravan on the Thebes-Farshut road traveling to Hut-sekhem. # Alternative text provides a description for screen readers ensuring compliance with accessibility standards
+  caption: Historical reconstruction of a caravan on the Thebes-Farshut road traveling to Hut-sekhem. # A custom variable used to store descriptive text for an image, video or table
   credit: # Owner of image
   source: # A link to the original archive or museum page
-  width: # Constrained width
+  width:  # Constrained width
   height: # Constrained height
   license: # Usage rights
 
@@ -48,6 +47,8 @@ timeline: # Timeline Block
   display:
     year: "1850 BCE"
     circa: true # Indicates approximate dates
+
+references:
 
 ---
 

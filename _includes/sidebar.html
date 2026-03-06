@@ -3,55 +3,50 @@
   <div class="position-sticky top-0 vh-100 overflow-auto p-3">
 
     <!-- Sidebar header -->
-    <div class="mb-4">
+    <div class="">
       <div class="text-body-secondary">Table of Contents</div>
     </div>
 
     <!-- Sidebar body -->
-    <ul class="nav flex-column mb-3">
-      <li class="nav-item">
-        <a href="{{ '/' | relative_url }}"
-          class="nav-link btn-link {% if page.url contains 'north-of-thebes' %}active{% endif %}">
-          Introduction
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ '/wadi-el-hol/' | relative_url }}"
-           class="nav-link btn-link {% if page.url contains 'wadi-el-hol' %}active{% endif %}">
+    <div class="d-flex flex-column gap-3">
+      <ul class="nav flex-column mb-3">
+        <li class="nav-item">
+          <a href="{{ '/' | relative_url }}"
+            class="hover-fill-link">
+            Introduction
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/wadi-el-hol/' | relative_url }}"
+          class="hover-fill-link">
           Wadi-el-Hol
-        </a>
-      </li>
-    </ul>
-    <ul class="nav flex-column mb-3">
-      <li class="nav-item">
-        <a href="{{ '/lumber-jack/' | relative_url }}"
-           class="nav-link btn-link {% if page.url contains 'lumber-jack' %}active{% endif %}">
-          Lumber Jack
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ '/steeplejack/' | relative_url }}"
-           class="nav-link btn-link {% if page.url contains 'steeplejack' %}active{% endif %}">
-          Steeplejack
-        </a>
-      </li>
-    </ul>
-    <ul class="nav flex-column mb-3">
-      <li class="nav-item">
-        <a href="{{ '/cracker-jack/' | relative_url }}"
-           class="nav-link btn-link {% if page.url contains 'cracker-jack' %}active{% endif %}">
-          Cracker Jack
-        </a>
-      </li>
-    </ul>
-    <ul class="nav flex-column mb-3">
-      <li class="nav-item">
-        <a href="{{ '/colophon/' | relative_url }}"
-           class="nav-link btn-link {% if page.url contains 'colophon' %}active{% endif %}">
-          Colophon
-        </a>
-      </li>
-    </ul>
-
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/lumber-jack/' | relative_url }}"
+            class="hover-fill-link">
+            Lumber Jack
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/steeplejack/' | relative_url }}"
+            class="hover-fill-link">
+            Steeplejack
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/cracker-jack/' | relative_url }}"
+            class="hover-fill-link">
+            Cracker Jack
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/colophon/' | relative_url }}"
+            class="hover-fill-link">
+            Colophon
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

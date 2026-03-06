@@ -12,13 +12,13 @@
             loading="lazy"
           />
           {% if include.caption %}
-          <figcaption class="figure-caption hero-caption">
+          <figcaption class="text-body-secondary mt-2">
             {{ include.caption }}
           </figcaption>
           {% endif %}
         </figure>
       </div>
-
+ 
       <div class="col-lg-6">
         <h3 class="display-5 fw-bold lh-1 mb-3">
           {{ include.title }}
@@ -30,16 +30,6 @@
         <p class="lead text-body-secondary">
           {{ include.description-two }}
         </p>
-
-        {% if include.links %}
-        <nav class="d-flex flex-wrap gap-3 mt-4" aria-label="Related links">
-          {% for link in include.links %}
-            <a href="{{ link.url }}" class="btn btn-outline-secondary btn-lg">
-              {{ link.label }}
-            </a>
-          {% endfor %}
-        </nav>
-        {% endif %}
       </div>
 
     </div>
