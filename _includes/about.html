@@ -1,0 +1,23 @@
+<!-- Hero Section with Book Cover Background for the About Page. -->
+<section class="book-hero py-5 my-5 text-center">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 mx-auto">
+        <h1 class="display-5 fw-light text-body-emphasis mb-4">{{ include.title }}</h1>
+        <p class="lead mb-4">
+          {{ page.sent-1 }}
+        </p>
+        <hr class="my-5">
+        <p class="lead mb-4">
+          {{ page.sent-2 }}
+        </p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+          <a href="{{ '/chapters/' | relative_url }}">
+            <button type="button" class="btn btn-book-gold btn-lg px-3 mt-4">
+              Explore scenes from the first chapter
+            </button>
+        </a>
+        </div>
+      </div>
+    </div>
+</section>

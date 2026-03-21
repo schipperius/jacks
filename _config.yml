@@ -47,8 +47,20 @@ plugins:
 # Collections
 # -----------------------------------------------------------------------------
 collections:
-  episodes:
+  parts:
     output: true
+    sort_by: order
+    sort_order: ascending
+    permalink: /:name/
+  chapters:
+    output: true
+    sort_by: order
+    sort_order: ascending
+    permalink: /:name/
+  scenes:
+    output: true
+    sort_by: scene_number
+    sort_order: ascending
     permalink: /:name/
   stories:
     output: true

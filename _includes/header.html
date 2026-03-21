@@ -7,6 +7,10 @@
           href="{{ '/' | relative_url }}">
         <span class="small text-body-secondary ms-2 d-none d-lg-inline">{{ site.sup }} {{ site.title }}</span>
       </a>
+      <a href="{{ '/chapters/' | relative_url }}" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
+        <span class="bi bi-book"></span>
+        <span class="ms-2">Chapters</span>
+      </a>
       <a href="{{ '/gallery/' | relative_url }}"
           class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
         <span class="bi bi-images"></span>
@@ -55,6 +59,10 @@
     </a>
     <!-- Icon Row -->
     <div class="d-flex flex-grow-1 justify-content-evenly">
+      <a href="{{ '/chapters/' | relative_url }}"
+        class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-book"></i>
+      </a>
       <a href="{{ '/gallery/' | relative_url }}"
         class="btn btn-outline-secondary btn-sm">
         <i class="bi bi-images"></i>

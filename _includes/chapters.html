@@ -1,0 +1,146 @@
+<!-- Chapter Section with list of scenes -->
+<div id="part-1" class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-sm border-0">
+        <!-- Chapter Card -->
+        <div class="card-header border-bottom-0 pt-4">
+          <h5 class="serif-heading">Chapter I: Trav'ling Thebes-Farshût Line</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text lead drop-cap">{{ chapters.sent-1 }}
+            Although J was the last letter added to the English alphabet, this digital anthology begins almost four thousand years
+            ago on a trade route accross the Theban Plateau during Egypt's Late Middle Kingdom.
+          </p>
+          <p class="card-text lead">{{ chapters.sent-2 }}
+            During this time, Egypt was in the middle of it's second golden age,
+            a period renowned for it's literature and the expansion of trade.
+          </p>
+        
+          <img src="../assets/images/chapters/qena-bend-map.png" alt="A reconstructed map of the Qena-bend"
+          class="rounded shadow-sm" style="width: 352px; height: 352px; object-fit: cover;">
+
+        <!-- Scene Navigation Cards second design -->
+        <div class="col-lg-12">
+          <div class="card h-100 scene-nav-card shadow-sm border-0">
+            <a href="{{ scene.url | relative_url }}" class="text-decoration-none text-dark">
+              <div class="row g-0">
+                <div class="col-4">
+                  <img src="../assets/images/scenes/leaving-the-nile-valley.png" alt="A satellite image of the River Nile"
+                    class="rounded shadow-sm" style="width: 352px; height: 192px; object-fit: cover;">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="card-body p-2">
+                    <h6 class="card-title mb-1 fw-bold" style="font-size: 0.9rem;">{{ scene.title }}</h6>
+                    <p class="card-text text-muted" style="font-size: 0.8rem;">
+                      {{ scene.content | strip_html | truncate: 80 }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>  
+          </div>
+        </div>
+
+
+
+        <div class="row g-3 align-items-center chapter-card pt-2">
+          <div class="col-auto">
+            <img src="assets/images/stories/leaving-the-nile-valley.png" alt="A satellite image of the River Nile"
+              class="rounded shadow-sm" style="width: 352px; height: 192px; object-fit: cover;">
+          </div>
+          <div class="col">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title mb-1"><small class="text-uppercase text-muted fw-bold">Chapter III: the
+                  Encampment</small></h5>
+            </div>
+            <p class="card-text text-muted small mb-0">
+              Carved into the soft limestone cliffs, by Semites some 4000 years ago (during the Middle Kingdom period,
+              2040-1674
+              BC),
+              it is here, in Egypt's western desert, that we find the first signs of an alphabetic writing system.
+              <a href="/stories/the-encampmet" class="link-primary text-decoration-none fw-bold">Read more →</a>
+            </p>
+          </div>
+          </div>
+
+
+
+
+        <div class="row g-3 align-items-center chapter-card pt-2">
+          <div class="col-auto">
+            <img src="{{ scenes.thumbnail }}" class="rounded shadow-sm" style="width: 352px; height: 192px; object-fit: cover;">
+          </div>
+          <div class="col">
+            <h5 class="card-title mb-1"><small class="text-uppercase text-muted fw-bold">Scene {{ scene.scene_number }}: {{
+                scene.title }}</small></h5>
+            <p class="card-text text-muted small mb-0">
+              {{ scene.excerpt }}
+              <a href="{{ scenes.url }}" class="link-primary text-decoration-none fw-bold">Read more →</a>
+            </p>
+          </div>
+
+          <div class="list-group list-group-flush px-4 pb-4">
+          <a href="/stories/the-ascent" class="list-group-item list-group-item-action border-0 py-3">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <img src="assets/images/scenes/leaving-the-nile-valley.png" class="rounded shadow-sm"
+                  style="width: 352px; height: 192px; object-fit: cover;" alt="Ascent thumbnail">
+              </div>
+              <div class="col">
+                <h6 class="text-uppercase mb-1">Scene: the Ascent</h6>
+                <p class="small text-muted mb-0">Standing along an ancient road at the Wadi el-Hol...</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scene List  -->
+<div class="list-group list-group-flush">
+  <div class="list-group-item py-3 border-0">
+    <div class="row g-3 align-items-center chapter-card">
+      <div class="col-auto">
+        <img src="assets/images/scenes/leaving-the-nile-valley.png"
+          alt="A small caravan begins the ascent of the Theban Plateau." class="rounded shadow-sm"
+          style="width: 100px; height: 100px; object-fit: cover;">
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-between align-items-start">
+          <h5 class="card-title mb-1"><small class="text-uppercase text-muted fw-bold">Scene: the Ascent</small></h5>
+        </div>
+        <p class="card-text text-muted small mb-0">
+          Standing along an ancient road at the Wadi el-Hol (Valley of Terror), just west of the Nile, and north of
+          Luxor, where
+          soldiers, mercenaries, and caravans of traders once traveled between the ancient cities of Thebes and Abydos.
+          <a href="/scenes/leaving-the-nile-valley" class="link-primary text-decoration-none fw-bold">Read more →</a>
+        </p>
+      </div>
+    </div>
+    <div class="row g-3 align-items-center chapter-card pt-2">
+      <div class="col-auto">
+        <img src="assets/images/chapters/qena-bend-map.png"
+          alt="Small caravan crossing the high desert plateau between Thebes and Abydos." class="rounded shadow-sm"
+          style="width: 100px; height: 100px; object-fit: cover;">
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-between align-items-start">
+          <h5 class="card-title mb-1"><small class="text-uppercase text-muted fw-bold">Chapter II: the Crossing</small>
+          </h5>
+        </div>
+        <p class="card-text text-muted small mb-0">
+          Carved into the soft limestone cliffs, by Semites some 4000 years ago (during the Middle Kingdom period,
+          2040-1674 BC),
+          it is here, in Egypt's western desert, that we find the first signs of an alphabetic writing system.
+          <a href="/stories/the-crossing" class="link-primary text-decoration-none fw-bold">Read more →</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
