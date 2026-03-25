@@ -4,10 +4,10 @@ title: "Trav'lin the Thebes-Farshût Line"
 chapter_number: 1
 part_number: 1
 image: "/assets/images/chapters/qena-bend-map.png"
+
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Although J was the last letter added to the English alphabet, this digital anthology begins almost four thousand years ago on a trade route across the Theban Plateau during Egypt's Late Middle Kingdom.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+During this time, Egypt was in the middle of it's second golden age, maybe it was around 1800 BCE, a period renowned for it's art, literature and the expansion of trade. The Thebes-Farshut road was a crucial desert connector facilitating the transport of essential resources that flowed into and out of the southern city of Thebes. 
 

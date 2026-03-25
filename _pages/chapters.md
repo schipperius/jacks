@@ -11,3 +11,4 @@ permalink: /chapters/
     {% include chapter-card.html chapter=chapter_item %}
   {% endfor %}
 </div>
+

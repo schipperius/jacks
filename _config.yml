@@ -61,13 +61,11 @@ collections:
     output: true
     sort_by: scene_number
     sort_order: ascending
-    permalink: /scenes/:name/
+    permalink: /:name/
   stories:
     output: true
     permalink: /:name/
-  docs:
-    output: true
-    permalink: /docs/:name/
+
 
 # ===============================
 # Includes / Extra Folders
@@ -98,7 +96,6 @@ markdown: kramdown
 # -----------------------------------------------------------------------------
 # Excludes - the following items will be excluded from processing, by default.
 exclude:
-  - _docs/
   - README.md
   - LICENSE
   - .github/

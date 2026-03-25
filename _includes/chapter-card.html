@@ -16,7 +16,7 @@
     <img src="{{ chapter.image | relative_url }}" class="img-fluid rounded mb-4" alt="{{ chapter.title }}">
     {% endif %}
   </div>
-
+  <!-- Begin list of scenes -->
   <div class="list-group list-group-flush border-top">
     {% assign scenes = site.scenes | where: "chapter_number", chapter.chapter_number | sort: "scene_number" %}
   
@@ -48,5 +48,5 @@
       </div>
     </a>
     {% endfor %}
-    </div>
+  </div>
 </article>
