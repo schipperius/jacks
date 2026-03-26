@@ -1,90 +1,142 @@
 <header class="navbar container sticky-top bg-body border-bottom py-2">
-  <!-- Desktop Layout -->
-  <div class="d-none d-md-flex align-items-center w-100">
-    <!-- Left collumn -->
-    <div class="d-flex align-items-center gap-3 flex-shrink-0">
-      <a class="navbar-brand d-flex align-items-center mb-0"
-          href="{{ '/' | relative_url }}">
-        <span class="small text-body-secondary ms-2 d-none d-lg-inline">{{ site.sup }} {{ site.title }}</span>
-      </a>
-      <a href="{{ '/chapters/' | relative_url }}" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-        <span class="bi bi-book"></span>
-        <span class="ms-2">Chapters</span>
-      </a>
-      <a href="{{ '/gallery/' | relative_url }}"
-          class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-        <span class="bi bi-images"></span>
-        <span class="ms-2">Gallery</span>
-      </a>
-      <a href="{{ '/map/' | relative_url }}"
-          class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-        <span class="bi bi-map"></span>
-        <span class="ms-2">Map</span>
-      </a>
-    </div>
-    <!-- Center Column (Search) -->
-    <div class="flex-grow-1 d-none d-md-flex justify-content-center">
-      <form class="d-flex" role="search">
-        <input
-          class="form-control form-control-sm me-2"
-          type="search"
-          placeholder="Search">
-        <button class="btn btn-outline-secondary btn-sm">
-          <i class="bi bi-search"></i>
-        </button>
-      </form>
-    </div>
-    <!-- Right Column -->
-    <div class="d-flex align-items-center gap-3 flex-shrink-0">
-      <!-- Theme Toggle Button-->
-      <div class="dropdown d-none d-md-block">
-        <button class="btn btn-outline-secondary btn-sm dropdown-toggle"
-                data-bs-toggle="dropdown">
-          Theme
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- Mobile Layout -->
-  <div class="d-flex d-md-none align-items-center w-100">
-    <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center mb-0 flex-shrink-0"
-      href="{{ '/' | relative_url }}">
-      <span class="small text-body-secondary ms-2">{{ site.sup }} {{ site.title }}</span>
+  <div class="d-flex align-items-center justify-content-between w-100">
+
+    <a class="navbar-brand d-flex align-items-center mb-0" href="{{ '/' | relative_url }}">
+      <span class="small text-body-secondary">{{ site.sup }} {{ site.title }}</span>
     </a>
-    <!-- Icon Row -->
-    <div class="d-flex flex-grow-1 justify-content-evenly">
-      <a href="{{ '/chapters/' | relative_url }}"
-        class="btn btn-outline-secondary btn-sm">
-        <i class="bi bi-book"></i>
-      </a>
-      <a href="{{ '/gallery/' | relative_url }}"
-        class="btn btn-outline-secondary btn-sm">
-        <i class="bi bi-images"></i>
-      </a>
-      <a href="{{ '/map/' | relative_url }}"
-        class="btn btn-outline-secondary btn-sm">
-        <i class="bi bi-map"></i>
-      </a>
-      <button class="btn btn-outline-secondary btn-sm">
-        <i class="bi bi-search"></i>
-      </button>
+
+    <nav class="d-flex align-items-center gap-1 gap-md-2">
+      {% for link in site.data.navigation.main %}
+    
+      {% assign sub_urls = link.sublinks | map: "url" %}
+      {% if page.url == link.url or sub_urls contains page.url %}
+      {% assign active_class = "btn-secondary" %}
+      {% else %}
+      {% assign active_class = "btn-outline-secondary" %}
+      {% endif %}
+    
+      {% if link.sublinks %}
       <div class="dropdown">
-        <button class="btn btn-outline-secondary btn-sm"
-                data-bs-toggle="dropdown">
-          <i class="bi bi-palette"></i>
+        <button class="btn btn-sm {{ active_class }} dropdown-toggle d-flex align-items-center" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi {{ link.icon }}"></i>
+          <span class="ms-2 d-none d-md-inline">{{ link.title }}</span>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><button class="dropdown-item" data-bs-theme-value="light">☀ Light</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="dark">🌙 Dark</button></li>
-          <li><button class="dropdown-item" data-bs-theme-value="auto">⚙ Auto</button></li>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item small {% if page.url == link.url %}active{% endif %}"
+              href="{{ link.url | relative_url }}">View All {{ link.title }}</a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          {% for sub in link.sublinks %}
+          <li>
+            <a class="dropdown-item {% if page.url == sub.url %}active{% endif %}" href="{{ sub.url | relative_url }}">{{
+              sub.title }}</a>
+          </li>
+          {% endfor %}
         </ul>
       </div>
+      {% else %}
+      <a href="{{ link.url | relative_url }}" class="btn btn-sm {{ active_class }} d-flex align-items-center">
+        <i class="bi {{ link.icon }}"></i>
+        <span class="ms-2 d-none d-md-inline">{{ link.title }}</span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="dropdown">
+      <button id="bd-theme" class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center" type="button"
+        data-bs-toggle="dropdown" aria-label="Toggle theme">
+        <i class="bi bi-palette"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+            <i class="bi bi-sun-fill me-2"></i> Light
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+            <i class="bi bi-moon-stars-fill me-2"></i> Dark
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+            <i class="bi bi-circle-half me-2"></i> Auto
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
+
+<script>
+  (() => {
+    'use strict'
+
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+    const getPreferredTheme = () => {
+      const storedTheme = getStoredTheme()
+      if (storedTheme) {
+        return storedTheme
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+
+    const setTheme = theme => {
+      if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', theme)
+      }
+    }
+
+    const showActiveTheme = (theme) => {
+      const themeSwitcher = document.querySelector('#bd-theme') // Target your theme button
+      if (!themeSwitcher) return
+
+      const activeIcon = themeSwitcher.querySelector('i')
+      const btnToActivate = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+      const iconOfActiveBtn = btnToActivate.querySelector('i').className
+
+      // Update the main button's icon to match the selected one
+      activeIcon.className = iconOfActiveBtn
+
+      // Update active state in the dropdown list
+      document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+        element.classList.remove('active')
+        element.setAttribute('aria-pressed', 'false')
+      })
+      btnToActivate.classList.add('active')
+      btnToActivate.setAttribute('aria-pressed', 'true')
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const storedTheme = getStoredTheme()
+      if (storedTheme !== 'light' && storedTheme !== 'dark') {
+        setTheme(getPreferredTheme())
+      }
+    })
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const theme = getPreferredTheme()
+      setTheme(theme)
+      showActiveTheme(theme)
+
+      document.querySelectorAll('[data-bs-theme-value]')
+        .forEach(toggle => {
+          toggle.addEventListener('click', () => {
+            const theme = toggle.getAttribute('data-bs-theme-value')
+            setStoredTheme(theme)
+            setTheme(theme)
+            showActiveTheme(theme)
+          })
+        })
+    })
+  })()
+</script>

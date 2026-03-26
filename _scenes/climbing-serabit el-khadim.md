@@ -1,6 +1,6 @@
 ---
 layout: scene
-title: "Climbing up to Serabit el-Kadhim"
+title: "Climbing Serabit el-Kadhim"
 scene_number: 2
 chapter_number: 2
 part_number: 1

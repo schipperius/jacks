@@ -14,3 +14,22 @@
   color: white;               /* Flips text to white for contrast */
 }
 
+/* Force the research button to stay visible */
+.btn-outline-dark,
+[data-bs-target^="#research-"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+/* Optional: Add a slight pulse or distinct color to make it stand out */
+.btn-outline-dark {
+  border-color: #6c757d;
+  color: #6c757d;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #6c757d;
+  color: #fff;
+}

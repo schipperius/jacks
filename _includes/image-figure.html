@@ -1,0 +1,11 @@
+{% assign img = site.data.gallery | where: "id", include.id | first %}
+
+<figure class="image-card gold-filigree">
+  <img src="{{ img.path | relative_url }}" alt="{{ img.title }}" class="img-fluid">
+  <figcaption>
+    <span class="image-title"><strong>{{ img.title }}</strong></span>
+    <p class="image-meta">{{ img.location }} | {{ img.period }}</p>
+    <p class="image-desc">{{ img.caption }}</p>
+    <small class="attribution">{{ img.attribution }}</small>
+  </figcaption>
+</figure>

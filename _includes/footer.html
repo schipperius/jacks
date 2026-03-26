@@ -1,8 +1,21 @@
   <footer class="footer container mt-auto border-top pb-2 py-3">
-    <div class="d-flex justify-content-end align-items-center pb-2 gap-2">
-      <a href="{{ '/colophon/' | relative_url }}"
-         class="nav-link {% if page.url contains '/colophon' %}active{% endif %} px-2">
-        © 1994-{{ site.time | date: '%Y' }}
-      </a>
+    <div class="methodology-badge d-inline-flex align-items-center p-2 border rounded shadow-sm">
+      <div class="me-2">
+        <i class="bi bi-cpu-fill text-primary" style="font-size: 1.2rem;"></i>
+      </div>
+      <div style="line-height: 1.2;">
+        <span class="d-block fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Methodology
+          Verified</span>
+          <a href="{{ '/methodology/' | relative_url }}" class="text-decoration-none text-muted" style="font-size: 0.6rem;">Algorithmic Transparency
+          Report</a>
+      </div>
     </div>
-  </footer>
+      
+    <div class="d-flex justify-content-end align-items-center pb-2 gap-2">
+    <a href="{{ '/colophon/' | relative_url }}"
+      class="nav-link {% if page.url contains '/colophon' %}active{% endif %} px-2">
+      Colophon
+    </a>
+    © 1994-{{ site.time | date: '%Y' }}
+  </div>
+</footer>

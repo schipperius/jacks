@@ -1,0 +1,115 @@
+- id: boyes2020
+  authors: "Boyes, P. J., & Steele, P. M. (Eds.)"
+  year: 2020
+  title: "Understanding relations between scripts II: Early alphabets"
+  source: "Oxbow Books"
+  type: "Book"
+
+- id: cappers2007
+  authors: "Cappers, R. T. J., Sikking, L., & Darnell, J. C."
+  year: 2007
+  title: "Food supply along the Theban Desert roads (Egypt): The Gebel Roma, Wadi el-Hôl, and Gebel Qarn el-Gir caravansary deposits"
+  source: "Paléorient, 33(2), 115–127"
+  type: "Journal"
+
+- id: darnell1997
+  authors: "Darnell, J. C."
+  year: 1997
+  title: "A new Middle Egyptian literary text from the Wadi el-Hôl"
+  source: "Journal of the American Research Center in Egypt, 34, 85–100"
+  type: "Journal"
+
+- id: darnell2002
+  authors: "Darnell, J. C."
+  year: 2002
+  title: "Theban Desert Road Survey in the Egyptian Western Desert, Vol. 1: Gebel Tjauti rock inscriptions 1-45 and Wadi el-Hôl rock inscriptions 1-45"
+  source: "Oriental Institute of the University of Chicago"
+  type: "Book"
+
+- id: darnell2005
+  authors: "Darnell, J. C., Dobbs-Allsopp, F. W., Lundberg, M. J., McCarter, P. K., & Zuckerman, B."
+  year: 2005
+  title: "Two early alphabetic inscriptions from the Wadi el-Hôl: New evidence for the origin of the alphabet from the Western Desert of Egypt"
+  source: "The Annual of the American Schools of Oriental Research, 59, 63–124"
+  type: "Journal"
+
+- id: darnell2013
+  authors: "Darnell, J. C."
+  year: 2013
+  title: "Wadi el-Hol"
+  source: "UCLA Encyclopedia of Egyptology"
+  type: "Encyclopedia"
+
+- id: goldwasser2006
+  authors: "Goldwasser, O."
+  year: 2006
+  title: "Canaanites reading hieroglyphs: Horus is Hathor? – The invention of the alphabet in Sinai"
+  source: "Ägypten und Levante, 16, 121–160"
+  type: "Journal"
+
+- id: goldwasser2011
+  authors: "Goldwasser, O."
+  year: 2011
+  title: "The miners who invented the alphabet — A response to Christopher Rollston"
+  source: "Journal of Ancient Egyptian Interconnections, 3(3), 9–22"
+  type: "Journal"
+
+- id: lemaire2008
+  authors: "Lemaire, A."
+  year: 2008
+  title: "The spread of alphabetic scripts (c. 1700–500 BCE)"
+  source: "Diogenes, 55(2), 44–57"
+  type: "Journal"
+
+- id: olmsted2020
+  authors: "Olmsted, D. D."
+  year: 2020
+  title: "Translations texts at Egyptian Wadi el-Hol (1550 BCE) in Akkadian"
+  source: "Research Report"
+  type: "Report"
+
+- id: sanders2004
+  authors: "Sanders, S. L."
+  year: 2004
+  title: "What was the alphabet for? The rise of written vernaculars and the making of Israelite national literature"
+  source: "Maarav, 11(1), 25–56"
+  type: "Journal"
+
+- id: yale_egyptology
+  authors: "Yale Egyptology"
+  year: "n.d."
+  title: "Theban Desert Road Survey: Alamat Tal"
+  source: "Yale University"
+  url: "https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-yale-toshka-desert-survey/alamat-tal"
+  type: "Web"
+
+- id: chicago_farshut
+  authors: "Darnell, J. C., & Darnell, D."
+  year: 1994
+  title: "The Luxor-Farshut Desert Road Survey"
+  source: "Oriental Institute Annual Report"
+  url: "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/93-94/93-94_Desert_Road.pdf"
+  type: "Report"
+
+- id: bbc_sinuhe
+  authors: "Bragg, M. (Host)"
+  year: 2014
+  title: "The Tale of Sinuhe [Audio Podcast]"
+  source: "BBC In Our Time"
+  url: "https://www.bbc.co.uk/programmes/b041ybj3"
+  type: "Audio"
+
+- id: narrow_doors_desert
+  authors: "Darnell, J. C."
+  year: 2013
+  title: "The Narrow Doors of the Desert: Ancient Egyptian Roads of the Desert"
+  source: "In *Ancient Levant*, De Gruyter Brill"
+  url: "https://www.degruyterbrill.com/document/doi/10.1515/9780824862992-009/html"
+  type: "Book Chapter"
+
+- id: hunt2001
+  authors: "Hunt, L., Lundberg, M., & Zuckerman, B."
+  year: 2001
+  title: "Eyewitnesses to the Past: Reclaiming Ancient Inscriptions with Modern Technologies"
+  source: "West Semitic Research Project"
+  type: "Research Project"

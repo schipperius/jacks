@@ -1,17 +1,32 @@
-{% if page.references %}
-<section class="bibliography mt-5 pt-4 border-top">
-  <h4 class="mb-3 text-secondary" style="font-size: 1.1rem; text-transform: uppercase;">
-    References
-  </h4>
-  <ul class="list-unstyled">
-    {% for id in include.links %}
-    {% assign citation_match = site.data.references | where: "id", id | first %}
+{% if include.links %}
+{% comment %}
+  1. Prepare the data: Loop through the IDs passed from the chapter
+and fetch the full citation objects from bibliography.yml
+{% endcomment %}
 
-    {% if citation_match %}
-    <li class="mb-2 text-muted" style="font-size: 0.9rem; padding-left: 1.5rem; text-indent: -1.5rem;">
-      {{ citation_match.citation }}
+{% assign citation_list = "" | split: "," %}
+
+{% for ref_id in include.links %}
+{% assign match = site.data.bibliography | where: "id", ref_id | first %}
+{% if match %}
+{% assign citation_list = citation_list | push: match %}
+{% endif %}
+{% endfor %}
+
+{% comment %}
+  2. Alphabetize the list by the citation text itself
+{% endcomment %}
+{% assign alphabetized_list = citation_list | sort: "citation" %}
+
+<section class="bibliography mt-3">
+
+
+  <ul class="list-unstyled mb-0">
+    {% for item in alphabetized_list %}
+    <li class="mb-3 text-muted"
+      style="font-size: 0.85rem; line-height: 1.5; padding-left: 1.5rem; text-indent: -1.5rem;">
+      {{ item.citation | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
     </li>
-    {% endif %}
     {% endfor %}
   </ul>
 </section>
