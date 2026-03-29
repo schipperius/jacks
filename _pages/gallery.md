@@ -33,11 +33,14 @@ permalink: /gallery/
           </p>
           <div class="attribution-block border-top pt-2 mt-3">
             <details class="metadata-drawer">
-              <summary class="small fw-bold text-uppercase text-muted">Evidence Metadata</summary>
+              <summary class="small fw-bold text-uppercase text-muted">Attribution</summary>
               <div class="small mt-2">
-                <p class="mb-1"><strong>Prompt:</strong> <span class="font-italic">{{ item.generation_prompt }}</span></p>
                 <p class="mb-0 text-secondary">
+                  <strong>Credit:</strong> <a href="{{ item.attribution_credit }}" target="_blank">{{ item.attribution_credit }}</a>
+                </p>                <p class="mb-0 text-secondary">
                   <strong>Source:</strong> <a href="{{ item.attribution_source }}" target="_blank">{{ item.attribution_credit }}</a>
+                </p>                <p class="mb-0 text-secondary">
+                  <strong>License:</strong> <a href="{{ item.attribution_license }}" target="_blank">{{ item.attribution_credit }}</a>
                 </p>
               </div>
             </details>

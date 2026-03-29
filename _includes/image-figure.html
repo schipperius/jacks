@@ -1,25 +1,16 @@
-<div
-  style="background: #fff3cd; color: #856404; padding: 10px; border: 1px solid #ffeeba; font-family: monospace; font-size: 12px;">
-  DEBUG: <br>
-  Target ID: "{{ include.id }}" <br>
-  CSV Rows Found: {{ site.data.gallery.size }} <br>
-  Match Found?: {% if img %} YES {% else %} NO {% endif %}
-</div>
-
 {% comment %}
-1. Strip any invisible spaces from the ID passed from the page
+  1. Strip any invisible spaces from the ID passed from the page
 {% endcomment %}
 {% assign target_id = include.id | strip %}
 
 {% comment %}
-2. Find the row where the CSV 'image_id' matches our target
+  2. Find the row where the CSV 'image_id' matches our target
 {% endcomment %}
 {% assign img = site.data.gallery | where: "image_id", target_id | first %}
 
 {% comment %}
   We look in the 'image_id' column of the CSV for the value passed as 'id'
 {% endcomment %}
-
 {% assign img = site.data.gallery | where: "image_id", include.id | first %}
 
 <figure class="image-node border-gold p-3 mb-4">
