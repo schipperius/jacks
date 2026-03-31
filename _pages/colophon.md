@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Colophon"
+title: "Book of Jack Colophon"
 permalink: /colophon/
 hero_image_id: da-vinci-workshop # The ID from gallery.csv
 

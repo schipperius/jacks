@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      {% include chapter-card.html chapter=page %}
+
+    </div>
+  </div>
+</div>
+
+<div class="chapter-navigation d-flex justify-content-between align-items-center mt-5 border-top pt-4">
+  <div class="nav-previous">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-gold btn-sm">
+      <i class="bi bi-arrow-left"></i> Previous: {{ page.previous.chapter_number }}
+    </a>
+    {% endif %}
+  </div>
+  <div class="nav-center">
+    <a href="{{ '/chapters/' | relative_url }}" class="btn btn-gold btn-sm" title="Back to Chapter Gallery">
+      <i class="bi bi-grid-3x3-gap"></i>
+    </a>
+  </div>
+  <div class="nav-next">
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-gold btn-sm">
+      Next: {{ page.next.chapter_number }} <i class="bi bi-arrow-right"></i>
+    </a>
+    {% endif %}
+  </div>
+</div>

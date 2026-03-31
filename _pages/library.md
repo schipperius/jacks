@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Search Index"
+title: "Book of Jack Index"
 permalink: /search-index/
 ---
 

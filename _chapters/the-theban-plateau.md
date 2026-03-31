@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: chapter
 title: "Trav'lin the Thebes-Farshût Line"
 chapter_number: 1
 part_number: 1
-image: "/assets/images/chapters/qena-bend-map.png"
+image: "/assets/images/chapters/map-qena-bend.png"
 academic_refs:
   - boyes2020
   - cappers2007

@@ -5,6 +5,7 @@ layout: default
 
 <article class="container my-5">
   <div class="row g-5">
+
     <div class="col-lg-8">
       <div class="plate-frame border-gold p-2 shadow-lg">
         <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_alt }}">
@@ -27,29 +28,34 @@ layout: default
         <p class="small mb-4 text-break"><strong>Prompt:</strong> {{ d.generation_prompt }}</p>
 
         <h6 class="text-uppercase fw-bold text-secondary mb-3">Anthology Context</h6>
-        <a href="{{ '/chapters/' | append: d.slug | relative_url }}" class="btn btn-outline-dark btn-sm w-100">
+        <a href="{{ '/#/' | append: d.slug | relative_url }}" class="btn btn-outline-dark btn-sm w-100">
           Return to Chapter {{ d.chapter }}
         </a>
+        <a href="{{ '/#/' | append: d.slug | relative_url }}" class="btn btn-outline-dark btn-sm w-100">
+          Return to Scene {{ d.chapter }}
+        </a>
+      </div>
+
+      <div class="plate-navigation d-flex justify-content-between mt-5 border-top pt-3">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-gold">
+          &larr; Previous Plate
+        </a>
+        {% else %}
+        <span></span> {% endif %}
+      
+        <a href="{{ '/gallery/' | relative_url }}" class="btn btn-gold">
+          Back to Gallery
+        </a>
+      
+        {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-gold">
+          Next Plate &rarr;
+        </a>
+        {% endif %}
       </div>
     </div>
-  </div>
-  
-  <div class="plate-navigation d-flex justify-content-between mt-5 border-top pt-3">
-    {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-gold">
-      &larr; Previous Plate
-    </a>
-    {% else %}
-    <span></span> {% endif %}
-  
-    <a href="{{ '/gallery/' | relative_url }}" class="btn btn-gold">
-      Back to Archive Grid
-    </a>
-  
-    {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-gold">
-      Next Plate &rarr;
-    </a>
-    {% endif %}
+
   </div>
 </article>
+

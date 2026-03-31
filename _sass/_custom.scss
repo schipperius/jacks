@@ -80,3 +80,59 @@
 .serif-font {
   font-family: 'EB Garamond', serif;
 }
+
+/* Custom muted text that respects theme contrast */
+.manuscript-muted {
+  color: var(--bs-secondary-color);
+  /* Uses Bootstrap 5's built-in theme-aware variable */
+}
+
+/* If you want a specific "aged ink" look for your project */
+[data-bs-theme="dark"] .manuscript-muted {
+  color: #b5a489 !important;
+  /* Lighter, warmer tone for dark mode */
+}
+
+[data-bs-theme="light"] .manuscript-muted {
+  color: #6c757d !important;
+  /* Standard muted grey for light mode */
+}
+
+/* --- Gold Button Styling --- */
+
+/* Base Gold Color (A bit deeper for light backgrounds) */
+.btn-gold {
+  background-color: #8a7345 !important;
+  color: #ffffff !important;
+  border: 1px solid #8a7345 !important;
+}
+
+.btn-outline-gold {
+  color: #8a7345 !important;
+  border: 1px solid #8a7345 !important;
+}
+
+/* Hover effects */
+.btn-gold:hover,
+.btn-outline-gold:hover {
+  background-color: #a68d59 !important;
+  color: #ffffff !important;
+}
+
+/* --- Dark Mode Adjustments --- */
+[data-bs-theme="dark"] .btn-outline-gold {
+  color: #d4af37 !important;
+  /* Brighter gold for dark mode visibility */
+  border-color: #d4af37 !important;
+}
+
+[data-bs-theme="dark"] .btn-gold {
+  background-color: #d4af37 !important;
+  color: #1a1a1a !important;
+  /* Dark text on bright button for contrast */
+}
+
+/* Ensure the border-top is visible but not distracting */
+.chapter-navigation {
+  border-top: 1px solid rgba(138, 115, 69, 0.2) !important;
+}

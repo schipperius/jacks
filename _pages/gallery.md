@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Digital Anthology Gallery
+title: Gallery
 permalink: /gallery/
 ---
 
