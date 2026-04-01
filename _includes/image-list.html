@@ -1,7 +1,7 @@
 {% if include.links %}
 <ul class="list-unstyled">
   {% for img_id in include.links %}
-  {% assign img = site.data.images | where: "id", img_id | first %}
+  {% assign img = site.data.b-images | where: "id", img_id | first %}
   {% assign prompt_data = site.data.prompts | where: "id", img_id | first %}
 
   {% if img %}

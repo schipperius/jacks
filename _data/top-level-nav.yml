@@ -1,0 +1,17 @@
+main:
+  - title: Chapters
+    url: /chapters/
+    icon: bi-book
+  - title: Gallery
+    url: /gallery/
+    icon: bi-images
+  - title: Map
+    url: /map/
+    icon: bi-map
+  - title: Library
+    url: /library/
+    icon: bi-bank
+  - title: Colophon
+    url: /colophon/
+    icon: bi-info-square
+  

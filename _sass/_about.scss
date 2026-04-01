@@ -33,7 +33,7 @@
 
 .book-hero {
   position: relative; /* Required for the overlay */
-  background-image: url("../images/pages/book-cover.jpg");
+  background-image: url("../images/ch-0/book-cover.jpg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -202,3 +202,13 @@
   }
 }
 
+.hero-image {
+  width: 100%;
+  /* Fills mobile/tablet screens */
+  max-width: 1440px;
+  /* Stops growing on large monitors */
+  margin: 0 auto;
+  /* Keeps it centered */
+  aspect-ratio: 1408 / 768;
+  object-fit: cover;
+}

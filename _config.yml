@@ -36,31 +36,28 @@ scholar:
   last_name: first
   style: apa
   template: bib
-  source: _bibliography  # This tells the plugin WHERE to look
-  bibliography: references.bib # This tells the plugin WHAT file to open
+  source: _data  # This tells the plugin WHERE to look
+  data: references.bib # This tells the plugin WHAT file to open
 
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
 collections:
-  pages:
+  top-matter:
     output: true
     permalink: /:name/
-  parts:
+  b-plates:
     output: true
-    sort_by: part_number
-    permalink: /parts/:name/
-  chapters:
-    output: true
-    sort_by: chapter_number
-    permalink: /chapters/:name/
-  scenes:
+    permalink: /plate/:name/
+  b-scenes:
     output: true
     sort_by: scene_number
-    permalink: /scenes/:name/
-  plates:
+    permalink: /scene/:name/
+  b-chapters:
     output: true
-    permalink: /plates/:name/
+    sort_by: chapter_number
+    permalink: /chapter/:name/
+
 
 # ===============================
 # Includes / Extra Folders
