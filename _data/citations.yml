@@ -1,9 +1,58 @@
-- id: boyes2020
-  authors: "Boyes, P. J., & Steele, P. M. (Eds.)"
-  year: 2020
-  title: "Understanding relations between scripts II: Early alphabets"
-  source: "Oxbow Books"
+- id: darnell1994
+  authors: "Darnell, J. C., & Darnell, D."
+  year: 1994
+  title: "The Luxor-Farshût Desert Road Survey"
+  source: "Oriental Institute Annual Report"
+  url: "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/93-94/93-94_Desert_Road.pdf"
+  type: "Report"
+  
+- id: darnell2002
+  authors: "Darnell, J. C."
+  year: 2002
+  title: "Theban Desert Road Survey in the Egyptian Western Desert, Vol. 1: Gebel Tjauti rock inscriptions 1-45 and Wadi el-Hôl rock inscriptions 1-45"
+  source: "Oriental Institute of the University of Chicago"
+  url: "https://www.academia.edu/20669996/Theban_Desert_Road_Survey_I_The_Rock_Inscriptions_of_Gebel_Tjauti_in_the_Theban_Western_Desert_Part_1_and_the_Rock_Inscriptions_of_the_Wadi_el_Hôl_Part_1_Oriental_Institute_Publication_117_Chicago_2002_"
   type: "Book"
+
+- id: darnell2005
+  authors: "Darnell, J. C., Dobbs-Allsopp, F. W., Lundberg, M. J., McCarter, P. K., & Zuckerman, B."
+  year: 2005
+  title: "Two early alphabetic inscriptions from the Wadi el-Hôl: New evidence for the origin of the alphabet from the Western Desert of Egypt"
+  source: "The Annual of the American Schools of Oriental Research, 59, 63–124"
+  url: ""
+  type: "Journal"
+
+- id: darnell2013
+  authors: "Darnell, J. C."
+  year: 2013
+  title: "Wadi el-Hol"
+  source: "UCLA Encyclopedia of Egyptology"
+  url: "https://escholarship.org/content/qt1sd2j49d/qt1sd2j49d.pdf"
+  type: "Encyclopedia"
+
+- id: yale_egyptology
+  authors: "Yale Egyptology"
+  year: "n.d."
+  title: "Theban Desert Road Survey: Alamat Tal"
+  source: "Yale University"
+  url: "https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-yale-toshka-desert-survey/alamat-tal"
+  type: "Web"
+
+- id: yale_egyptology
+  authors: "Yale Egyptology"
+  year: "n.d."
+  title: "Theban Desert Road Survey and Yale Toshka Desert Survey"
+  source: "Yale University"
+  url: "https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-and-yale-toshka-desert-survey"
+  type: "Web"
+
+- id: 
+  authors: ""
+  year:
+  title: 
+  source: ""
+  url: "http://www.inscriptifact.com/news/Biblos.pdf"
+  type: "Web"
 
 - id: cappers2007
   authors: "Cappers, R. T. J., Sikking, L., & Darnell, J. C."
@@ -18,27 +67,6 @@
   title: "A new Middle Egyptian literary text from the Wadi el-Hôl"
   source: "Journal of the American Research Center in Egypt, 34, 85–100"
   type: "Journal"
-
-- id: darnell2002
-  authors: "Darnell, J. C."
-  year: 2002
-  title: "Theban Desert Road Survey in the Egyptian Western Desert, Vol. 1: Gebel Tjauti rock inscriptions 1-45 and Wadi el-Hôl rock inscriptions 1-45"
-  source: "Oriental Institute of the University of Chicago"
-  type: "Book"
-
-- id: darnell2005
-  authors: "Darnell, J. C., Dobbs-Allsopp, F. W., Lundberg, M. J., McCarter, P. K., & Zuckerman, B."
-  year: 2005
-  title: "Two early alphabetic inscriptions from the Wadi el-Hôl: New evidence for the origin of the alphabet from the Western Desert of Egypt"
-  source: "The Annual of the American Schools of Oriental Research, 59, 63–124"
-  type: "Journal"
-
-- id: darnell2013
-  authors: "Darnell, J. C."
-  year: 2013
-  title: "Wadi el-Hol"
-  source: "UCLA Encyclopedia of Egyptology"
-  type: "Encyclopedia"
 
 - id: goldwasser2006
   authors: "Goldwasser, O."
@@ -75,41 +103,3 @@
   source: "Maarav, 11(1), 25–56"
   type: "Journal"
 
-- id: yale_egyptology
-  authors: "Yale Egyptology"
-  year: "n.d."
-  title: "Theban Desert Road Survey: Alamat Tal"
-  source: "Yale University"
-  url: "https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-yale-toshka-desert-survey/alamat-tal"
-  type: "Web"
-
-- id: chicago_farshut
-  authors: "Darnell, J. C., & Darnell, D."
-  year: 1994
-  title: "The Luxor-Farshut Desert Road Survey"
-  source: "Oriental Institute Annual Report"
-  url: "https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/93-94/93-94_Desert_Road.pdf"
-  type: "Report"
-
-- id: bbc_sinuhe
-  authors: "Bragg, M. (Host)"
-  year: 2014
-  title: "The Tale of Sinuhe [Audio Podcast]"
-  source: "BBC In Our Time"
-  url: "https://www.bbc.co.uk/programmes/b041ybj3"
-  type: "Audio"
-
-- id: narrow_doors_desert
-  authors: "Darnell, J. C."
-  year: 2013
-  title: "The Narrow Doors of the Desert: Ancient Egyptian Roads of the Desert"
-  source: "In *Ancient Levant*, De Gruyter Brill"
-  url: "https://www.degruyterbrill.com/document/doi/10.1515/9780824862992-009/html"
-  type: "Book Chapter"
-
-- id: hunt2001
-  authors: "Hunt, L., Lundberg, M., & Zuckerman, B."
-  year: 2001
-  title: "Eyewitnesses to the Past: Reclaiming Ancient Inscriptions with Modern Technologies"
-  source: "West Semitic Research Project"
-  type: "Research Project"

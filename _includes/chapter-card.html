@@ -40,7 +40,7 @@
 
   <!-- Begin list of scenes -->
   <div class="list-group list-group-flush border-top">
-    {% assign scenes = site.b-scenes | where: "chapter_number", chapter.chapter_number | sort: "scene_number" %}
+    {% assign scenes = site.scenes | where: "chapter_number", chapter.chapter_number | sort: "scene_number" %}
   
     {% for scene in scenes %}
     <a href="{{ scene.url | relative_url }}" class="list-group-item list-group-item-action border-0 py-4 px-4">

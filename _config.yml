@@ -39,22 +39,26 @@ scholar:
 # Collections
 # -----------------------------------------------------------------------------
 
+# Add this line
+collections_dir: _content
+
+# Your existing collections block remains mostly the same
 collections:
-  top-matter:
-    output: true
-    permalink: /:name/
-  b-plates:
-    output: true
-    permalink: /plate/:name/
-  b-scenes:
-    output: true
-    sort_by: scene_number
-    permalink: /scene/:name/
-  b-chapters:
+  chapters:
     output: true
     sort_by: chapter_number
     permalink: /chapter/:name/
-
+  pages:
+    output: true
+    permalink: /:name/
+  plates:
+    output: true
+    permalink: /plate/:name/
+  scenes:
+    output: true
+    sort_by: scene_number
+    permalink: /scene/:name/
+  
 
 # ===============================
 # Includes / Extra Folders

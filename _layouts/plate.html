@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% assign d = site.data.b-images | where: "image_id", page.image_id | first %}
 
 <style>
   :root {
@@ -99,18 +98,153 @@ layout: default
 
 </style>
 
+<style>/* The Map Inset Frame */
+  .map-porthole {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--scribe-gold);
+  position: relative;
+  /* A subtle grid background to simulate a survey map */
+  background-color: #fcfaf5;
+  background-image: 
+    linear-gradient(var(--scribe-gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--scribe-gold) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-opacity: 0.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--scribe-gold);
+  }
+
+  .map-crosshair {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--scribe-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Let clicks pass through to the link */
+  z-index: 10;
+  }
+
+  .map-crosshair::before, .map-crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: var(--scribe-gold);
+  }
+
+  /* Horizontal line */
+  .map-crosshair::before {
+  top: 50%;
+  left: -5px;
+  width: 30px;
+  height: 1px;
+  }
+
+  /* Vertical line */
+  .map-crosshair::after {
+  left: 50%;
+  top: -5px;
+  width: 1px;
+  height: 30px;
+  }
+
+  /* If no image exists, this text shows up */
+  .map-porthole::after {
+  content: "Cartographic Data Pending";
+  font-family: serif;
+  font-style: italic;
+  color: var(--scribe-gold);
+  opacity: 0.6;
+  font-size: 0.8rem;
+  }
+  
+  .map-porthole img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: sepia(0.15) contrast(1.1);
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  
+  .map-porthole:hover img {
+    transform: scale(1.08);
+  }
+
+  .map-porthole .overlay-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  }
+
+  .map-porthole:hover .overlay-text {
+  opacity: 1;
+  }
+  
+  /* Custom Journey Path */
+  .journey-wrapper {
+    position: relative;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .journey-line-base {
+    height: 2px;
+    width: 100%;
+    background-color: #e0e0e0;
+    position: relative;
+  }
+  
+  .journey-line-fill {
+    height: 100%;
+    background-color: var(--scribe-gold);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .journey-stop {
+    width: 10px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+  }
+  
+  .journey-stop.reached {
+    background-color: var(--scribe-gold);
+  }
+  
+  .journey-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6c757d;
+    position: absolute;
+    top: 15px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+</style>
+
+{% assign d = site.data.plates | where: "image_id", page.image_id | first %}
 <article class="container-fluid px-lg-0 my-5">
   <div class="row g-5">
 
     <div class="col-lg-8">
       <div class="hero-plate-frame p-2 shadow-lg mb-2">
         <a href="{{ d.image_path | relative_url }}" class="lightbox-trigger">
-          <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_alt }}">
+          <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_prompt }}">
         </a>
       </div>
       <div class="d-flex justify-content-between align-items-center px-2 my-2">
         <p class="mb-0">
-          {{ d.place_city }}, {{ d.place_country }} | {{ d.period }} | {{ d.display_year }}
+          {{ d.place_region }} - {{ d.place_city }}, {{ d.place_country }} | {{ d.period }} | {{ d.display_year }}
         </p>
         <div class="small text-uppercase">
           <a href="{{ '/chapters/' | relative_url }}" class="text-decoration-none border-bottom"
@@ -139,38 +273,119 @@ layout: default
           </li>
           <li class="nav-item">
             <button class="nav-link" data-bs-toggle="tab" 
-            data-bs-target="#mapping" type="button">Prompt</button>
+            data-bs-target="#prompt" type="button">Prompt</button>
           </li>
           <li class="nav-item">
             <button class="nav-link" data-bs-toggle="tab" 
-            data-bs-target="#image-prompt" type="button">Cartography</button>
+            data-bs-target="#cartography" type="button">Cartography</button>
           </li>
         </ul>
         <div class="tab-content tab-content-scribe p-4 mb-4 shadow-sm">
           <div class="tab-pane fade show active" id="attribution">
-            <p>Image by: {{ d.attr_image_credit }} for the {{ d.attr_image_source }} ({{ d.image_date }})</p>
-            <p>Tools: AI-Generated via Google Gemini Nano Banana 2.</p>
-            <p>Reference: Image reconstruction primarily from The Theban Desert Road Survey (Darnell, 2002).</p>
-            <p>License:
-              <a href="{{ d.attr_license_url }}" class="text-decoration-none border-bottom"
+            <p class="lead">{{ page.image_title }}</p>
+            <p class="mb-2">Image by 
+              <a href="{{ '/colophon/' | relative_url }}" class="text-decoration-none"
                 style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-                {{ d.attr_image_license }}
+                {{ d.attr_image_credit }}
+              </a> 
+              for the {{ d.attr_image_source }} ({{ d.image_date }}).
+            </p>
+            <p class="">This visual reconstruction is primarily informed by the <em>{{ page.image_informed }}</em> 
+              <a href="{{ page.informed_url }}" class="text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                {{ page.informed_author}}
+              </a> 
+                and generated with Google Gemini 3.1 Flash Image.</p>
+            <p class="">Licensed under
+              <a href="{{ d.attr_license_url }}" class="text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                {{ d.attr_image_license }}.
               </a>
             </p>
           </div>
 
           <div class="tab-pane fade" id="prompt">
-            <p>{{ page.image_prompt }}</p>
+            <p>{{ page.image_prompt | newline_to_br }}</p>
           </div>
 
-          <div class="tab-pane fade" id="Cartography">
-            ...
-          </div>
+          {% assign progress = d.journey_percent | plus: 0 | default: 0 %}
+          <!-- Begin Cartography -->
+          <div class="tab-pane fade" id="cartography">
+
+            <div class="map-porthole shadow-sm mb-3">
+              <a href="{{ '/map/' | relative_url }}">
+                {% if d.map_thumbnail %}
+                <img src="{{ d.map_thumbnail | relative_url }}" alt="Regional map of {{ d.place_city }}">
+                {% else %}
+                <img src="{{ '/assets/images/ch-1/' | relative_url }}" alt="Archaic survey map">
+                {% endif %}
+                <div class="map-crosshair" style="left: {{ progress }}%; top: 40%;"></div>
+              </a>
+            </div>
+                      
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-end">
+                <div>
+                  <h6 class="text-uppercase small ls-1 text-muted mb-0">Location Data</h6>
+                  <p class="mb-0 font-monospace small">{{ d.latitude }}, {{ d.longitude }}</p>
+                </div>
+                <div class="text-end">
+                  <h6 class="text-uppercase small ls-1 text-muted mb-0">Elevation</h6>
+                  <p class="mb-0 small">{{ d.elevation | default: '---' }} masl</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="text-uppercase small ls-1 text-muted mb-0">Elevation Profile</h6>
+            </div>
+            
+            <svg viewBox="0 0 200 30" class="w-100" style="height: 30px; fill: none;">
+              <path d="M0 25 L40 25 L80 5 L120 8 L160 10 L200 10" stroke="#e0e0e0" stroke-width="2" />
+            
+              <path d="M0 25 L40 25 L80 5 L120 8 L160 10 L200 10" stroke="var(--scribe-gold)" stroke-width="2"
+                stroke-dasharray="{{ progress | times: 2 }}, 200" />
+            
+              {% assign dot_pos = progress | times: 2 %}
+              <circle cx="{{ dot_pos }}" cy="{% if progress < 20 %}25{% elsif progress < 40 %}15{% else %}8{% endif %}" r="3"
+                fill="var(--scribe-gold)" />
+            </svg>
+            <div class="d-flex justify-content-between small italic text-muted mt-1" style="font-size: 0.65rem;">
+              <span>Nile Valley</span>
+              <span>Theban Plateau</span>  
+            </div>
+
+            <div class="journey-wrapper">
+              <div class="journey-line-base">
+                <div class="journey-line-fill" style="width: {{ progress }}%;"></div>
+          
+                <div class="journey-stop reached" style="left: 8%;">
+                  <span class="journey-label">Thebes</span>
+                </div>
+          
+                <div class="journey-stop {% if progress >= 50 %}reached{% endif %}" style="left: 50%;">
+                  <span class="journey-label">Wadi el-Hôl</span>
+                </div>
+          
+                <div class="journey-stop {% if progress >= 100 %}reached{% endif %}" style="left: 100%;">
+                  <span class="journey-label" style="transform: translateX(-80%);">Hiw</span>
+                </div>
+              </div>
+            </div>
+          
+            <div class="mt-5 text-center">
+              <a href="{{ '/map/' | relative_url }}" class="small text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                Cartographic Archive
+              </a>
+            </div>    
+          </div><!-- End Cartography -->
+          
         </div>
       </div>
     </div>
   </div>
-
+  <!-- Gallery Paginaton-->
   <div class="row mt-2 pt-3" style="border-color: var(--scribe-gold) !important;">
     <div class="col-12 d-flex justify-content-between align-items-center">
       {% if page.previous %}

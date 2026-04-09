@@ -6,12 +6,12 @@
 {% comment %}
   2. Find the row where the CSV 'image_id' matches our target
 {% endcomment %}
-{% assign img = site.data.b-images | where: "image_id", target_id | first %}
+{% assign img = site.data.plates | where: "image_id", target_id | first %}
 
 {% comment %}
   We look in the 'image_id' column of the CSV for the value passed as 'id'
 {% endcomment %}
-{% assign img = site.data.b-images | where: "image_id", include.id | first %}
+{% assign img = site.data.plates | where: "image_id", include.id | first %}
 
 <figure class="image-node border-gold p-3 mb-4">
   <div class="image-wrapper">
