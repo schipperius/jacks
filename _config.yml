@@ -38,11 +38,7 @@ scholar:
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
-
-# Add this line
 collections_dir: _content
-
-# Your existing collections block remains mostly the same
 collections:
   chapters:
     output: true
