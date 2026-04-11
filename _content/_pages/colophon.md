@@ -4,7 +4,7 @@ title: Colophon
 permalink: /colophon/
 image_id: da-vinci-workshop # The ID from b-images.csv
 
-para-1: |
+para-1: >
   The Book of Jack was initially conceived as a coffee table book.
 
   For context, it was September 1994 and the Internet was in its infancy. Websites consisted of static HTML tables and numbered less than 10,000 worldwide. There were no search engines. Most home computers only had 4 MB of RAM with average download speeds of about 35 Kilobits per second.
@@ -13,22 +13,11 @@ para-1: |
 
 ---
 
-Today, this digital anthology ...
-
-
-
-
-### **Detailed Prompt for Tavernier's Miélot Study (c. 1460)**
-
-This prompt creates a photorealistic, cinematic reconstruction of the medieval scriptorium, precisely mapping all specific objects and text from the original illumination (image_6.png) to a complex, three-dimensional environment.
-
-**Prompt Text:**
-
-A photorealistic, highly detailed cinematic reconstruction of the medieval scribe Jean Miélot in his meticulously recreated study in Bruges, c. 1460, based on image_6.png. The scene is rendered in a monochromatic grisaille-derived palette of sepia, grey-browns, bone whites, and aged vellum textures to maintain the original illumination feel. Miélot, a meticulous portrait in profile, wearing his authentic multi-layered grey robe and hood with a simple cap, is seated on a detailed wooden stool. He is in the identical profile pose, writing intensely in a large vellum manuscript placed on the complex, ornate, multi-part oak and walnut desk. The desk, with its unique triangular pyramid-like front structure holding the main manuscript and scroll with legible script, features intricate gothic carved motifs. Below the writing surface, four precise inkwells are visible on their small side-shelf. The surrounding large wooden shelving unit is packed with hundreds of highly detailed vellum and leather-bound books with metal clasps, arranged precisely as in image_6.png, including the open books propped up and lying on shelves. Specific details, like the open box on the far right top shelf containing the metal instruments and scrolls, are recreated with photorealistic textures. Above the shelving unit, the framed plaque with the verbatim text **'au fil Du roy Dce wps'** is rendered as an aged carved wooden object with legible, old French script. The entire scriptorium environment is rich in wood grain and vellum pores, with cinematic soft, warm side-lighting from a nearby window highlighting dust motes and textures. Ultra-detailed, 8k resolution.
-
 ### The Technology Stack & Architecture
 
-#### The Writing Layer
+#### The Research & Writing Layer
+* Researcing for The Book of Jack project requires [**Zotero**](https://www.zotero.org), a free, easy-to-use tool to help you collect, organize, annotate, cite, and share the research.
+
 * The Book of Jack* is written in [**Scrivener**](https://www.literatureandlatte.com), a comprehensive writing software designed for long-term projects that combines editing, file management, outlining and research tools into one interface.
 
 * Formatting the scrivener text is done with [**Markdown**](https://www.markdownguide.org), a lghtweight, easy-to-read and easy-to-write plain text markup language used to format text for the web.

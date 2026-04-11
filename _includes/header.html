@@ -17,7 +17,7 @@
     </a>
   
     <nav class="d-flex align-items-center gap-1 gap-md-2">
-      {% for link in site.data.top-level-nav.main %}
+      {% for link in site.data.navigation.main %}
     
       {% assign sub_urls = link.sublinks | map: "url" %}
       {% if page.url == link.url or sub_urls contains page.url %}
