@@ -1,8 +1,7 @@
 ---
 layout: plate
-image_id: theban-plateau
+image_id: theban-hills
 
-id: wadi_el_hol_entrance
 model: "Gemini 3 Flash"
 date_generated: 2026-03-22
 prompt: >

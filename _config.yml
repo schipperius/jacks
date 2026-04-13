@@ -29,11 +29,11 @@ plugins:
   - jekyll-seo-tag
 
 scholar:
-  last_name: first
   style: apa
-  template: bib
-  source: _data  # This tells the plugin WHERE to look
-  data: references.bib # This tells the plugin WHAT file to open
+  locale: en                        # Citation style (apa, ieee, mla, etc.)
+  bibliography: references.bib      # Name of your bib file
+  source: _bibliography             # Directory for your bib file
+  type: bibliography
 
 # -----------------------------------------------------------------------------
 # Collections

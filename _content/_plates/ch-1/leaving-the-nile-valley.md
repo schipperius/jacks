@@ -24,6 +24,7 @@ image_prompt: |
   
   Atmosphere: Dust motes dancing in the first light, a sense of quiet tension and preparation for the heat.
 
+image_info: by the 
 image_informed: Theban Desert Road Survey 
 informed_author: (Darnell, 2002)
 informed_url: https://isac.uchicago.edu/research/publications/oip/theban-desert-road-survey-egyptian-western-desert-volume-1-gebel-tjauti

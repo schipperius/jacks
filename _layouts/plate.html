@@ -262,6 +262,7 @@ layout: default
         <h1 class="display-5">{{ page.image_title }}</h1>
         <p class="lead italic">{{ page.image_caption }}</p>
       </div>
+      <!-- Maybe add the first truncated paragraph that supports the image -->
     </div>
 
     <div class="col-lg-4">
@@ -290,11 +291,11 @@ layout: default
               </a> 
               for the {{ d.attr_image_source }} ({{ d.image_date }}).
             </p>
-            <p class="">This visual reconstruction is primarily informed by the <em>{{ page.image_informed }}</em> 
+            <p class="">This visual reconstruction is primarily informed {{ page.image_info }} <em>{{ page.image_informed }}</em> 
               <a href="{{ page.informed_url }}" class="text-decoration-none"
                 style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
                 {{ page.informed_author}}
-              </a> 
+              </a>,
                 and generated with Google Gemini 3.1 Flash Image.</p>
             <p class="">Licensed under
               <a href="{{ d.attr_license_url }}" class="text-decoration-none"
@@ -385,10 +386,7 @@ layout: default
       </div>
     </div>
   </div>
-  <div>
-    {% include scenes-card.html %}
-  </div>
-      <!-- Gallery Paginaton-->
+  <!-- Gallery Paginaton-->
   <div class="row mt-2 pt-3" style="border-color: var(--scribe-gold) !important;">
     <div class="col-12 d-flex justify-content-between align-items-center">
       {% if page.previous %}
