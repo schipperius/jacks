@@ -4,7 +4,7 @@ title: Gallery
 permalink: /gallery/
 ---
 
-<div class="container my-5">
+<section class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for item in site.data.plates %}
     <div class="col-md-6 col-lg-4"> 
@@ -36,5 +36,5 @@ permalink: /gallery/
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 

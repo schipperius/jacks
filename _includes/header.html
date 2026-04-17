@@ -1,4 +1,4 @@
-<header class="navbar container sticky-top bg-body border-bottom px-2 py-2">
+<header class="navbar container sticky-top bg-body border-bottom px-2 py-3">
   <div class="d-flex align-items-center justify-content-between w-100">
 
     {% if page.url == '/' %}
@@ -16,7 +16,7 @@
       </span>
     </a>
   
-    <nav class="d-flex align-items-center gap-1 gap-md-2">
+    <nav class="d-flex align-items-center gap-1 gap-md-3">
       {% for link in site.data.navigation.main %}
     
       {% assign sub_urls = link.sublinks | map: "url" %}

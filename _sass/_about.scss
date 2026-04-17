@@ -31,7 +31,7 @@
 
   .book-hero {
     position: relative; /* Required for the overlay */
-    background-image: url("../images/ch-0/book-cover.jpg");
+    background-image: url("../images/book-cover.webp");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -210,3 +210,5 @@
     aspect-ratio: 1408 / 768;
     object-fit: cover;
   }
+
+  

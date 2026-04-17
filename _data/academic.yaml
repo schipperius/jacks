@@ -1,0 +1,438 @@
+---
+references:
+- id: colemanUCLAEncyclopediaEgyptology2013
+  accessed:
+    - year: 2026
+      month: 4
+      day: 5
+  author:
+    - family: Coleman
+      given: John
+  author_list: John Coleman
+  chapters: Chapter 01
+  citation-key: colemanUCLAEncyclopediaEgyptology2013
+  container-title: UCLA Encyclopedia of Egyptology
+  date: '2013'
+  issued:
+    - year: 2013
+  language: en
+  note: 'chapters: Chapter 01'
+  publication: UCLA Encyclopedia of Egyptology
+  source: Zotero
+  tags: academic, chapter-01
+  title: UCLA Encyclopedia of Egyptology - Wadi el-Hol
+  type: entry-encyclopedia
+  URL: https://escholarship.org/uc/item/1sd2j49d
+
+- id: darnellNarrowDoorsDesert2002
+  accessed:
+    - year: 2026
+      month: 3
+      day: 29
+  author:
+    - family: Darnell
+      given: John Colman
+  author_list: John Colman Darnell
+  chapters: Chapter 01
+  citation-key: darnellNarrowDoorsDesert2002
+  container-title: 'Inscribed Landscapes: Marking and Making Place'
+  date: '2002'
+  ISBN: 0-8248-2472-5
+  issued:
+    - year: 2002
+  language: en
+  note: 'chapters: Chapter 01'
+  page: 104–121
+  publication: 'Inscribed Landscapes: Marking and Making Place'
+  publisher: University of Hawaii Press
+  source: Google Scholar
+  tags: academic, chapter-01
+  title: >-
+    The Narrow Doors of the Desert: Ancient Egyptian Roads in the Theban Western
+    Desert
+  title-short: The Narrow Doors of the Desert
+  type: chapter
+  URL: >-
+    https://books.google.com/books?hl=en&lr=&id=e6IHp3aug2IC&oi=fnd&pg=PA104&dq=wadi+el+h%C3%B4l+desert+road+survey&ots=p71CdEmZIg&sig=N0mejzDhCs1a-r2n0Yls6E0SYrA
+
+- id: darnellOrientalInstitute199219931993
+  abstract: >-
+    The road to Farshut begins near the ancient limestone quarries in the
+    northern fork of the Wadyein.
+  accessed:
+    - year: 2026
+      month: 2
+      day: 12
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199219931993
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1993'
+  genre: Annual Report
+  issued:
+    - year: 1993
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: Oriental Institute 1992-1993 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf
+
+- id: darnellOrientalInstitute199319941994
+  accessed:
+    - year: 2026
+      month: 2
+      day: 21
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199319941994
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1994'
+  genre: Annual Report
+  issued:
+    - year: 1994
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: Oriental Institute 1993-1994 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/93-94/93-94_Desert_Road.pdf
+
+- id: darnellOrientalInstitute199419951995
+  accessed:
+    - year: 2026
+      month: 2
+      day: 23
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199419951995
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1995'
+  genre: Annual Report
+  issued:
+    - year: 1995
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: Oriental Institute 1994-1995 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/94-95/94-95_Desert_Road.pdf
+
+- id: darnellOrientalInstitute199519961996
+  accessed:
+    - year: 2026
+      month: 3
+      day: 8
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199519961996
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1996'
+  genre: Annual Report
+  issued:
+    - year: 1996
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: Oriental Institute 1995-1996 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/95-96/95-96_Desert_Road.pdf
+
+- id: darnellOrientalInstitute199619971997
+  accessed:
+    - year: 2026
+      month: 3
+      day: 17
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199619971997
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1997'
+  genre: Annual Report
+  issued:
+    - year: 1997
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: Oriental Institute 1996-1997 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/96-97/96-97_Desert_Road.pdf
+
+- id: darnellOrientalInstitute199719981998
+  accessed:
+    - year: 2026
+      month: 3
+      day: 25
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellOrientalInstitute199719981998
+  collection-title: The Luxor-Farshut Desert Road Survey
+  date: '1998'
+  issued:
+    - year: 1998
+  note: 'chapters: Chapter 01'
+  tags: academic, chapter-01
+  title: Oriental Institute 1997-1998 Annual Report
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/97-98/97-98_Desert_Road.pdf
+
+- id: darnellResults2001Kerak2005
+  author:
+    - family: Darnell
+      given: John Coleman
+  author_list: undefined undefined, John Coleman Darnell
+  call-number: DS101 .A45 vol. 59
+  chapters: Chapter 01
+  citation-key: darnellResults2001Kerak2005
+  collection-number: v. 59
+  collection-title: The annual of the American Schools of Oriental Research
+  date: '2005'
+  editor:
+    - literal: Meredith S. Chesson
+  ISBN: 978-0-89757-071-8
+  issued:
+    - year: 2005
+  language: en
+  note: 'chapters: Chapter 01'
+  number-of-pages: '144'
+  original-date:
+    date-parts:
+      - - '2005'
+  publisher: American Schools of Oriental Research
+  publisher-place: Boston, MA
+  source: Library of Congress ISBN
+  tags: academic, chapter-01
+  title: Results of the 2001 Kerak Plateau Early Bronze Age survey
+  type: book
+  URL: https://www.jstor.org/stable/3768582
+
+- id: darnellThebanDesertRoad2002
+  accessed:
+    - year: 2026
+      month: 4
+      day: 6
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  call-number: DT137.W4 D37 2002
+  chapters: Chapter 01
+  citation-key: darnellThebanDesertRoad2002
+  collection-number: v. 119
+  collection-title: Oriental Institute publications
+  date: '2002'
+  ISBN: 978-1-885923-17-2
+  issued:
+    - year: 2002
+  language: en
+  note: 'chapters: Chapter 01'
+  number-of-pages: '175'
+  publisher: Oriental Institute of the University of Chicago
+  publisher-place: Chicago
+  source: Library of Congress ISBN
+  tags: academic, chapter-01
+  title: Theban Desert Road Survey in the Egyptian Western Desert Volume 1
+  type: book
+  URL: https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/OIP119.pdf
+  volume: '119'
+
+- id: haringbenUnderstandingRelationsScripts2019
+  accessed:
+    - year: 2026
+      month: 4
+      day: 12
+  author:
+    - literal: Haring, Ben
+  author_list: Philip J. Boyes, Philippa M. Steele, undefined undefined
+  chapters: Chapter 01
+  citation-key: haringbenUnderstandingRelationsScripts2019
+  date: '2019-10-03'
+  DOI: 10.2307/j.ctv2mm1xnh
+  editor:
+    - family: Boyes
+      given: Philip J.
+    - family: Steele
+      given: Philippa M.
+  ISBN: 978-1-78925-095-4 978-1-78925-092-3
+  issued:
+    - year: 2019
+      month: 10
+      day: 3
+  language: en
+  note: 'chapters: Chapter 01'
+  publisher: Oxbow Books
+  source: DOI.org (Crossref)
+  tags: academic, chapter-01
+  title: 'Understanding Relations Between Scripts II: Early Alphabets'
+  title-short: Understanding Relations Between Scripts II
+  type: book
+  URL: http://www.jstor.org/stable/10.2307/j.ctv2mm1xnh
+
+- id: huntEyewitnessesReclaimingAncientn.d.
+  author:
+    - family: Hunt
+      given: Leta
+    - family: Lundberg
+      given: Marilyn
+    - family: Zuckerman
+      given: Bruce
+  author_list: Leta Hunt, Marilyn Lundberg, Bruce Zuckerman
+  chapters: Chapter 01
+  citation-key: huntEyewitnessesReclaimingAncientn.d.
+  date: n.d.
+  issued:
+    - literal: n.d.
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: >-
+    Eyewitnesses to the Past: Reclaiming Ancient Inscriptions with Modern
+    Technologies Through USC's West Semitic Research and InscriptiFact Projects
+  title-short: Reclaiming Ancient Inscriptions
+  type: document
+  URL: http://www.inscriptifact.com/news/Biblos.pdf
+
+- id: no-nameAlamatTalRoadn.d.
+  abstract: >-
+    Two main pharaonic roads, the Alamat Tal (Wadi Alamat) Road and Farshût
+    Road, cross the Qena Bend between ancient Thebes and the region of Hou,
+    providing a desert “shortcut” to the often difficult waters of the Nile, and
+    giving Thebes direct access to the shortest route to the southern oases —
+    the Girga Road.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 6
+  author:
+    - literal: no-name
+  author_list: undefined undefined
+  chapters: Chapter 01
+  citation-key: no-nameAlamatTalRoadn.d.
+  container-title: Yale Egyptology
+  date: n.d.
+  genre: Blog
+  issued:
+    - literal: n.d.
+  note: 'chapters: Chapter 01'
+  publication: Yale Egyptology
+  tags: academic, chapter-01
+  title: >-
+    Alamat Tal Road, Wadi of the Horus Qaa, Dominion Behind Thebes and Gebel
+    Tjauti | Yale Egyptology
+  type: post-weblog
+  URL: >-
+    https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-yale-toshka-desert-survey/alamat-tal
+
+- id: no-nameThebanDesertRoadn.d
+  accessed:
+    - year: 2026
+      month: 4
+      day: 6
+  author:
+    - literal: no-name
+  author_list: undefined undefined
+  chapters: Chapter 01
+  citation-key: no-nameThebanDesertRoadn.d
+  container-title: Yale Egyptology
+  date: n.d
+  genre: Blog
+  issued:
+    - literal: n.d
+  note: 'chapters: Chapter 01'
+  publication: Yale Egyptology
+  tags: academic, chapter-01
+  title: Theban Desert Road Survey and Yale Toshka Desert Survey | Yale Egyptology
+  type: post-weblog
+  URL: >-
+    https://egyptology.yale.edu/expeditions/past-and-joint-projects/theban-desert-road-survey-and-yale-toshka-desert-survey
+
+- id: parkerhopeProtoSinaiticInscriptionsSerabit2023
+  accessed:
+    - year: 2026
+      month: 4
+      day: 1
+  author:
+    - literal: Parker, Hope
+  author_list: undefined undefined
+  chapters: Chapter 02
+  citation-key: parkerhopeProtoSinaiticInscriptionsSerabit2023
+  container-title: Ägypten und Levante
+  container-title-short: AEundL
+  date: '2023'
+  DOI: 10.1553/AEundL32s269
+  ISSN: 1015-5104, 1813-5145
+  issued:
+    - year: 2023
+  language: de
+  note: 'chapters: Chapter 02'
+  page: 269–311
+  publication: Ägypten und Levante
+  source: DOI.org (Crossref)
+  tags: academic, chapter-02
+  title: >-
+    The Proto-Sinaitic Inscriptions at Serabit el-Khadim in Their Archaeological
+    Context: Date and Function
+  title-short: >-
+    The Proto-Sinaitic Inscriptions at Serabit el-Khadim in Their Archaeological
+    Context
+  type: article-journal
+  URL: https://hw.oeaw.ac.at?arp=0x003e0a71
+  volume: '32'
+
+- id: VisibleLanguageInventions
+  citation-key: VisibleLanguageInventions
+  title: >-
+    visible language  inventions of writing  in the ancient middle east and
+    beyond
+  type: book
+...

@@ -3,7 +3,8 @@ layout: default
 title: Map
 permalink: /map/
 ---
-<div id="map" class="my-4" style="height: 80vh; border-radius: 12px;"></div>
+<section id="map" class="my-4" style="height: 80vh; border-radius: 12px;">
+</section>
 
 <script>
   window.storyLocations = [

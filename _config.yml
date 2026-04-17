@@ -84,6 +84,8 @@ markdown: kramdown
 # -----------------------------------------------------------------------------
 # Excludes - the following items will be excluded from processing, by default.
 exclude:
+  - scripts/
+  - docs/
   - README.md
   - LICENSE
   - Gemfile

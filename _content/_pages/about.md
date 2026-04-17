@@ -8,7 +8,7 @@ permalink: /
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-lg-8 mx-auto">
-        <h1 class="display-5 fw-light text-body-emphasis mb-4">the Book of Jack</h1>
+        <h1 class="display-5 fw-light mb-4">the Book of Jack</h1>
         <p class="lead mb-4">
           A collection of stories about the origin and development of the alphabet, specifically through the lens of the letter J, 
           the name Jack and the phonemic sound shift from <span class="phonemic">/j/</span> to <span class="phonemic">/dʒ/</span>.        
@@ -28,3 +28,4 @@ permalink: /
     </div>
   </div>
 </section>
+

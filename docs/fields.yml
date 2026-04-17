@@ -1,0 +1,83 @@
+
+image:
+  path: # -> b-images.csv
+  title: # -> b-images.csv
+  layout: 
+  aspect_ratio: 
+slug: # -> b-images.csv
+order: # -> b-images.csv
+weight: # -> b-images.csv
+hierarchy:
+  scene: # -> b-images.csv
+  chapter: # -> b-images.csv
+  part: # -> b-images.csv
+attribution:
+  credit: # -> b-images.csv
+  source: # -> b-images.csv
+  license: # -> b-images.csv
+generation:
+  model: # -> b-images.csv
+  informed_by: 
+  date_generated: # -> b-images.csv
+time_place: 
+  time_line: 
+    period: # -> b-images.csv
+    era: # -> b-images.csv
+    epoch: # -> b-images.csv
+    mile_stone: # -> b-images.csv
+    sort_year: # -> b-images.csv
+    display_year: # -> b-images.csv
+    circa: # -> b-images.csv
+    end_year: # -> b-images.csv
+  map:
+    lat: # -> b-images.csv
+    lng: # -> b-images.csv
+    approx: # -> b-images.csv
+    labels: # -> b-images.csv
+      past: # -> b-images.csv
+      current: # -> b-images.csv
+
+images.csv
+image_id: # Primary ID 
+image_slug:
+image_path:
+section_number:
+chapter_number:
+scene_number:
+order:
+weight:
+image_date:
+
+
+image-legal.csv
+image_id: # Primary ID 
+generation_model:
+image_layout:
+image_aspect_ratio:
+
+attr_image_credit:
+attr_image_source:
+attr_image_license:
+attr_license_url:
+
+image-mapping.csv
+image_id: # Primary ID 
+display_year:
+circa:
+sort_year:
+end_year:
+era:
+period:
+epoch:
+milestone:
+
+elevation:
+latitude:
+longitude:
+approx:
+journey_percent:
+place_country:
+place_provincial:
+place_region:
+place_place:
+place_city:

@@ -1,0 +1,102 @@
+---
+references:
+- id: BuildingWebsiteLot
+  abstract: >-
+    When someone says, “We need a new website,” it often sounds simple. But
+    anyone who has ever built a house knows that what looks simple on the
+    surface is actually a series of hundreds of decisions that determine whether
+    the final result works beautifully or becomes a constant source of
+    frustration.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  citation-key: BuildingWebsiteLot
+  language: en
+  title: Building a Website Is a Lot Like Building a House
+  type: webpage
+  URL: >-
+    https://www.linkedin.com/pulse/building-website-lot-like-house-lori-highby-xnjac
+
+- id: editorsAncientEgyptCivilization2009
+  abstract: >-
+    Ancient Egypt was the preeminent civilization in the Mediterranean world
+    from around 3100 B.C. to its conquest in 332...
+  accessed:
+    - year: 2026
+      month: 4
+      day: 14
+  author:
+    - family: Editors
+      given: HISTORY
+      dropping-particle: com
+  author_list: HISTORY com Editors
+  chapters: Chapter 01
+  citation-key: editorsAncientEgyptCivilization2009
+  container-title: HISTORY
+  date: '2009-10-14T13:53:27.000Z'
+  issued:
+    - year: 2009
+      month: 10
+      day: 14
+  language: en
+  note: 'chapters: Chapter 01'
+  publication: HISTORY
+  tags: narrative, chapter-01
+  title: 'Ancient Egypt: Civilization, Empire & Culture'
+  title-short: Ancient Egypt
+  type: webpage
+  URL: https://www.history.com/articles/ancient-egypt
+
+- id: rossDataWarehouseDining2004
+  abstract: "I\_worked at a company called Metaphor back in the early 1980s. As part of a startup software company introducing then-cutting-edge concepts (such as folders, file drawers, and workflows on a graphical electronic desktop), I\_appreciated the benefits of using metaphors to represent seemingly complex concepts. Effective verbal and visual metaphors are able to convert complexity into [...]"
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  author:
+    - family: Ross
+      given: Margy
+  author_list: Margy Ross
+  citation-key: rossDataWarehouseDining2004
+  container-title: Kimball Group
+  date: '2004-01-01T21:19:40-06:00'
+  issued:
+    - year: 2004
+      month: 1
+      day: 1
+  language: en-US
+  publication: Kimball Group
+  section: Articles & Design Tips
+  title: Data Warehouse Dining Experience
+  type: webpage
+  URL: https://www.kimballgroup.com/2004/01/data-warehouse-dining-experience/
+
+- id: ThothHill2025
+  abstract: >-
+    Thoth Hill is an archaeological site first dated to predynastic period
+    located on the West Bank of Thebes approximately 3 kilometers north of the
+    Valley of the Kings. A predynastic temple was built over by a mud-brick
+    temple from the 11th Dynasty that is still visible today. The temple was
+    dedicated to the god Horus. The site is the oldest known temple in Thebes.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 4
+  chapters: Chapter 01
+  citation-key: ThothHill2025
+  container-title: Wikipedia
+  date: '2025-05-08T00:44:57Z'
+  issued:
+    - year: 2025
+      month: 5
+      day: 8
+  language: en
+  license: Creative Commons Attribution-ShareAlike License
+  note: 'chapters: Chapter 01'
+  publication: Wikipedia
+  tags: narrative, chapter-01
+  title: Thoth Hill
+  type: webpage
+  URL: https://en.wikipedia.org/w/index.php?title=Thoth_Hill&oldid=1289342176
+...

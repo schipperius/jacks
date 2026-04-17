@@ -5,12 +5,20 @@ permalink: /chapters/
 ---
 
 <div class="container my-5">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> 
-  {% assign all_chapters = site.chapters | sort: 'chapter_number' %}
-  {% for chapter_item in all_chapters %}
-    <div class="col-md-6 col-lg-4"> 
-      {% include chapter-gallery-card.html chapter=chapter_item %}
-    </div>
+  {% assign chapters = site.chapters | sort: 'chapter_number' %}
+  
+  {% for chapter in chapters %}
+    <section class="chapter-group mb-5">
+      {% include chapter-header.html chapter=chapter %}
+      <div class="row g-4 mb-5">
+        {% assign current_scenes = site.scenes | where: "chapter_number", chapter.chapter_number | sort: "scene_number" %}
+        {% for scene in current_scenes %}
+          <div class="col-md-4 col-lg-3">
+            {% include scene-card.html scene=scene %}
+          </div>
+        {% endfor %}
+      </div>
+      <hr class="my-5 opacity-25">
+    </section>
   {% endfor %}
-  </div>
 </div>

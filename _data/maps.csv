@@ -1,0 +1,6 @@
+image_id,image_slug,display_year,circa,sort_year,era,super_period,period,sub_period,start_year,end_year,milestone,elevation,latitude,longitude,approx,journey_percent,place_country,place_provincial,place_region,place_place,place_city
+map-qena-bend,map-qena-bend,c. 1850 BCE,TRUE,-1850,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991,-1802,TRUE,,,,,,Egypt,Qena Governorate,Qena Bend,Theban Hills,Thebes
+leaving-nile-valley,leaving-nile-valley,c. 1850 BCE,TRUE,-1850,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991,-1802,TRUE,223,25.74593,32.624614,TRUE,10,Egypt,Qena Governorate,Qena Bend,Theban Cliffs,Thebes
+ascending-theban-hills,ascending-theban-hills,c. 1850 BCE,TRUE,-1850,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991,-1802,TRUE,,26.0125,32.4986,TRUE,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes
+map-sinai-peninsula,map-sinai-peninsula,c. 1850 BCE,TRUE,-1850,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991,-1802,TRUE,,,,TRUE,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes
+craftsman-workshop,craftsman-workshop,c. 1475,TRUE,1475,CE,Early Modern,Late Middle Ages,Italian Renaissance,1300,1600,TRUE,,43.7696,11.2558,TRUE,,Italy,Tuscany,,Florentine Republic,Florence
