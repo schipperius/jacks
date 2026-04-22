@@ -1,7 +1,8 @@
 image_id,image_slug,display_year,circa,sort_year,era,super_period,period,sub_period,start_year,end_year,milestone,elevation,latitude,longitude,approx,journey_percent,place_country,place_provincial,place_region,place_place,place_city
-colophon-da-vinci-workshop,da-vinci-inspired-bottega,c. 1475,True,1475.0,CE,Early Modern,Late Middle Ages,Italian Renaissance,1300.0,1600.0,True,,43.7696,11.2558,True,,Italy,Tuscany,,Florentine Republic,Florence
+s0-da-vinci-inspired-bottega,da-vinci-inspired-bottega,c. 1475,True,1475.0,CE,Early Modern,Late Middle Ages,Italian Renaissance,1300.0,1600.0,True,,43.7696,11.2558,True,,Italy,Tuscany,,Florentine Republic,Florence
 s01-map-qena-bend,map-qena-bend,c. 1850-1700 BCE,True,-1850.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,,,,,,Egypt,Qena Governorate,Qena Bend,Theban Hills,Thebes
 s01e01-ascending-theban-hills,ascending-theban-hills,c. 1850-1700 BCE,True,-1850.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,,26.0125,32.4986,True,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes
-s01e01-final-preparations,final-preparations,,,,,,,,,,,,,,,,,,,,
+s01e01-climbing-limestone-cliffs,climbing-limestone-cliffs,c. 1850-1700 BCE,True,-1850.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,,,,,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes
 s01e01-leaving-nile-valley,leaving-nile-valley,c. 1850-1700 BCE,True,-1850.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,223.0,25.74593,32.624614,True,10.0,Egypt,Qena Governorate,Qena Bend,Theban Cliffs,Thebes
 s02-map-land-fayrous,map-land-fayrous,c. 1850-1700 BCE,True,-1850.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,,,,True,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes
+s01e01-giving-thanks-offerings,giving-thanks-offerings,c. 1850-1700 BCE,True,-1849.0,BCE,Ancient Egypt,Middle Kingdom,12th Dynasty,-1991.0,-1802.0,True,,,,,,Egypt,Qena Governorate,Qena Bend,Theban Plateau,Thebes

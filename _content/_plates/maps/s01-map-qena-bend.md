@@ -2,6 +2,9 @@
 layout: plate
 image_id: s01-map-qena-bend
 
+image_caption: A consequence of geomorphological processes
+
+
 model: "Gemini 3 Flash"
 date_generated: 2026-03-20
 prompt: >

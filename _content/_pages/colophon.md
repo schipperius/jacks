@@ -2,90 +2,98 @@
 layout: default
 title: Colophon
 permalink: /colophon/
-image_id: craftsman-workshop # Foreign Key from plates.csv
 
+image_id: s0-da-vinci-inspired-bottega
 ---
 
 {% comment %} 
-  LOGIC: We look into our 'plates.csv' and find the row where 'image_id' 
-  matches the 'image_id' in this page's front matter above. 
+  1. Index everything by image_id 
 {% endcomment %}
-{% assign d = site.data.plates | where: "image_id", page.image_id | first %}
+
+{% assign hub_map   = site.data.plates      | group_by: "image_id" %}
+{% assign loc_map   = site.data.location    | group_by: "image_id" %}
+{% assign attr_map  = site.data.attribution | group_by: "image_id" %}
+{% assign ppl_map   = site.data.people      | group_by: "image_id" %}
+{% assign plate_map = site.plates           | group_by: "image_id" %}
+
+{% comment %} 
+  2. Setup Target ID and perform lookups
+{% endcomment %}
+
+{% assign target_id = page.image_id | append: "" | strip %}
+
+{% assign hub   = hub_map   | where: "name", target_id | map: "items" | first | first %}
+{% assign loc   = loc_map   | where: "name", target_id | map: "items" | first | first %}
+{% assign attr  = attr_map  | where: "name", target_id | map: "items" | first | first %}
+{% assign ppl   = ppl_map   | where: "name", target_id | map: "items" | first | first %}
+{% assign plate = plate_map | where: "name", target_id | map: "items" | first | first %}
+
 <article class="container-fluid px-lg-0 my-5">
   <div class="row g-5">
     <div class="col-lg-8">
-      {% comment %} 
-        LOGIC: If 'd' (our CSV data) actually exists, show the image. 
-        This prevents the page from looking 'broken' if a CSV row is missing.
-      {% endcomment %}
-      {% if d %}
-      <div class="hero-plate-frame p-2 shadow-lg mb-2">
-        <a href="{{ d.image_path | relative_url }}" class="lightbox-trigger">
-          <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_prompt }}">
-        </a>
-      </div>
-      <div class="d-flex justify-content-between align-items-center px-2 my-2">
-        <p class="mb-0">
-          {% comment %} Logic: Displaying the location/date string from the CSV {% endcomment %}
-          {{ d.place_place }}, {{ d.place_provincial }} | {{ d.period }} | {{ d.display_year }}      
-        </p>
-      </div>
-      {% endif %}
-      <div class="px-2 mt-3">
-        {% comment %} 
-          Logic: 
-          1. We look into 'site.plates' (your collection).
-          2. We find the file where the 'image_id' matches this page's 'image_id'.
-          3. We 'assign' that whole file to a new name: 'plate_file'.
-        {% endcomment %}
-        {% assign plate_file = site.plates | where: "image_id", page.image_id | first %}
-        {% if plate_file %}
-          {% comment %} 
-            Now we use 'plate_file' instead of 'page' or 'item'. 
-          {% endcomment %}
-          <h1 class="display-5">{{ plate_file.image_title }}</h1>
-          <p class="lead italic">{{ plate_file.image_caption }}</p>
+
+      {% if hub %}
+        <div class="hero-plate-frame p-2 shadow-lg mb-2">
+          <a href="{{ hub.image_path | relative_url }}" class="lightbox-trigger">
+            <img src="{{ hub.image_path | relative_url }}" class="img-fluid w-100" alt="{{ hub.image_caption | default: hub.image_caption }}">
+          </a>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center px-2 my-2">
+          <p class="mb-0 text-muted small">
+            {{ loc.place_place }}, {{ loc.place_provincial }} | {{ loc.period }} | {{ loc.display_year }}      
+          </p>
+        </div>
+
+        <div class="px-2 mt-4">
+          <h3 class="display-6">{{ hub.image_title }}</h3>
+          <p class="lead">{{ plate.image_caption | default: plate.image_caption }}</p>
+          
+          {% comment %} This displays Markdown text from your _plates/ file {% endcomment %}
+          <div class="mt-4">
+            {{ plate.content | truncatewords: 75 }}
+          </div>
+        </div>
+
         {% else %}
-          {% comment %} Optional: A fallback if the file isn't found {% endcomment %}
-          <h1 class="display-5">Plate Not Found</h1>
+        <div class="alert alert-warning">
+          Plate data for ID <strong>{{ target_id }}</strong> not found in _data/plates.csv.
+        </div>
         {% endif %}
-      </div>
-      <!-- <div>{{ some_page.content | strip_html | truncatewords: 50 }}</div>
-       Maybe add the first truncated paragraph that supports the image -->
     </div>
+
     <div class="col-lg-4">
-      <div class="row">
-      <h1 class="display-5 fw-light text-body-emphasis lh-1 mb-3">
-        {{ page.title }}
-      </h1>
-      <p class="lead text-body-secondary">The Book of Jack was initially conceived as a coffee table book.</p>
-      <p>Hopefully, this digital anthology retains the original intent of a curated collection designed for an immersive experience.</p>
+      <div class="mb-4">
+        <h1 class="display-5 fw-light text-body-emphasis lh-1 mb-3">
+          <!-- {{ page.title }} -->
+        </h1>
+        <p class="lead text-body-secondary">The Book of Jack was initially conceived as a coffee table book.</p>
+        <p>The history of writing and publishing is marked by diverse spaces, from sacred "Houses of Life" 
+          to industrial print shops, each reflecting the technology and culture of its era.</p>
       </div>
-      <div class="justify-content-between align-items-center">
-        {% comment %} 
-          Logic: You can check a 'status' column in your CSV. 
-          If it's 'verified', show a gold badge. If not, show a 'work in progress' note.
-        {% endcomment %}
-        {% if d.status == "verified" %}
-          <span class="badge bg-gold">Museum Verified</span>
+
+      <div class="mt-4">
+        {% if hub.status == "verified" %}
+          <span class="badge bg-success">Museum Verified</span>
         {% else %}
-          <span class="badge bg-secondary">Research in Progress</span>
+          <span class="badge border text-secondary">Research in Progress</span>
         {% endif %}
       </div>
+      
     </div>
-    <hr class="border-bottom my-1">
   </div>
+  <hr class="border-bottom my-2">
 </article>
 
+### The Technology Stack & Architecture for the Book of Jack Project
 
-### The Technology Stack & Architecture
 * Building a website has a number of similarities to [*building a house*](https://www.linkedin.com/pulse/building-website-lot-like-house-lori-highby-xnjac) with the data resembling [*the kitchen and dining room*](https://www.kimballgroup.com/2004/01/data-warehouse-dining-experience/) experience. 
 
 #### The Framework
-* [*Jekyll*](https://jekyllrb.com) provides a structured framework to build, manage and deploy the Book of Jack. 
+* [*Jekyll*](https://jekyllrb.com) provides a structured framework to build, manage and deploy the Book of Jack project. 
 
 #### The Presentation Layer
-* [*Markdown*](https://www.markdownguide.org), [*HTML5 & CSS3*](https://www.w3schools.com/htmlcss/default.asp) and [*Bootstrap 5*](https://getbootstrap.com) are used to format text, build the static pages, control the presentation and visual style, and provide mobile first responsiveness.  
+* [*Markdown*](https://www.markdownguide.org), [*HTML5 & CSS3*](https://www.w3schools.com/htmlcss/default.asp), [*Sass*](https://sass-lang.com) and [*Bootstrap 5*](https://getbootstrap.com) are used to format text, build the static pages, control the presentation and visual style, and provide mobile first responsiveness.  
 
 #### The Data Layer
 * [*Zotero*](https://www.zotero.org) is used to collect, organize, annotate and cite research. The [*Better BibTeX*](https://retorque.re/zotero-better-bibtex/) extension is used to manage, customize and prepare the bibliographic data for export. [*YAML*](https://yaml.org) keeps the structured data such as references, images and navigation separate from the presentation layer. 
@@ -99,5 +107,4 @@ image_id: craftsman-workshop # Foreign Key from plates.csv
 * [*GitHub*](github.com) provides cloud storage for Git repositories, version control, issue tracking and project management tools. [*GitHub Pages*](*.github.io) provides secure hosting and automated deployment and [*GitHub Actions*](https://github.com/features/actions) is used to automate development workflows thorugh continuous integration and delivery.
 
 #### Writing & Editing
-* [*Scrivener*](https://www.literatureandlatte.com) is widely regarded as one of the best word-processing software programs designed specifically for writers, combining editing, file management, outlining and research tools into one user-friendly interface.
-
+* [*Scrivener*](https://www.literatureandlatte.com) is widely regarded as one of the best integrated writing environments designed specifically for writers, combining editing, file management, outlining and research tools into one user-friendly interface.

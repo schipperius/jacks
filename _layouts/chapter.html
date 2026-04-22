@@ -105,21 +105,8 @@ layout: default
   }
 </style>
 
-{% comment %}
-TRIAD ARCHITECTURE LOGIC:
-1. We look into the 'plates' collection (site.plates) to find the Markdown file
-that matches our scene's image_id. This gives us 'plate_doc' (The Label).
-2. We look into 'site.data.plates' (your CSV) to get 'd' (The Technical Ledger).
-{% endcomment %}
-
 {% assign plate_doc = site.plates | where: "image_id", page.image_id | first %}
 {% assign d = site.data.plates | where: "image_id", page.image_id | first %}
-
-{% comment %}
-Logic Check: We pull the full data object 'd' from our CSV/Data file.
-The error usually occurs here: the <img> tag was looking for 'page.image_path',
-but the actual path is likely stored inside the 'd' object (e.g., d.image_path).
-{% endcomment %}
 
 <section class="chapter-intro-section">
   <div class="container">

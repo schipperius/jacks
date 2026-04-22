@@ -243,8 +243,7 @@ references:
   note: 'chapters: Chapter 01'
   number-of-pages: '144'
   original-date:
-    date-parts:
-      - - '2005'
+    - year: 2005
   publisher: American Schools of Oriental Research
   publisher-place: Boston, MA
   source: Library of Congress ISBN
@@ -435,4 +434,30 @@ references:
     Visible language  inventions of writing  in the ancient middle east and
     beyond
   type: book
+
+- id: walkerHousesBooksHouses2024
+  abstract: "Jo inside the\_new Great Library of Alexandria (© Dr.Amr Aboulfath)This month Immortal Egypt has been busy in and around the North, once more enjoying the company of the inspirational ‘Northern Ladies’ who lunch to raise funds for multiple charities. And with some of them also volunteering at Halifax’s Old Library to keep it open to the public, our recent talk tailored to their wonderful book-filled venue once again brought home just how crucial libraries are to so many people, not just today but"
+  accessed:
+    - year: 2026
+      month: 4
+      day: 20
+  author:
+    - family: Walker
+      given: Graham
+  author_list: Graham Walker
+  citation-key: walkerHousesBooksHouses2024
+  container-title: Immortal Egypt
+  date: '2024-11-30T13:18:09.893Z'
+  issued:
+    - year: 2024
+      month: 11
+      day: 30
+  language: en
+  publication: Immortal Egypt
+  tags: academic, colophon, narrative
+  title: '‘Houses of Books’, ‘Houses of Life’: libraries past, present & future'
+  title-short: ‘Houses of Books’, ‘Houses of Life’
+  type: webpage
+  URL: >-
+    https://www.immortalegypt.co.uk/post/houses-of-books-houses-of-life-libraries-past-present-future
 ...

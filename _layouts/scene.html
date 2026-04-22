@@ -3,35 +3,36 @@ layout: default
 ---
 
 {% comment %}
-TRIAD ARCHITECTURE LOGIC:
-1. We look into the 'plates' collection (site.plates) to find the Markdown file
-that matches our scene's image_id. This gives us 'plate_doc' (The Label).
-2. We look into 'site.data.plates' (your CSV) to get 'd' (The Technical Ledger).
+1. INDEX EVERYTHING BY IMAGE_ID
+Indexing 'references' here makes the Offcanvas drawer build much faster.
 {% endcomment %}
-
-{% assign plate_doc = site.plates | where: "image_id", page.image_id | first %}
-{% assign d = site.data.plates | where: "image_id", page.image_id | first %}
+{% assign hub_map = site.data.plates | group_by: "image_id" %}
+{% assign plate_map = site.plates | group_by: "image_id" %}
+{% assign ref_map = site.data.references.references | group_by: "id" %}
 
 {% comment %}
-Logic Check: We pull the full data object 'd' from our CSV/Data file.
-The error usually occurs here: the <img> tag was looking for 'page.image_path',
-but the actual path is likely stored inside the 'd' object (e.g., d.image_path).
+2. LOOKUP DATA FOR THIS SPECIFIC SCENE
 {% endcomment %}
+{% assign target_id = page.image_id | append: "" | strip %}
+
+{% assign hub = hub_map | where: "name", target_id | map: "items" | first | first %}
+{% assign plate = plate_map | where: "name", target_id | map: "items" | first | first %}
 
 <article class="card col-lg-8 mx-auto my-3 shadow-sm border-0">
 
   <div class="card-body text-center pt-5 pb-4">
     <h6 class="text-uppercase tracking-widest text-muted mb-2">
-      Chapter {{ d.chapter_number }} | Scene {{ d.scene_number }}
+      {% if hub.chapter_number %}Chapter {{ hub.chapter_number }}{% endif %}
+      {% if hub.scene_number %}| Scene {{ hub.scene_number }}{% endif %}
     </h6>
     <h1 class="display-5 fw-bold serif-heading">{{ page.title }}</h1>
     <hr class="w-25 mx-auto">
 
     {% comment %}
     CURATOR'S DRAWER TRIGGER:
-    Only show the button if this plate actually has references assigned to it.
+    Only show if the Markdown file has a 'references' list in the front matter.
     {% endcomment %}
-    {% if plate_doc.references %}
+    {% if plate.references %}
     <div class="mt-3">
       <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#sourceDrawer">
@@ -41,23 +42,18 @@ but the actual path is likely stored inside the 'd' object (e.g., d.image_path).
     {% endif %}
   </div>
 
-  {% comment %}
-  Fix: We check if 'd' exists and use the path from the data file.
-  If your CSV column is named 'file_path' or 'url', update 'd.image_path' below.
-  {% endcomment %}
-
-  {% if d.image_path %}
+  {% if hub.image_path %}
   <div class="scene-hero-container">
-    <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" style="max-height: 450px; object-fit: cover;"
-      alt="{{ d.image_caption }}">
+    <img src="{{ hub.image_path | relative_url }}" class="img-fluid w-100" style="max-height: 450px; object-fit: cover;"
+      alt="{{ hub.image_alt | default: hub.image_title }}">
 
     {% comment %}
-    Pulling the caption from the Plate Collection file rather than the CSV
-    to allow for longer, formatted text if needed.
+    Caption logic: Preference given to the Markdown collection caption, then the CSV.
     {% endcomment %}
-    {% if plate_doc.caption %}
+    {% assign display_caption = plate.image_caption | default: hub.image_caption %}
+    {% if display_caption %}
     <div class="p-3 bg-light text-center">
-      <small class="text-muted italic">{{ plate_doc.image_caption }}</small>
+      <small class="text-muted fst-italic">{{ display_caption }}</small>
     </div>
     {% endif %}
   </div>
@@ -73,12 +69,8 @@ but the actual path is likely stored inside the 'd' object (e.g., d.image_path).
 
 {% comment %}
 THE CURATOR'S DRAWER (OFFCANVAS)
-This section stays hidden until the "View Sources" button is clicked.
-It pulls bibliography data from site.data.references based on the keys
-listed in the current plate's front matter.
 {% endcomment %}
-
-{% if plate_doc.references %}
+{% if plate.references and plate.references.size > 0 %}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sourceDrawer" aria-labelledby="sourceDrawerLabel"
   style="background-color: #fcfaf7;">
   <div class="offcanvas-header border-bottom">
@@ -88,14 +80,15 @@ listed in the current plate's front matter.
   <div class="offcanvas-body">
     <p class="text-muted small mb-4">Historical and archaeological data informing this reconstruction:</p>
 
-    {% for ref_key in plate_doc.references %}
-    {% comment %} Search your reference data for the matching citation key {% endcomment %}
-    {% assign entry = site.data.references | where: "cite_key", ref_key | first %}
+    {% for ref_key in plate.references %}
+    {% assign key_string = ref_key | append: "" | strip %}
+
+    {% assign entry = ref_map | where: "name", key_string | map: "items" | first | first %}
 
     <div class="mb-4">
       {% if entry %}
       <h6 class="fw-bold mb-1">{{ entry.author }} ({{ entry.year }})</h6>
-      <p class="small text-muted italic mb-1">{{ entry.title }}</p>
+      <p class="small text-muted fst-italic mb-1">{{ entry.title }}</p>
       {% if entry.publisher %}<p class="small text-muted mb-0">{{ entry.publisher }}</p>{% endif %}
       {% else %}
       <p class="small text-danger">Check reference key: <strong>{{ ref_key }}</strong></p>

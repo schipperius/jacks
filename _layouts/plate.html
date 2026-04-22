@@ -232,30 +232,51 @@ layout: default
   }
 </style>
 
-{% assign d = site.data.plates | where: "image_id", page.image_id | first %}
+{% comment %} 
+  1. Index the data files by image_id at the top 
+{% endcomment %}
+{% assign hub_map  = site.data.plates      | group_by: "image_id" %}
+{% assign loc_map  = site.data.location    | group_by: "image_id" %}
+{% assign attr_map = site.data.attribution | group_by: "image_id" %}
+{% assign ppl_map = site.data.people       | group_by: "image_id" %}
+
+{% comment %} 
+  2. Force the current page's image_id to a string to ensure it matches the CSV indexing
+{% endcomment %}
+{% assign target_id = page.image_id | append: "" | strip %}
+
+{% comment %} 
+  3. Perform the lookups 
+{% endcomment %}
+{% assign hub  = hub_map  | where: "name", target_id | map: "items" | first | first %}
+{% assign loc  = loc_map  | where: "name", target_id | map: "items" | first | first %}
+{% assign attr = attr_map | where: "name", target_id | map: "items" | first | first %}
+{% assign ppl = ppl_map | where: "name", target_id | map: "items" | first | first %}
+
+
 <article class="container-fluid px-lg-0 my-5">
   <div class="row g-5">
 
     <div class="col-lg-8">
       <div class="hero-plate-frame p-2 shadow-lg mb-2">
-        <a href="{{ d.image_path | relative_url }}" class="lightbox-trigger">
-          <img src="{{ d.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_prompt }}">
+        <a href="{{ hub.image_path | relative_url }}" class="lightbox-trigger">
+          <img src="{{ hub.image_path | relative_url }}" class="img-fluid w-100" alt="{{ d.image_prompt }}">
         </a>
       </div>
       <div class="d-flex justify-content-between align-items-center px-2 my-2">
         <p class="mb-0">
-          {{ d.place_region }} - {{ d.place_city }}, {{ d.place_country }} | {{ d.period }} | {{ d.display_year }}
+          {{ loc.place_region }} - {{ loc.place_city }}, {{ loc.place_country }} | {{ loc.period }} | {{ loc.display_year }}
         </p>
         <div class="small text-uppercase">
           <a href="{{ '/chapters/' | relative_url }}" class="text-decoration-none border-bottom"
             style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-            Chapter {{ d.chapter_number }}
+            Chapter {{ hub.chapter_number }}
           </a>
           <span class="mx-2">|</span>
           <!-- this link does not go to the scene -->
           <a href="{{ '/chapters/' | relative_url }}" class="text-decoration-none border-bottom"
             style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-            Scene {{ d.scene_number }}
+            Scene {{ hub.scene_number }}
           </a>
         </div>
       </div>
@@ -263,15 +284,17 @@ layout: default
         <h1 class="display-5">{{ page.image_title }}</h1>
         <p class="lead italic">{{ page.image_caption }}</p>
       </div>
-      <!-- Maybe add the first truncated paragraph that supports the image -->
+      <!-- Maybe add the truncated text from a scene that supports the image. -->
     </div>
 
+    <!-- In Progress: Move cartography tab to first and active.-->
     <div class="col-lg-4">
       <div class="row">
+
         <ul class="nav nav-tabs nav-tabs-scribe" id="heroTabs" role="tablist">
           <li class="nav-item">
             <button class="nav-link active" data-bs-toggle="tab" 
-            data-bs-target="#attribution" type="button">Attribution</button>
+            data-bs-target="#cartography" type="button">Cartography</button>
           </li>
           <li class="nav-item">
             <button class="nav-link" data-bs-toggle="tab" 
@@ -279,45 +302,20 @@ layout: default
           </li>
           <li class="nav-item">
             <button class="nav-link" data-bs-toggle="tab" 
-            data-bs-target="#cartography" type="button">Cartography</button>
+            data-bs-target="#attribution" type="button">Attribution</button>
           </li>
         </ul>
-        <div class="tab-content tab-content-scribe p-4 mb-4 shadow-sm">
-          <div class="tab-pane fade show active" id="attribution">
-            <p class="lead">{{ page.image_title }}</p>
-            <p class="mb-2">Image by 
-              <a href="{{ '/colophon/' | relative_url }}" class="text-decoration-none"
-                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-                {{ d.attr_image_credit }}
-              </a> 
-              for the {{ d.attr_image_source }} ({{ d.image_date_year }}).
-            </p>
-            <p class="">This visual reconstruction is primarily informed {{ page.image_info }} <em>{{ page.image_informed }}</em> 
-              <a href="{{ page.informed_url }}" class="text-decoration-none"
-                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-                {{ page.informed_author}}
-              </a>,
-                and generated with Google Gemini 3.1 Flash Image.</p>
-            <p class="">Licensed under
-              <a href="{{ d.attr_license_url }}" class="text-decoration-none"
-                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
-                {{ d.attr_image_license }}.
-              </a>
-            </p>
-          </div>
 
-          <div class="tab-pane fade" id="prompt">
-            <p>{{ page.image_prompt | newline_to_br }}</p>
-          </div>
+        <div class="tab-content tab-content-scribe p-4 mb-4 shadow-sm">
 
           {% assign progress = d.journey_percent | plus: 0 | default: 0 %}
           <!-- Begin Cartography -->
-          <div class="tab-pane fade" id="cartography">
+          <div class="tab-pane fade show active" id="cartography">
 
             <div class="map-porthole shadow-sm mb-3">
               <a href="{{ '/map/' | relative_url }}">
-                {% if d.map_thumbnail %}
-                <img src="{{ d.map_thumbnail | relative_url }}" alt="Regional map of {{ d.place_city }}">
+                {% if loc.map_thumbnail %}
+                <img src="{{ loc.map_thumbnail | relative_url }}" alt="Regional map of {{ loc.place_city }}">
                 {% else %}
                 <img src="{{ '/assets/images/ch-1/' | relative_url }}" alt="Archaic survey map">
                 {% endif %}
@@ -329,11 +327,11 @@ layout: default
               <div class="d-flex justify-content-between align-items-end">
                 <div>
                   <h6 class="text-uppercase small ls-1 text-muted mb-0">Location Data</h6>
-                  <p class="mb-0 font-monospace small">{{ d.latitude }}, {{ d.longitude }}</p>
+                  <p class="mb-0 font-monospace small">{{ loc.latitude }}, {{ loc.longitude }}</p>
                 </div>
                 <div class="text-end">
                   <h6 class="text-uppercase small ls-1 text-muted mb-0">Elevation</h6>
-                  <p class="mb-0 small">{{ d.elevation | default: '---' }} masl</p>
+                  <p class="mb-0 small">{{ loc.elevation | default: '---' }} masl</p>
                 </div>
               </div>
             </div>
@@ -382,7 +380,38 @@ layout: default
               </a>
             </div>    
           </div><!-- End Cartography -->
+
+          <div class="tab-pane fade" id="prompt">
+            <p>{{ page.image_prompt | newline_to_br }}</p>
+          </div>
           
+          <!-- Add attribution of real images used to generate AI image. -->
+          <div class="tab-pane fade" id="attribution">
+            <p class="lead">{{ page.image_title }}</p>
+            <p class="mb-2">Image by 
+              <a href="{{ '/colophon/' | relative_url }}" class="text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                {{ attr.attr_image_credit }}
+              </a> 
+              for the {{ attr.attr_image_source }} ({{ attr.image_date_year }}).
+            </p>
+            <p class="">This visual reconstruction is primarily informed {{ page.image_info }} <em>{{ page.image_informed }}</em> 
+              <a href="{{ page.informed_url }}" class="text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                {{ page.informed_author}}
+              </a> along with 
+              <a href="{{ page.informed_url }}" class="text-decoration-none"
+              style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+              sourced images
+            </a> used to generate a new visual with Google Gemini 3.1 Flash Image.</p>
+            <p class="">Licensed under
+              <a href="{{ attr.attr_license_url }}" class="text-decoration-none"
+                style="color: var(--scribe-gold); border-color: var(--scribe-gold) !important;">
+                {{ attr.attr_image_license }}.
+              </a>
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

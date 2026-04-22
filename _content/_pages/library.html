@@ -4,7 +4,13 @@ title: Library
 permalink: /Library/
 ---
 
+{% comment %} 
+  1. INDEX THE PLATES DATA 
+  We do this once at the top to avoid running 'where' inside the for-loop.
+{% endcomment %}
+{% assign hub_map = site.data.plates | group_by: "image_id" %}
 {% assign visual_count = site.plates | size %}
+
 <section class="container mt-5">
   <div class="my-3">
     <h1 class="fw-light">Library Index</h1>
@@ -26,12 +32,12 @@ permalink: /Library/
   <ul class="nav nav-tabs mb-4 border-bottom-0" id="libraryTabs" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active fw-light" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic-pane" type="button" role="tab">
-        Main Source <span id="count-academic" class="badge rounded-pill bg-secondary ms-1 small">0</span>
+        Academic <span id="count-academic" class="badge rounded-pill bg-secondary ms-1 small">0</span>
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link fw-light" id="narrative-tab" data-bs-toggle="tab" data-bs-target="#narrative-pane" type="button" role="tab">
-        Supplemental <span id="count-narrative" class="badge rounded-pill bg-secondary ms-1 small">0</span>
+        Narrative <span id="count-narrative" class="badge rounded-pill bg-secondary ms-1 small">0</span>
       </button>
     </li>
     <li class="nav-item" role="presentation">
@@ -42,6 +48,7 @@ permalink: /Library/
   </ul>
 
   <div class="tab-content" id="libraryTabContent">
+    {% comment %} ACADEMIC PANE {% endcomment %}
     <div class="tab-pane fade show active" id="academic-pane" role="tabpanel">
       <div class="no-results-msg d-none py-5 text-center">
         <i class="bi bi-search text-secondary display-6"></i>
@@ -55,6 +62,8 @@ permalink: /Library/
         {% endfor %}
       </div>
     </div>
+
+    {% comment %} NARRATIVE PANE {% endcomment %}
     <div class="tab-pane fade" id="narrative-pane" role="tabpanel">
       <div class="no-results-msg d-none py-5 text-center">
         <i class="bi bi-search text-secondary display-6"></i>
@@ -68,6 +77,8 @@ permalink: /Library/
         {% endfor %}
       </div>
     </div>
+
+    {% comment %} VISUAL PANE {% endcomment %}
     <div class="tab-pane fade" id="visual-pane" role="tabpanel">
       <div class="no-results-msg d-none py-5 text-center">
         <i class="bi bi-search text-secondary display-6"></i>
@@ -76,17 +87,18 @@ permalink: /Library/
       <div class="row row-cols-1 row-cols-md-2 g-4 mt-1">
         {% for plate_file in site.plates %}
           {% comment %}
-            We convert both IDs to strings to ensure the match works 
+            Index Lookup: Find metadata in CSV based on Markdown image_id
           {% endcomment %}
-          {% assign current_id = plate_file.image_id | append: "" %}
-          {% assign metadata = site.data.plates | where: "image_id", current_id | first %}
+          {% assign current_id = plate_file.image_id | append: "" | strip %}
+          {% assign metadata = hub_map | where: "name", current_id | map: "items" | first | first %}
+          
           <div class="col evidence-row">
-            <!-- Hidden bank for search: includes prompt from MD and fields from CSV -->
-            <div class="d-none">{{ plate_file.image_prompt }} {{ metadata.place_city }} {{ metadata.era }}</div>
+            {% comment %} Hidden searchable keywords {% endcomment %}
+            <div class="d-none">{{ plate_file.image_prompt }} {{ metadata.place_city }} {{ metadata.era }} {{ plate_file.content | strip_html }}</div>
+            
             <div class="card h-100 border-0 bg-body-tertiary shadow-sm position-relative">
               <div class="row g-0 h-100">
                 <div class="col-4">
-                  <!-- Using image_path from your CSV -->
                   <img src="{{ metadata.image_path | relative_url }}" 
                       class="img-fluid rounded-start h-100 object-fit-cover" 
                       alt="{{ plate_file.title }}"
@@ -95,14 +107,12 @@ permalink: /Library/
                 <div class="col-8">
                   <div class="card-body p-3">
                     <h6 class="card-title mb-1 text-body fw-light">{{ plate_file.title }}</h6>
-                    <!-- Attribution using your specific CSV headers -->
                     <p class="card-text small text-secondary mb-2">
                       {{ metadata.attr_image_credit }} 
                       {% if metadata.display_year %}
                         ({{ metadata.display_year }})
                       {% endif %}
                     </p>
-                    <!-- Chapter Badge using chapter_number or era from CSV -->
                     {% if metadata.era %}
                       <div class="d-flex flex-wrap gap-1" style="z-index: 5; position: relative;">
                         <span class="badge rounded-pill bg-warning-subtle text-warning-emphasis border border-warning-subtle small filter-badge" 
@@ -121,48 +131,36 @@ permalink: /Library/
         {% endfor %}
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
-  /**
-   * Clickable Badge Filter
-   * Triggered when a user clicks a chapter badge on a card.
-   */
+  // Initial count on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCounts();
+  });
+
   function filterByTag(tagName) {
     const searchInput = document.getElementById('vaultSearch');
-    
-    // Set the search input to the tag name
     searchInput.value = tagName;
-    
-    // Run the update counts and filter logic
     updateCounts();
-    
-    // Smooth scroll back to the search bar so the user sees the result
     window.scrollTo({
       top: searchInput.offsetTop - 100,
       behavior: 'smooth'
     });
   }
 
-  /**
-   * Main Search and Count Logic
-   * Filters Academic, Narrative, and Visual panes simultaneously.
-   */
   function updateCounts() {
     const panes = ['academic', 'narrative', 'visual'];
     const filter = document.getElementById('vaultSearch').value.toLowerCase();
     
     panes.forEach(paneId => {
       const pane = document.getElementById(`${paneId}-pane`);
-      // Ensure this looks for your .evidence-row class
       const items = pane.querySelectorAll('.evidence-row');
       const noResultsMsg = pane.querySelector('.no-results-msg');
       let matchCount = 0;
 
       items.forEach(item => {
-        // Searches all text inside the card (Title, Author, Tags, Prompts)
         const text = item.innerText.toLowerCase();
         if (text.includes(filter)) {
           item.classList.remove('d-none');
@@ -172,19 +170,12 @@ permalink: /Library/
         }
       });
 
-      // Update the badge count in the Tabs
       const countBadge = document.getElementById(`count-${paneId}`);
-      if (countBadge) {
-        countBadge.innerText = matchCount;
-      }
+      if (countBadge) countBadge.innerText = matchCount;
       
-      // Update the "Index" stats at the top only when search is empty
-      if (filter === "") {
-          const statEl = document.getElementById(`stat-${paneId}`);
-          if (statEl) statEl.innerText = matchCount;
-      }
+      const statEl = document.getElementById(`stat-${paneId}`);
+      if (statEl) statEl.innerText = matchCount;
 
-      // Toggle the "No Results" message
       if (matchCount === 0 && filter !== "") {
         noResultsMsg.classList.remove('d-none');
       } else {
@@ -193,11 +184,5 @@ permalink: /Library/
     });
   }
 
-  // Listen for typing in the search box
   document.getElementById('vaultSearch').addEventListener('keyup', updateCounts);
-
-  // Run on page load to set initial counts
-  window.addEventListener('DOMContentLoaded', updateCounts);
 </script>
-
-

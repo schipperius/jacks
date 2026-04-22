@@ -4,12 +4,8 @@ image_id: s01e01-leaving-nile-valley
 
 plate_number: 1
 
-# Image Metadata has three locations: 
-  # _config.yml ---> GLOBAL metadata that applies to ALL images and will NOT change such as attribution_license.
-  # _data/plates.csv ---> UNIQUE metadata that is shorter and may be subject to batch changes.
-  # _content/_plates/filename.md ---> UNIQUE metadata that is longer such as image_caption, image_alt and generation_prompt.
 image_title: >
-  Leaving the River Nile Valley
+  Leaving the Nile River Valley
 image_caption: >
   A cinematic, wide-angle historical reconstruction of a Middle Kingdom caravan at the start of the Farshût Road leaving the Nile River valley.
 image_alt: > 
