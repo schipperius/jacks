@@ -19,42 +19,16 @@
     <nav class="d-flex align-items-center gap-1 gap-md-3">
       {% for link in site.data.navigation.main %}
     
-      {% assign sub_urls = link.sublinks | map: "url" %}
-      {% if page.url == link.url or sub_urls contains page.url %}
+      {% if page.url == link.url contains page.url %}
       {% assign active_class = "btn-secondary" %}
       {% else %}
       {% assign active_class = "btn-outline-secondary" %}
       {% endif %}
     
-      {% if link.sublinks %}
-      <div class="dropdown">
-        <button class="btn btn-sm {{ active_class }} dropdown-toggle d-flex align-items-center" type="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi {{ link.icon }}"></i>
-          <span class="ms-2 d-none d-md-inline">{{ link.title }}</span>
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item small {% if page.url == link.url %}active{% endif %}"
-              href="{{ link.url | relative_url }}">View All {{ link.title }}</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          {% for sub in link.sublinks %}
-          <li>
-            <a class="dropdown-item {% if page.url == sub.url %}active{% endif %}" href="{{ sub.url | relative_url }}">{{
-              sub.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% else %}
       <a href="{{ link.url | relative_url }}" class="btn btn-sm {{ active_class }} d-flex align-items-center">
         <i class="bi {{ link.icon }}"></i>
         <span class="ms-2 d-none d-md-inline">{{ link.title }}</span>
       </a>
-      {% endif %}
       {% endfor %}
     </nav>
 
@@ -81,6 +55,7 @@
         </li>
       </ul>
     </div>
+
   </div>
 </header>
 

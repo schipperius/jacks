@@ -1,7 +1,6 @@
 ---
 layout: scene
 image_id: s01e01-climbing-limestone-cliffs
-title: "Climbing the Limestone Cliffs"
 
 scene_number: 3
 chapter_number: 1

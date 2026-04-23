@@ -31,7 +31,7 @@ plugins:
 scholar:
   style: apa
   locale: en                        
-  bibliography: bibliography.bib      # Name of your bib file
+  bibliography: references.bib      # Name of your bib file
   source: _data                     # Directory for your bib file
   type: bibliography
 

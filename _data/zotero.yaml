@@ -1,5 +1,203 @@
 ---
 references:
+- id: AncientEgyptianOfferings
+  abstract: >-
+    Discover the ancient Egyptian offerings. Learn about the "Voice Offering,"
+    the daily rituals, and how food sustained the soul for eternity.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 22
+  citation-key: AncientEgyptianOfferings
+  container-title: Egypt Fun Tours
+  language: en-CA
+  publication: Egypt Fun Tours
+  tags: chapter-01, images, narrative
+  title: 'Ancient Egyptian Offerings: Food, Rituals & The Afterlife'
+  title-short: Ancient Egyptian Offerings
+  type: post-weblog
+  URL: https://egyptfuntours.com/blog/offerings-in-ancient-egypt/
+
+- id: argenbergEnglishAreaHas2007
+  accessed:
+    - year: 2026
+      month: 4
+      day: 22
+  archive: Own work
+  author:
+    - family: Argenberg
+      given: Vyacheslav
+  author_list: Vyacheslav Argenberg
+  citation-key: argenbergEnglishAreaHas2007
+  date: 21 May 2007, 11:21:51
+  issued:
+    - year: 2007
+      month: 5
+      day: 21
+  source: Wikimedia Commons
+  tags: chapter-01, images
+  title: >-
+    English:  The area has been a focus of archaeological and egyptological
+    exploration for a long time. Theban Plateau, Theban Hills, Thebes, Luxor,
+    Waset, Egypt.
+  title-short: English
+  type: graphic
+  URL: https://commons.wikimedia.org/wiki/File:Thebes,_Luxor,_Egypt,_Cliffs.jpg
+
+- id: argenbergEnglishQurnHighest2007
+  accessed:
+    - year: 2026
+      month: 4
+      day: 22
+  archive: Own work
+  author:
+    - family: Argenberg
+      given: Vyacheslav
+  author_list: Vyacheslav Argenberg
+  citation-key: argenbergEnglishQurnHighest2007
+  date: 20 May 2007, 11:43:58
+  issued:
+    - year: 2007
+      month: 5
+      day: 20
+  source: Wikimedia Commons
+  tags: chapter-01, images
+  title: >-
+    English:  Al Qurn is the highest peak (420 m) in the Theban Hills, located
+    on the western bank of the Nile, opposite modern Luxor. Its ancient name was
+    Ta Dehent, or "the peak". Al Qurn is believed to be one of the entrances to
+    the Duat (underworld). The whole Theban plateau was lifted up by the African
+    faults, and then valleys cut down and the Nile excavated a large canyon.
+    Theban Plateau, Theban Hills, Thebes, Luxor, Waset, Egypt.
+  title-short: English
+  type: graphic
+  URL: https://commons.wikimedia.org/wiki/File:Thebes,_Egypt,_Al_Qurn_cliffs.jpg
+
+- id: argenbergThebanHills2007
+  accessed:
+    - year: 2026
+      month: 4
+      day: 18
+  archive: Own work
+  author:
+    - family: Argenberg
+      given: Vyacheslav
+  author_list: Vyacheslav Argenberg
+  citation-key: argenbergThebanHills2007
+  date: 20 May 2007, 10:21:52
+  issued:
+    - year: 2007
+      month: 5
+      day: 20
+  source: Wikimedia Commons
+  tags: images-01, chapter-01
+  title: Theban Hills
+  title-short: English
+  type: graphic
+  URL: >-
+    https://commons.wikimedia.org/wiki/File:Thebes,_Egypt,_Theban_Hills_lunar_landscape.jpg
+
+- id: beshrStructuralCharacteristicsQena2021
+  abstract: >-
+    The Qena Bend of the Nile River, named after Qena town in Upper Egypt, is
+    considered a remarkable geomorphological feature in southern Egypt. It is
+    unique and its geodynamic formation is still not fully understood. This
+    study addresses the relationship between the bend geometry and the
+    structural setting of the underlying basement complex using remotely sensed
+    and aeromagnetic data. The hillshade and drainage extraction algorithms were
+    applied to the digital elevation model (DEM) of the Shuttle Radar Topography
+    Mission (SRTM) to deﬁne the lineaments dissecting the limestone plateaus and
+    control the Nile Valley cliffs. Moreover, the Interferometry Synthetic
+    Aperture Radar (InSAR) coherence image was derived from two Sentinel-1
+    images to delineate and/or conﬁrm the structures, which underlie and control
+    the sand dunes movement. In addition, various edge-detection derivatives
+    were applied on the reduced-to-pole (RTP) aeromagnetic anomaly to deﬁne the
+    basement structures. The results showed the derived surface and subsurface
+    structures are controlled by the NW–SE and NE–SW trends of the Suez–Red Sea,
+    Aqaba–Dead Sea, and Qena–Safaga Shear Zone. The RTP anomaly reveals a strong
+    NE–SW positive anomaly zone coinciding with the bend. The magnetic 2D
+    forward modelling and 3D depth inversion suggest the basement consists of
+    granitic rocks (0.02 – 0.033 cgs) and the positive anomaly below the bend
+    probably attributes to a major uplift at a depth of 750 m. This uplift broke
+    the plateau forming NE–SW-oriented weak structural zones along which the
+    bend was developed.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 22
+  author:
+    - family: Beshr
+      given: Ahmed M.
+    - family: Kamel Mohamed
+      given: Adel
+    - family: ElGalladi
+      given: Ahmed
+    - family: Gaber
+      given: Ahmed
+    - family: El-Baz
+      given: Farouk
+  author_list: >-
+    Ahmed M. Beshr, Adel Kamel Mohamed, Ahmed ElGalladi, Ahmed Gaber, Farouk
+    El-Baz
+  citation-key: beshrStructuralCharacteristicsQena2021
+  container-title: The Egyptian Journal of Remote Sensing and Space Science
+  container-title-short: The Egyptian Journal of Remote Sensing and Space Science
+  date: 12/2021
+  DOI: 10.1016/j.ejrs.2021.11.005
+  ISSN: '11109823'
+  issue: '3'
+  issued:
+    - year: 2021
+      month: 12
+  language: en
+  page: 999–1011
+  publication: The Egyptian Journal of Remote Sensing and Space Science
+  source: DOI.org (Crossref)
+  tags: chapter-01
+  title: >-
+    Structural characteristics of the Qena Bend of the Egyptian Nile River,
+    using remote-sensing and geophysics
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S1110982321000910
+  volume: '24'
+
+- id: BritishMuseumImages
+  abstract: >-
+    This is a British Museum Images licensable image titled 'Nova Reperta,
+    Impressio Librorum, print, Antwerp' by British Museum Images All rights
+    reserved. You may not copy, publish, or use this image except for sample
+    layout ('comp') use only. You must purchase the image from British Museum
+    Images in order to use it for ANY other purpose.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 21
+  citation-key: BritishMuseumImages
+  container-title: British Museum Images
+  language: en
+  publication: British Museum Images
+  title: The British Museum Images
+  type: webpage
+  URL: https://www.bmimages.com/preview.asp?image=01482536001
+
+- id: BuildingWebsiteLot
+  abstract: >-
+    When someone says, “We need a new website,” it often sounds simple. But
+    anyone who has ever built a house knows that what looks simple on the
+    surface is actually a series of hundreds of decisions that determine whether
+    the final result works beautifully or becomes a constant source of
+    frustration.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  citation-key: BuildingWebsiteLot
+  language: en
+  title: Building a Website Is a Lot Like Building a House
+  type: webpage
+  URL: >-
+    https://www.linkedin.com/pulse/building-website-lot-like-house-lori-highby-xnjac
+
 - id: colemanUCLAEncyclopediaEgyptology2013
   accessed:
     - year: 2026
@@ -284,6 +482,42 @@ references:
   URL: https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/OIP119.pdf
   volume: '119'
 
+- id: editorsAncientEgyptCivilization2009
+  abstract: >-
+    Ancient Egypt was the preeminent civilization in the Mediterranean world
+    from around 3100 B.C. to its conquest in 332...
+  accessed:
+    - year: 2026
+      month: 4
+      day: 14
+  author:
+    - family: Editors
+      given: HISTORY
+      dropping-particle: com
+  author_list: HISTORY com Editors
+  chapters: Chapter 01
+  citation-key: editorsAncientEgyptCivilization2009
+  container-title: HISTORY
+  date: '2009-10-14T13:53:27.000Z'
+  issued:
+    - year: 2009
+      month: 10
+      day: 14
+  language: en
+  note: 'chapters: Chapter 01'
+  publication: HISTORY
+  tags: narrative, chapter-01
+  title: 'Ancient Egypt: Civilization, Empire & Culture'
+  title-short: Ancient Egypt
+  type: webpage
+  URL: https://www.history.com/articles/ancient-egypt
+
+- id: ElQurn
+  citation-key: ElQurn
+  tags: images-01, chapter-01
+  title: El-Qurn
+  type: graphic
+
 - id: haringbenUnderstandingRelationsScripts2019
   accessed:
     - year: 2026
@@ -340,6 +574,34 @@ references:
   title-short: Reclaiming Ancient Inscriptions
   type: document
   URL: http://www.inscriptifact.com/news/Biblos.pdf
+
+- id: museum16thCenturyCE2020
+  abstract: >-
+    An illustration of a Flemish printer's shop, Impressio Librorum. Made in
+    Antwerp, 1580-1605 CE. (British Museum, London)
+  accessed:
+    - year: 2026
+      month: 4
+      day: 21
+  author:
+    - family: Museum
+      given: The British
+  author_list: The British Museum
+  citation-key: museum16thCenturyCE2020
+  container-title: World History Encyclopedia
+  date: '2020-10-30'
+  issued:
+    - year: 2020
+      month: 10
+      day: 30
+  language: en
+  publication: World History Encyclopedia
+  source: www.worldhistory.org
+  tags: images, narrative
+  title: 16th Century CE Flemish Book Printer
+  type: article-journal
+  URL: >-
+    https://www.worldhistory.org/image/13067/16th-century-ce-flemish-book-printer/
 
 - id: no-nameAlamatTalRoadn.d.
   abstract: >-
@@ -427,6 +689,136 @@ references:
   type: article-journal
   URL: https://hw.oeaw.ac.at?arp=0x003e0a71
   volume: '32'
+
+- id: rossDataWarehouseDining2004
+  abstract: "I\_worked at a company called Metaphor back in the early 1980s. As part of a startup software company introducing then-cutting-edge concepts (such as folders, file drawers, and workflows on a graphical electronic desktop), I\_appreciated the benefits of using metaphors to represent seemingly complex concepts. Effective verbal and visual metaphors are able to convert complexity into [...]"
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  author:
+    - family: Ross
+      given: Margy
+  author_list: Margy Ross
+  citation-key: rossDataWarehouseDining2004
+  container-title: Kimball Group
+  date: '2004-01-01T21:19:40-06:00'
+  issued:
+    - year: 2004
+      month: 1
+      day: 1
+  language: en-US
+  publication: Kimball Group
+  section: Articles & Design Tips
+  title: Data Warehouse Dining Experience
+  type: webpage
+  URL: https://www.kimballgroup.com/2004/01/data-warehouse-dining-experience/
+
+- id: SearchMediaWikimedia
+  accessed:
+    - year: 2026
+      month: 4
+      day: 22
+  citation-key: SearchMediaWikimedia
+  language: en
+  tags: chapter-01, images
+  title: Search media - Wikimedia Commons
+  type: webpage
+  URL: >-
+    https://commons.wikimedia.org/w/index.php?search=Vyacheslav+Argenberg+thebes&title=Special%3AMediaSearch
+
+- id: SmarthistoryArtHistory
+  abstract: >-
+    World-class resources on art and cultural objects for learners from around
+    the globe
+  accessed:
+    - year: 2026
+      month: 4
+      day: 17
+  citation-key: SmarthistoryArtHistory
+  container-title: Smarthistory
+  language: en
+  publication: Smarthistory
+  tags: narrative
+  title: Smarthistory – art history
+  type: webpage
+  URL: https://smarthistory.org/
+
+- id: ThebanHills
+  citation-key: ThebanHills
+  tags: images-01, chapter-01
+  title: Theban Hills
+  type: graphic
+
+- id: ThebanHills2007
+  accessed:
+    - year: 2026
+      month: 4
+      day: 18
+  citation-key: ThebanHills2007
+  date: '2007-05-21'
+  issued:
+    - year: 2007
+      month: 5
+      day: 21
+  language: ha
+  tags: images-01, chapter-01
+  title: Theban Hills
+  title-short: Fayil
+  type: graphic
+  URL: https://commons.wikimedia.org/wiki/File:Thebes,_Luxor,_Egypt,_Cliffs.jpg
+
+- id: ThebanHillsa
+  citation-key: ThebanHillsa
+  tags: images-01, chapter-01
+  title: Theban Hills
+  type: graphic
+
+- id: ThegreatbelzoniImage
+  accessed:
+    - year: 2026
+      month: 4
+      day: 18
+  citation-key: ThegreatbelzoniImage
+  language: en
+  tags: images-01, chapter-01
+  title: 'thegreatbelzoni: Image'
+  title-short: thegreatbelzoni
+  type: graphic
+  URL: >-
+    https://thegreatbelzoni.wordpress.com/wp-content/uploads/2018/02/dsc01198.jpg
+
+- id: ThothHill2025
+  abstract: >-
+    Thoth Hill is an archaeological site first dated to predynastic period
+    located on the West Bank of Thebes approximately 3 kilometers north of the
+    Valley of the Kings. A predynastic temple was built over by a mud-brick
+    temple from the 11th Dynasty that is still visible today. The temple was
+    dedicated to the god Horus. The site is the oldest known temple in Thebes.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 4
+  chapters: Chapter 01
+  citation-key: ThothHill2025
+  date: '2025-05-08T00:44:57Z'
+  issued:
+    - year: 2025
+      month: 5
+      day: 8
+  language: en
+  license: Creative Commons Attribution-ShareAlike License
+  note: 'chapters: Chapter 01'
+  tags: images-01, chapter-01
+  title: Thoth Hill
+  type: graphic
+  URL: https://en.wikipedia.org/w/index.php?title=Thoth_Hill&oldid=1289342176
+
+- id: ValleyQueens
+  citation-key: ValleyQueens
+  tags: images-01, chapter-01
+  title: Valley of the Queens
+  type: graphic
 
 - id: VisibleLanguageInventions
   citation-key: VisibleLanguageInventions

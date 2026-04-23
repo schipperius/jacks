@@ -37,45 +37,49 @@ permalink: /gallery/
 </style>
 
 {% comment %}
-  STEP 1: PRE-INDEX EVERYTHING
-  We create lookup tables so we don't have to 'loop' inside a 'loop'.
+Logic: Index satellite CSVs and _plates/ by image_id.
+Do not need to index the manifest file.
 {% endcomment %}
-
-{% assign loc_map = site.data.location | group_by: "image_slug" %}
-{% assign attr_map = site.data.attribution | group_by: "image_slug" %}
-{% assign ppl_map = site.data.people | group_by: "image_slug" %}
-{% assign plates_md = site.plates | group_by: "image_id" %}
+{% assign loc_map = site.data.location | group_by: "image_id" %}
+{% assign attr_map = site.data.attribution | group_by: "image_id" %}
+{% assign plate_map = site.plates | group_by: "image_id" %}
 
 <section class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for entry in site.data.manifest %}
+    {% assign target_id = entry.image_id | strip %}
 
-    {% for hub in site.data.plates %}
     {% comment %}
-    STEP 2: INSTANT LOOKUP
-    Instead of an 'include' with more loops, we just grab the data by the slug.
+    Logic: Retrieve satellite data from CSVs
     {% endcomment %}
-    {% assign slug = hub.image_slug | strip %}
+    {% assign loc = loc_map | where: "name", target_id | map: "items" | first | first %}
+    {% assign attr = attr_map | where: "name", target_id | map: "items" | first | first %}
 
-    {% comment %} Grab the first matching record from our maps {% endcomment %}
-    {% assign loc = loc_map | where: "name", slug | map: "items" | first | first %}
-    {% assign attr = attr_map | where: "name", slug | map: "items" | first | first %}
-
-    {% comment %} Link to the Markdown Collection using the image_id {% endcomment %}
-    {% assign plate_md = plates_md | where: "name", hub.image_id | map: "items" | first | first %}
+    {% comment %}
+    Logic: Retrieve long-form data from _plates/ using plate_map
+    {% endcomment %}
+    {% assign plate_content = plate_map | where: "name", target_id | map: "items" | first | first %}
 
     <div class="col">
-      <!-- Adding 'h-100' to the card container ensures all boxes are equal height -->
       <div class="card h-100 border-gold shadow-sm hover-lift">
         <figure class="mb-0 d-flex flex-column h-100">
-          
-          <!-- Image Section -->
+
           <div class="position-relative overflow-hidden">
-            <a href="{{ plate_md.url | relative_url }}" class="d-block">
+            <!-- Logic: If a markdown file exists, link the image; otherwise, just show image -->
+            {% if plate_content.url %}
+            <a href="{{ plate_content.url | relative_url }}" class="d-block">
+              {% endif %}
+          
               <div class="ratio ratio-{{ attr.image_aspect_ratio | default: '16x9' }}">
-                <img src="{{ hub.image_path | relative_url }}" class="card-img-top object-fit-cover transition-img"
-                  alt="{{ hub.image_alt | default: hub.image_title }}">
+                <!-- Logic: Use entry.image_path if it exists; otherwise, use a default fallback image -->
+                <img src="{{ entry.image_path | default: '/assets/images/default-placeholder.jpg' | relative_url }}"
+                  class="card-img-top object-fit-cover transition-img" alt="{{ entry.image_alt | default: entry.image_title }}">
               </div>
+          
+              {% if plate_content.url %}
             </a>
+            {% endif %}
+
             <!-- Contextual Badge (e.g. Era or Period) -->
             {% if loc.super_period %}
             <div class="position-absolute top-0 end-0 m-2">
@@ -87,21 +91,12 @@ permalink: /gallery/
           </div>
 
           <figcaption class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="text-gold small fw-bold">
-                {% if hub.circa == "True" or hub.circa == true %}<em>c.</em> {% endif %}{{ hub.display_year }}
-              </span>
-              {% if loc.place_city %}
-              <span class="text-muted small">
-                <i class="fas fa-map-marker-alt me-1"></i> {{ loc.place_city }}
-              </span>
-              {% endif %}
-            </div>
-
-            <h5 class="card-title archival-font h6 mb-2">{{ hub.image_title }}</h5>
-
+            <h5 class="card-title archival-font h6 mb-2">{{ entry.image_title }}</h5>
             <p class="card-text small text-muted flex-grow-1">
-              {{ plate_md.image_caption | default: hub.image_caption | truncate: 100 }}
+              {% comment %}
+              Logic: Access the markdown frontmatter caption via plate_content
+              {% endcomment %}
+              {{ plate_content.image_caption | default: entry.image_title | truncate: 100 }}
             </p>
 
           </figcaption>
@@ -111,4 +106,3 @@ permalink: /gallery/
     {% endfor %}
   </div>
 </section>
-

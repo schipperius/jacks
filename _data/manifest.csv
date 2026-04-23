@@ -1,0 +1,8 @@
+image_id,image_slug,chapter_title,episode_title,scene_number,chapter_number,part_number,image_title,image_path,season_number,episode_number,status,order,weight
+s0-da-vinci-inspired-bottega,da-vinci-inspired-bottega,Colophon,Colophon,,,,DaVinci Inspired Bottega,assets/images/s0-da-vinci-inspired-bottega.png,0,0,In Progress,,
+s01-map-qena-bend,map-qena-bend,The Theban Plateau,,,01,01,The Qena Bend of the Nile River,assets/images/maps/s01-map-qena-bend.png,1,0,In Progress,,
+s01e01-ascending-theban-hills,ascending-theban-hills,The Theban Plateau,The Ascent,002,01,01,Ascending the Theban Hills,assets/images/s01-qena-bend/s01e01-ascending-theban-hills.png,1,1,In Progress,,
+s01e01-climbing-limestone-cliffs,climbing-limestone-cliffs,The Theban Plateau,The Ascent,003,01,01,Climbing the Limestone Cliffs,assets/images/s01-qena-bend/s01e01-climbing-limestone-cliffs.png,1,1,In Progress,,
+s01e01-giving-thanks-offerings,giving-thanks-offerings,The Theban Plateau,The Ascent,004,01,01,Giving Thanks and Offerings,assets/images/s01-qena-bend/s01e01-giving-thanks-offerings.jpg,1,1,In Progress,,
+s01e01-leaving-nile-valley,leaving-nile-valley,The Theban Plateau,The Ascent,001,01,01,Leaving the Nile River Valley,assets/images/s01-qena-bend/s01e01-leaving-nile-valley.png,1,1,In Progress,,
+s02-map-land-fayrous,map-land-fayrous,The Land of Turquoise,,,02,01,The Land of Fayrouz,assets/images/maps/s02-satellite-land-fayrous.png,2,0,In Progress,,

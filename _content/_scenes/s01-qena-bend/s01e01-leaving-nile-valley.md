@@ -2,8 +2,6 @@
 layout: scene
 image_id: s01e01-leaving-nile-valley
 
-title: "Leaving the Nile River Valley"
-
 scene_number: 1
 chapter_number: 1
 part_number: 1

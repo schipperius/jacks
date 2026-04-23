@@ -2,12 +2,10 @@ import pandas as pd
 import os
 
 # Paths (Update these if you moved files to _data/anthology/)
-master_file = '_data/plates.csv'
+master_file = '_data/manifest.csv'
 satellite_files = [
     '_data/attribution.csv', 
-    '_data/location.csv', 
-    '_data/people.csv', 
-    '_data/join-image-ref.csv'
+    '_data/location.csv'
 ]
 
 def sync_data():
