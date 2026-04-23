@@ -1,6 +1,6 @@
 ---
 layout: plate
-image_id: s0-da-vinci-inspired-bottega
+image_id: col-da-vinci-bottega
 image_title: DaVinci Inspired Bottega
 
 image_caption: |
@@ -11,4 +11,4 @@ reference:
   - 
 ---
 
-Plate/Scene content goes here.
+Plate/Scene content goes here. The history of writing and publishing in 1524.

@@ -4,9 +4,11 @@ layout: default
 
 {% comment %}
 1. INDEX EVERYTHING BY IMAGE_ID
-Indexing 'references' here makes the Offcanvas drawer build much faster.
+We index all satellite files so we can pull any piece of data needed.
 {% endcomment %}
-{% assign hub_map = site.data.plates | group_by: "image_id" %}
+{% assign manifest_map = site.data.manifest | group_by: "image_id" %}
+{% assign loc_map = site.data.location | group_by: "image_id" %}
+{% assign attr_map = site.data.attribution | group_by: "image_id" %}
 {% assign plate_map = site.plates | group_by: "image_id" %}
 {% assign ref_map = site.data.references.references | group_by: "id" %}
 
@@ -15,22 +17,24 @@ Indexing 'references' here makes the Offcanvas drawer build much faster.
 {% endcomment %}
 {% assign target_id = page.image_id | append: "" | strip %}
 
-{% assign hub = hub_map | where: "name", target_id | map: "items" | first | first %}
+{% assign manifest = manifest_map | where: "name", target_id | map: "items" | first | first %}
+{% assign loc = loc_map | where: "name", target_id | map: "items" | first | first %}
 {% assign plate = plate_map | where: "name", target_id | map: "items" | first | first %}
 
 <article class="card col-lg-8 mx-auto my-3 shadow-sm border-0">
 
   <div class="card-body text-center pt-5 pb-4">
     <h6 class="text-uppercase tracking-widest text-muted mb-2">
-      {% if hub.chapter_number %}Chapter {{ hub.chapter_number }}{% endif %}
-      {% if hub.scene_number %}| Scene {{ hub.scene_number }}{% endif %}
+      {% if page.chapter_number %}Chapter {{ page.chapter_number }}{% endif %}
+      {% if page.scene_number %}| Scene {{ page.scene_number }}{% endif %}
     </h6>
-    <h1 class="display-5 fw-bold serif-heading">{{ page.title }}</h1>
+    {% comment %} Use manifest title if page title is missing {% endcomment %}
+    <h1 class="display-5 fw-bold serif-heading">{{ page.title | default: manifest.image_title }}</h1>
     <hr class="w-25 mx-auto">
 
     {% comment %}
     CURATOR'S DRAWER TRIGGER:
-    Only show if the Markdown file has a 'references' list in the front matter.
+    Checks the linked Markdown plate for references.
     {% endcomment %}
     {% if plate.references %}
     <div class="mt-3">
@@ -42,18 +46,22 @@ Indexing 'references' here makes the Offcanvas drawer build much faster.
     {% endif %}
   </div>
 
-  {% if hub.image_path %}
+  {% if manifest.image_path %}
   <div class="scene-hero-container">
-    <img src="{{ hub.image_path | relative_url }}" class="img-fluid w-100" style="max-height: 450px; object-fit: cover;"
-      alt="{{ hub.image_alt | default: hub.image_title }}">
+    <img src="{{ manifest.image_path | relative_url }}" class="img-fluid w-100"
+      style="max-height: 450px; object-fit: cover;" alt="{{ manifest.image_title }}">
 
     {% comment %}
-    Caption logic: Preference given to the Markdown collection caption, then the CSV.
+    Caption logic: Check the Long-form Plate first, then fallback to Master Manifest.
     {% endcomment %}
-    {% assign display_caption = plate.image_caption | default: hub.image_caption %}
+    {% assign display_caption = plate.image_caption | default: manifest.image_caption %}
     {% if display_caption %}
-    <div class="p-3 bg-light text-center">
+    <div class="p-3 bg-light text-center border-bottom">
       <small class="text-muted fst-italic">{{ display_caption }}</small>
+      {% if loc.place_city %}
+      <br><small class="text-uppercase small-caps text-secondary" style="font-size: 0.7rem;">{{ loc.place_city }}, {{
+        loc.place_region }}</small>
+      {% endif %}
     </div>
     {% endif %}
   </div>
@@ -63,7 +71,66 @@ Indexing 'references' here makes the Offcanvas drawer build much faster.
     {{ content }}
   </div>
 
-  {% include pagination.html collection="scenes" sort_key="scene_number" %}
+  <div class="card-footer bg-white p-4 border-top-0">
+    {%- assign collection_name = include.collection -%}
+    {%- assign sort_key = include.sort_key -%}
+    
+    {% comment %} Force the current value to be an integer {% endcomment %}
+    {%- assign current_val = page[sort_key] | plus: 0 -%}
+    
+    {%- assign prev_val = current_val | minus: 1 -%}
+    {%- assign next_val = current_val | plus: 1 -%}
+    
+    {% comment %}
+    Crucial Change: We cast the attribute to an integer during the search
+    if the standard 'where' fails, but usually forcing current_val is enough.
+    {% endcomment %}
+    
+    {%- if collection_name == "scenes" -%}
+    {%- assign prev_item = site[collection_name] | where: "chapter_number", page.chapter_number | where: sort_key, prev_val
+    | first -%}
+    {%- assign next_item = site[collection_name] | where: "chapter_number", page.chapter_number | where: sort_key, next_val
+    | first -%}
+    {%- else -%}
+    {% comment %}
+    If plates still fail, it's because the 'where' filter can't match
+    integer prev_val to string "1". We use a loop instead for maximum reliability.
+    {% endcomment %}
+    {%- for item in site[collection_name] -%}
+    {%- assign item_val = item[sort_key] | plus: 0 -%}
+    {%- if item_val == prev_val -%}{%- assign prev_item = item -%}{%- endif -%}
+    {%- if item_val == next_val -%}{%- assign next_item = item -%}{%- endif -%}
+    {%- endfor -%}
+    {%- endif -%}
+    
+    <div class="bg-transparent border-0 pb-4 text-center">
+      <div class="row mt-2 pt-3" style="border-top: 1px solid var(--scribe-gold) !important;">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+    
+          {% if prev_item %}
+          <a href="{{ prev_item.url | relative_url }}" class="btn btn-book-gold btn-sm px-3 text-body">
+            <i class="bi bi-chevron-left"></i> {{ prev_item.title | truncate: 20 }}
+          </a>
+          {% else %}
+          <div class="spacer" style="min-width: 100px;"></div>
+          {% endif %}
+    
+          <a href="{{ '/chapters/' | relative_url }}" class="btn btn-outline-secondary btn-sm" title="Return to Archive">
+            <i class="bi bi-book"></i> Index
+          </a>
+    
+          {% if next_item %}
+          <a href="{{ next_item.url | relative_url }}" class="btn btn-book-gold btn-sm px-3">
+            {{ next_item.title | truncate: 20 }} <i class="bi bi-chevron-right"></i>
+          </a>
+          {% else %}
+          <div class="spacer" style="min-width: 100px;"></div>
+          {% endif %}
+    
+        </div>
+      </div>
+    </div>
+  </div>
 
 </article>
 
@@ -82,7 +149,6 @@ THE CURATOR'S DRAWER (OFFCANVAS)
 
     {% for ref_key in plate.references %}
     {% assign key_string = ref_key | append: "" | strip %}
-
     {% assign entry = ref_map | where: "name", key_string | map: "items" | first | first %}
 
     <div class="mb-4">
@@ -91,7 +157,7 @@ THE CURATOR'S DRAWER (OFFCANVAS)
       <p class="small text-muted fst-italic mb-1">{{ entry.title }}</p>
       {% if entry.publisher %}<p class="small text-muted mb-0">{{ entry.publisher }}</p>{% endif %}
       {% else %}
-      <p class="small text-danger">Check reference key: <strong>{{ ref_key }}</strong></p>
+      <p class="small text-danger">Reference key not found: <strong>{{ ref_key }}</strong></p>
       {% endif %}
       <hr class="w-25 opacity-25">
     </div>

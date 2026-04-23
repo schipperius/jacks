@@ -4,130 +4,211 @@ title: Library
 permalink: /Library/
 ---
 
-{% comment %} 
-  1. INDEX THE PLATES DATA 
-  We do this once at the top to avoid running 'where' inside the for-loop.
+<style>
+  :root {
+    --scribe-gold: #d4af37;
+    --scribe-bg: #fdfaf3;
+    --scribe-text: #1a1a1a;
+  }
+
+  /* 1. Header & Search Styling */
+  .fw-light {
+    font-family: serif;
+    /* color: var(--scribe-text); */
+  }
+
+  #vaultSearch {
+    border: 1px solid var(--scribe-gold) !important;
+    /* background-color: var(--scribe-bg); */
+    font-family: serif;
+    font-style: italic;
+    border-radius: 0;
+    /* Keeps it looking archival/industrial */
+  }
+
+  /* 2. Tab Navigation */
+  #libraryTabs .nav-link {
+    /* color: var(--scribe-text); */
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+
+  #libraryTabs .nav-link.active {
+    background: transparent;
+    color: var(--scribe-gold);
+    border-bottom: 2px solid var(--scribe-gold);
+    font-weight: bold;
+  }
+
+  /* 3. List Item (Academic/Narrative) Styling */
+  .evidence-row .list-group-item {
+    background-color: transparent;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    margin-bottom: 2px;
+  }
+
+  .evidence-row .list-group-item:hover {
+    background-color: var(--scribe-bg);
+    border-left: 3px solid var(--scribe-gold);
+    padding-left: 1.5rem;
+    /* Subtle "nudge" effect */
+  }
+
+  .evidence-row h6 {
+    font-family: serif;
+    font-weight: 600 !important;
+    color: var(--scribe-text);
+  }
+
+  /* 4. Visual Card Styling */
+  .visual-card-custom {
+    border: 1px solid #eee !important;
+    transition: border-color 0.3s ease;
+  }
+
+  .evidence-row:hover .visual-card-custom {
+    border-color: var(--scribe-gold) !important;
+  }
+
+  .rounded-start {
+    border-radius: 0 !important;
+    /* Sharp corners feel more archival */
+    filter: sepia(0.2);
+    /* Gives images a unified historical tone */
+  }
+
+  /* 5. Custom Badge */
+  .badge.rounded-pill {
+    background-color: #eee !important;
+    color: var(--scribe-text) !important;
+    border: 1px solid #ddd;
+    font-weight: normal;
+  }
+
+  .active .badge.rounded-pill {
+    background-color: var(--scribe-gold) !important;
+    color: white !important;
+    border-color: var(--scribe-gold);
+  }
+</style>
+
+{% comment %}
+1. INDEX DATA
+We use manifest_map for the visual tab to match your new master CSV name.
 {% endcomment %}
-{% assign hub_map = site.data.plates | group_by: "image_id" %}
+{% assign manifest_map = site.data.manifest | group_by: "image_id" %}
 {% assign visual_count = site.plates | size %}
+{% assign academic_count = site.data.academic.references | size | default: 0 %}
+{% assign narrative_count = site.data.narrative.references | size | default: 0 %}
 
 <section class="container mt-5">
   <div class="my-3">
-    <h1 class="fw-light">Library Index</h1>
+    <h1 class="fw-light border-bottom pb-2" style="border-color: var(--scribe-gold) !important;">Library Index</h1>
     <p class="text-secondary my-4">
-      <i class="bi bi-info-circle"></i> Currently indexing <strong>The Book of Jack</strong> Evidence Vault 
-      <span class="mx-2">|</span> 
-      <span id="stat-academic">0</span> Academic <span class="mx-1">•</span> 
-      <span id="stat-narrative">0</span> Narrative <span class="mx-1">•</span> 
+      <i class="bi bi-info-circle"></i> Currently indexing <strong>The Book of Jack</strong> Evidence Vault
+      <span class="mx-2">|</span>
+      <span id="stat-academic">{{ academic_count }}</span> Academic <span class="mx-1">•</span>
+      <span id="stat-narrative">{{ narrative_count }}</span> Narrative <span class="mx-1">•</span>
       {{ visual_count }} Visual
     </p>
   </div>
 
   <p class="lead text-body">A consolidated index of all primary, supplemental, and visual evidence.</p>
-  
+
   <div class="mb-5">
-    <input type="text" id="vaultSearch" class="form-control form-control-lg border-2 shadow-sm" placeholder="Search by author, title, chapter, or keyword...">
+    <input type="text" id="vaultSearch" class="form-control form-control-lg border-2 shadow-sm"
+      placeholder="Search by author, title, chapter, or keyword...">
   </div>
 
   <ul class="nav nav-tabs mb-4 border-bottom-0" id="libraryTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active fw-light" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic-pane" type="button" role="tab">
-        Academic <span id="count-academic" class="badge rounded-pill bg-secondary ms-1 small">0</span>
+    <li class="nav-item">
+      <button class="nav-link active fw-light" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic-pane"
+        type="button" role="tab">
+        Academic <span id="count-academic" class="badge rounded-pill bg-secondary ms-1 small">{{ academic_count
+          }}</span>
       </button>
     </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link fw-light" id="narrative-tab" data-bs-toggle="tab" data-bs-target="#narrative-pane" type="button" role="tab">
-        Narrative <span id="count-narrative" class="badge rounded-pill bg-secondary ms-1 small">0</span>
+    <li class="nav-item">
+      <button class="nav-link fw-light" id="narrative-tab" data-bs-toggle="tab" data-bs-target="#narrative-pane"
+        type="button" role="tab">
+        Narrative <span id="count-narrative" class="badge rounded-pill bg-secondary ms-1 small">{{ narrative_count
+          }}</span>
       </button>
     </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link fw-light" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual-pane" type="button" role="tab">
+    <li class="nav-item">
+      <button class="nav-link fw-light" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual-pane" type="button"
+        role="tab">
         Visual <span id="count-visual" class="badge rounded-pill bg-secondary ms-1 small">{{ visual_count }}</span>
       </button>
     </li>
   </ul>
 
   <div class="tab-content" id="libraryTabContent">
+
     {% comment %} ACADEMIC PANE {% endcomment %}
     <div class="tab-pane fade show active" id="academic-pane" role="tabpanel">
-      <div class="no-results-msg d-none py-5 text-center">
-        <i class="bi bi-search text-secondary display-6"></i>
-        <p class="text-secondary mt-3">No matches found.</p>
-      </div>
       <div class="list-group list-group-flush border-top">
         {% for entry in site.data.academic.references %}
-          <div class="evidence-row">
-            {% include citation.html %}
+        <div class="evidence-row">
+          <div class="list-group-item list-group-item-action py-3 position-relative">
+            <h6 class="mb-1 text-body fw-normal">{{ entry.title | default: "Untitled Work" }}</h6>
+            <p class="mb-2 text-secondary small">
+              {{ entry.author_list | default: "Unknown Author" }} ({{ entry.date | default: "n.d." }})
+              {% if entry.publication %} • <em>{{ entry.publication }}</em>{% endif %}
+            </p>
+            {% if entry.URL %}<a href="{{ entry.URL }}" target="_blank" class="stretched-link"></a>{% endif %}
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
 
     {% comment %} NARRATIVE PANE {% endcomment %}
     <div class="tab-pane fade" id="narrative-pane" role="tabpanel">
-      <div class="no-results-msg d-none py-5 text-center">
-        <i class="bi bi-search text-secondary display-6"></i>
-        <p class="text-secondary mt-3">No matches found.</p>
-      </div>
       <div class="list-group list-group-flush border-top">
         {% for entry in site.data.narrative.references %}
-          <div class="evidence-row">
-            {% include citation.html %}
+        <div class="evidence-row">
+          <div class="list-group-item list-group-item-action py-3 position-relative">
+            <h6 class="mb-1 text-body fw-normal">{{ entry.title | default: "Untitled Work" }}</h6>
+            <p class="mb-2 text-secondary small">{{ entry.author_list }} ({{ entry.date }})</p>
+            {% if entry.URL %}<a href="{{ entry.URL }}" target="_blank" class="stretched-link"></a>{% endif %}
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
 
     {% comment %} VISUAL PANE {% endcomment %}
     <div class="tab-pane fade" id="visual-pane" role="tabpanel">
-      <div class="no-results-msg d-none py-5 text-center">
-        <i class="bi bi-search text-secondary display-6"></i>
-        <p class="text-secondary mt-3">No matches found.</p>
-      </div>
       <div class="row row-cols-1 row-cols-md-2 g-4 mt-1">
         {% for plate_file in site.plates %}
-          {% comment %}
-            Index Lookup: Find metadata in CSV based on Markdown image_id
-          {% endcomment %}
-          {% assign current_id = plate_file.image_id | append: "" | strip %}
-          {% assign metadata = hub_map | where: "name", current_id | map: "items" | first | first %}
-          
-          <div class="col evidence-row">
-            {% comment %} Hidden searchable keywords {% endcomment %}
-            <div class="d-none">{{ plate_file.image_prompt }} {{ metadata.place_city }} {{ metadata.era }} {{ plate_file.content | strip_html }}</div>
-            
-            <div class="card h-100 border-0 bg-body-tertiary shadow-sm position-relative">
-              <div class="row g-0 h-100">
-                <div class="col-4">
-                  <img src="{{ metadata.image_path | relative_url }}" 
-                      class="img-fluid rounded-start h-100 object-fit-cover" 
-                      alt="{{ plate_file.title }}"
-                      style="min-height: 100px; width: 100%;">
-                </div>
-                <div class="col-8">
-                  <div class="card-body p-3">
-                    <h6 class="card-title mb-1 text-body fw-light">{{ plate_file.title }}</h6>
-                    <p class="card-text small text-secondary mb-2">
-                      {{ metadata.attr_image_credit }} 
-                      {% if metadata.display_year %}
-                        ({{ metadata.display_year }})
-                      {% endif %}
-                    </p>
-                    {% if metadata.era %}
-                      <div class="d-flex flex-wrap gap-1" style="z-index: 5; position: relative;">
-                        <span class="badge rounded-pill bg-warning-subtle text-warning-emphasis border border-warning-subtle small filter-badge" 
-                              style="cursor: pointer;" 
-                              onclick="filterByTag('{{ metadata.era | strip }}')">
-                          {{ metadata.era }}
-                        </span>
-                      </div>
-                    {% endif %}
-                    <a href="{{ plate_file.url | relative_url }}" class="stretched-link"></a>
-                  </div>
+        {% assign current_id = plate_file.image_id | append: "" | strip %}
+        {% assign metadata = manifest_map | where: "name", current_id | map: "items" | first | first %}
+
+        <div class="col evidence-row">
+          <div class="card h-100 border-0 bg-body-tertiary shadow-sm position-relative visual-card-custom">
+            <div class="row g-0 h-100">
+              <div class="col-4">
+                <img src="{{ metadata.image_path | relative_url }}"
+                  class="img-fluid rounded-start h-100 object-fit-cover" style="min-height: 100px;">
+              </div>
+              <div class="col-8">
+                <div class="card-body p-3">
+                  <h6 class="card-title mb-1 fw-light">{{ plate_file.title }}</h6>
+                  <p class="card-text small text-secondary">
+                    {{ metadata.image_title }} {% if metadata.display_year %}({{ metadata.display_year }}){% endif %}
+                  </p>
+                  <a href="{{ plate_file.url | relative_url }}" class="stretched-link"></a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>

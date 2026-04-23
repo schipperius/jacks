@@ -1,0 +1,91 @@
+---
+references:
+- id: BuildingWebsiteLot
+  abstract: >-
+    When someone says, “We need a new website,” it often sounds simple. But
+    anyone who has ever built a house knows that what looks simple on the
+    surface is actually a series of hundreds of decisions that determine whether
+    the final result works beautifully or becomes a constant source of
+    frustration.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  citation-key: BuildingWebsiteLot
+  language: en
+  title: Building a Website Is a Lot Like Building a House
+  type: webpage
+  URL: >-
+    https://www.linkedin.com/pulse/building-website-lot-like-house-lori-highby-xnjac
+
+- id: editorsAncientEgyptCivilization2009
+  abstract: >-
+    Ancient Egypt was the preeminent civilization in the Mediterranean world
+    from around 3100 B.C. to its conquest in 332...
+  accessed:
+    - year: 2026
+      month: 4
+      day: 14
+  author:
+    - family: Editors
+      given: HISTORY
+      dropping-particle: com
+  author_list: HISTORY com Editors
+  chapters: Chapter 01
+  citation-key: editorsAncientEgyptCivilization2009
+  container-title: HISTORY
+  date: '2009-10-14T13:53:27.000Z'
+  issued:
+    - year: 2009
+      month: 10
+      day: 14
+  language: en
+  note: 'chapters: Chapter 01'
+  publication: HISTORY
+  tags: narrative, chapter-01
+  title: 'Ancient Egypt: Civilization, Empire & Culture'
+  title-short: Ancient Egypt
+  type: webpage
+  URL: https://www.history.com/articles/ancient-egypt
+
+- id: rossDataWarehouseDining2004
+  abstract: "I\_worked at a company called Metaphor back in the early 1980s. As part of a startup software company introducing then-cutting-edge concepts (such as folders, file drawers, and workflows on a graphical electronic desktop), I\_appreciated the benefits of using metaphors to represent seemingly complex concepts. Effective verbal and visual metaphors are able to convert complexity into [...]"
+  accessed:
+    - year: 2026
+      month: 4
+      day: 15
+  author:
+    - family: Ross
+      given: Margy
+  author_list: Margy Ross
+  citation-key: rossDataWarehouseDining2004
+  container-title: Kimball Group
+  date: '2004-01-01T21:19:40-06:00'
+  issued:
+    - year: 2004
+      month: 1
+      day: 1
+  language: en-US
+  publication: Kimball Group
+  section: Articles & Design Tips
+  title: Data Warehouse Dining Experience
+  type: webpage
+  URL: https://www.kimballgroup.com/2004/01/data-warehouse-dining-experience/
+
+- id: SmarthistoryArtHistory
+  abstract: >-
+    World-class resources on art and cultural objects for learners from around
+    the globe
+  accessed:
+    - year: 2026
+      month: 4
+      day: 17
+  citation-key: SmarthistoryArtHistory
+  container-title: Smarthistory
+  language: en
+  publication: Smarthistory
+  tags: narrative
+  title: Smarthistory – art history
+  type: webpage
+  URL: https://smarthistory.org/
+...

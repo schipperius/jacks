@@ -2,84 +2,82 @@
 layout: default
 title: Colophon
 permalink: /colophon/
-
-image_id: s0-da-vinci-inspired-bottega
+image_id: col-da-vinci-bottega
 ---
 
 {% comment %} 
-  1. Index everything by image_id 
+  1. Index everything using the new naming convention
 {% endcomment %}
-
-{% assign hub_map   = site.data.plates      | group_by: "image_id" %}
-{% assign loc_map   = site.data.location    | group_by: "image_id" %}
-{% assign attr_map  = site.data.attribution | group_by: "image_id" %}
-{% assign ppl_map   = site.data.people      | group_by: "image_id" %}
-{% assign plate_map = site.plates           | group_by: "image_id" %}
+{% assign manifest_map = site.data.manifest    | group_by: "image_id" %}
+{% assign loc_map      = site.data.location    | group_by: "image_id" %}
+{% assign attr_map     = site.data.attribution | group_by: "image_id" %}
+{% assign plate_map    = site.plates           | group_by: "image_id" %}
 
 {% comment %} 
-  2. Setup Target ID and perform lookups
+  2. Perform lookups for the specific image_id defined in front matter
 {% endcomment %}
-
 {% assign target_id = page.image_id | append: "" | strip %}
 
-{% assign hub   = hub_map   | where: "name", target_id | map: "items" | first | first %}
-{% assign loc   = loc_map   | where: "name", target_id | map: "items" | first | first %}
-{% assign attr  = attr_map  | where: "name", target_id | map: "items" | first | first %}
-{% assign ppl   = ppl_map   | where: "name", target_id | map: "items" | first | first %}
-{% assign plate = plate_map | where: "name", target_id | map: "items" | first | first %}
+{% assign manifest = manifest_map | where: "name", target_id | map: "items" | first | first %}
+{% assign loc      = loc_map      | where: "name", target_id | map: "items" | first | first %}
+{% assign attr     = attr_map     | where: "name", target_id | map: "items" | first | first %}
+{% assign plate    = plate_map    | where: "name", target_id | map: "items" | first | first %}
 
 <article class="container-fluid px-lg-0 my-5">
   <div class="row g-5">
     <div class="col-lg-8">
 
-      {% if hub %}
+      {% if manifest %}
         <div class="hero-plate-frame p-2 shadow-lg mb-2">
-          <a href="{{ hub.image_path | relative_url }}" class="lightbox-trigger">
-            <img src="{{ hub.image_path | relative_url }}" class="img-fluid w-100" alt="{{ hub.image_caption | default: hub.image_caption }}">
+          <a href="{{ manifest.image_path | relative_url }}" class="lightbox-trigger">
+            <img src="{{ manifest.image_path | relative_url }}" class="img-fluid w-100" alt="{{ manifest.image_title }}">
           </a>
         </div>
 
         <div class="d-flex justify-content-between align-items-center px-2 my-2">
           <p class="mb-0 text-muted small">
-            {{ loc.place_place }}, {{ loc.place_provincial }} | {{ loc.period }} | {{ loc.display_year }}      
+            {% if loc.place_city %}
+              {{ loc.place_city }}{% if loc.place_region %}, {{ loc.place_region }}{% endif %} | 
+            {% endif %}
+            {{ loc.super_period }} | {{ loc.display_year }}      
           </p>
         </div>
 
         <div class="px-2 mt-4">
-          <h3 class="display-6">{{ hub.image_title }}</h3>
-          <p class="lead">{{ plate.image_caption | default: plate.image_caption }}</p>
+          <h3 class="display-6">{{ manifest.image_title }}</h3>
+          
+          {% comment %} Fallback: Plate caption > Manifest caption > Manifest Title {% endcomment %}
+          <p class="lead">
+            {{ plate.image_caption | default: manifest.image_caption | default: manifest.image_title }}
+          </p>
           
           {% comment %} This displays Markdown text from your _plates/ file {% endcomment %}
           <div class="mt-4">
-            {{ plate.content | truncatewords: 75 }}
+            {{ plate.content | strip_html | truncatewords: 75 }}
           </div>
         </div>
 
-        {% else %}
+      {% else %}
         <div class="alert alert-warning">
-          Plate data for ID <strong>{{ target_id }}</strong> not found in _data/plates.csv.
+          Data for ID <strong>{{ target_id }}</strong> not found in master manifest.
         </div>
-        {% endif %}
+      {% endif %}
     </div>
 
     <div class="col-lg-4">
       <div class="mb-4">
-        <h1 class="display-5 fw-light text-body-emphasis lh-1 mb-3">
-          <!-- {{ page.title }} -->
-        </h1>
-        <p class="lead text-body-secondary">The Book of Jack was initially conceived as a coffee table book.</p>
-        <p>The history of writing and publishing is marked by diverse spaces, from sacred "Houses of Life" 
-          to industrial print shops, each reflecting the technology and culture of its era.</p>
+        <p class="lead text-body-secondary">The Book of Jack was initially conceived as a coffee table book. Today, it's a digital anthology.</p>
+        <p>The history of writing and publishing is marked by diverse spaces, from sacred "Houses of Life" to industrial print shops, each reflecting the technology and culture of its era...</p>
       </div>
 
       <div class="mt-4">
-        {% if hub.status == "verified" %}
+        {% comment %} Using status from the attribution or manifest file {% endcomment %}
+        {% if attr.status == "verified" or manifest.status == "verified" %}
           <span class="badge bg-success">Museum Verified</span>
         {% else %}
           <span class="badge border text-secondary">Research in Progress</span>
         {% endif %}
       </div>
-      
     </div>
   </div>
   <hr class="border-bottom my-2">

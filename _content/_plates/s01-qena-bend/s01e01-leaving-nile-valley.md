@@ -30,3 +30,4 @@ informed_url: https://isac.uchicago.edu/research/publications/oip/theban-desert-
 
 ---
 
+Leaving the river Nile at 4:00am.
