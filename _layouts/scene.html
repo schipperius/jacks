@@ -10,7 +10,7 @@ We index all satellite files so we can pull any piece of data needed.
 {% assign loc_map = site.data.location | group_by: "image_id" %}
 {% assign attr_map = site.data.attribution | group_by: "image_id" %}
 {% assign plate_map = site.plates | group_by: "image_id" %}
-{% assign ref_map = site.data.references.references | group_by: "id" %}
+{% assign ref_map = site.data.zotero.references | group_by: "id" %}
 
 {% comment %}
 2. LOOKUP DATA FOR THIS SPECIFIC SCENE
@@ -25,7 +25,7 @@ We index all satellite files so we can pull any piece of data needed.
   <div class="card-body text-center pt-4 pb-4">
 
     <h6 class="text-uppercase tracking-widest text-muted mb-4">
-      <!-- Add link from chapter to the chapter image of the chapters page -->
+      <!-- Add link from chapter to the chapter.number image of the chapters page -->
       {% if page.chapter_number %}Chapter {{ page.chapter_number }}{% endif %}
       {% if page.scene_number %}| Scene {{ page.scene_number }}{% endif %}
     </h6>
@@ -56,7 +56,7 @@ We index all satellite files so we can pull any piece of data needed.
     {% endcomment %}
     {% assign display_caption = plate.image_caption | default: man.image_caption %}
     {% if display_caption %}
-    <div class="p-3 bg-light text-center border-bottom">
+    <div class="p-3 text-center border-bottom">
       <small class="text-muted fst-italic">{{ display_caption }}</small>
       {% if loc.place_city %}
       <br><small class="text-uppercase small-caps text-secondary" style="font-size: 0.7rem;">{{ loc.place_city }}, {{
@@ -71,7 +71,7 @@ We index all satellite files so we can pull any piece of data needed.
     {{ content }}
   </div>
 
-  <div class="card-footer bg-white p-4 border-top-0">
+  <div class="card-footer p-4 border-top-0">
     {% comment %} 1. Global Setup {% endcomment %}
     {% assign all_scenes = site.scenes | sort: "scene_number" | sort: "chapter_number" %}
   
@@ -105,7 +105,7 @@ We index all satellite files so we can pull any piece of data needed.
       <li class="page-item d-none d-md-block">
         <a class="page-link h-100 py-3 d-flex flex-column align-items-center justify-content-center px-4"
           href="{{ '/chapters/' | relative_url }}" title="Back to Chapter Index">
-      
+          <!-- Tag the <a> to Chapter {{ chapter.chapter_number }} ???-->
           {% comment %} Reference Chapter Number above the Index icon {% endcomment %}
           <div class="text-uppercase text-muted fw-bold mb-1" style="font-size: 0.6rem; letter-spacing: 0.1rem;">
             {% if page.chapter_number %}Chapter {{ page.chapter_number }}{% else %}Anthology{% endif %}

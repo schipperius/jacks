@@ -12,7 +12,7 @@ Although J was the last letter added to the English alphabet, this digital antho
 
 During this time, Egypt was experiencing its second golden age, a period of sustained peace and prosperity, significant cultural achievements in art and literature, and massive expansion of commerce  and foreign trade. 
 
-The river Nile, although often considered the best transportation route between central Africa and the Mediterranean world, may not always have been the ideal artery of travel [(Darnell, 2002)](). Some stretches of the river were difficult to navigate.
+The river Nile, although often considered the best transportation route between central Africa and the Mediterranean world, may not always have been the ideal artery of travel [(Darnell, 2002)](This should link to the referencce in the library). Some stretches of the river were difficult to navigate.
 
 {% cite cite_key %}
 

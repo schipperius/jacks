@@ -52,7 +52,6 @@ collections:
     permalink: /plate/:name/
   scenes:
     output: true
-    sort_by: scene_number
     permalink: /scene/:name/
   
 

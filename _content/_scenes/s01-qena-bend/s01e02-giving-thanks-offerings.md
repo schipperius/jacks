@@ -1,6 +1,7 @@
 ---
 layout: scene
-image_id: s01e01-giving-thanks-offerings
+image_id: s01e02-giving-thanks-offerings
+permalink: /scene/giving-thanks-offerings
 
 scene_number: 4
 chapter_number: 1

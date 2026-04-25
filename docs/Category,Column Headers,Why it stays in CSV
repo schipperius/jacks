@@ -1,7 +1,0 @@
-Category,Column Headers,Why it stays in CSV
-The Glue,"image_id, slug","These are your ""Primary Keys"" that link the files."
-Structure,"order, weight, scene_number, chapter_number, part_number",Allows you to re-order the entire book by dragging rows.
-UI/Layout,"image_layout, image_aspect_ratio, image_path","Lets you bulk-change the ""Look"" of the site or fix broken paths."
-Timeline,"period, era, epoch, milestone, sort_year, circa, end_year","Critical for building a chronological ""Time Slider"" or filtering."
-Mapping,"lat, lng, approx",Essential for generating a Tolkien-esque map of the Farshut Road.
-Tech Specs,"generation_model, attribution_license",Allows you to bulk-update if you switch AI models or licensing terms.

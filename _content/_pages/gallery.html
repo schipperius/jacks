@@ -54,16 +54,16 @@ we normalize the ID to a string to ensure it matches the 'name' in our maps.
 
 <section class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    {% for entry in site.data.manifest %}
+    {% for man in site.data.manifest %}
 
     {% comment %}
     CRITICAL: Normalize ID to string to ensure the 'where' filter finds it
     {% endcomment %}
-    {% assign target_id = entry.image_id | append: "" | strip %}
+    {% assign target_id = man.image_id | append: "" | strip %}
 
     {% assign loc = loc_map | where: "name", target_id | map: "items" | first | first %}
     {% assign attr = attr_map | where: "name", target_id | map: "items" | first | first %}
-    {% assign plate_content = plate_map | where: "name", target_id | map: "items" | first | first %}
+    {% assign plate = plate_map | where: "name", target_id | map: "items" | first | first %}
 
     <div class="col">
       <div class="card h-100 border-gold shadow-sm hover-lift">
@@ -74,18 +74,18 @@ we normalize the ID to a string to ensure it matches the 'name' in our maps.
             Logic: Link to the PLATE (long form) if it exists,
             otherwise you might want to link to the SCENE.
             {% endcomment %}
-            {% if plate_content.url %}
-            <a href="{{ plate_content.url | relative_url }}" class="d-block">
+            {% if plate.url %}
+            <a href="{{ plate.url | relative_url }}" class="d-block">
               {% endif %}
 
               {% comment %} Use the aspect ratio from the attribution CSV {% endcomment %}
               <div class="ratio ratio-{{ attr.image_aspect_ratio | default: '16x9' }}">
-                <img src="{{ entry.image_path | default: '/assets/images/default-placeholder.jpg' | relative_url }}"
+                <img src="{{ man.image_path | default: '/assets/images/default-placeholder.jpg' | relative_url }}"
                   class="card-img-top object-fit-cover transition-img"
-                  alt="{{ entry.image_alt | default: entry.image_title }}">
+                  alt="{{ man.image_alt | default: man.image_title }}">
               </div>
 
-              {% if plate_content.url %}
+              {% if plate.url %}
             </a>
             {% endif %}
 
@@ -99,11 +99,11 @@ we normalize the ID to a string to ensure it matches the 'name' in our maps.
           </div>
 
           <figcaption class="card-body d-flex flex-column">
-            <h5 class="card-title archival-font h6 mb-2">{{ entry.image_title }}</h5>
+            <h5 class="card-title archival-font h6 mb-2">{{ man.image_title }}</h5>
 
             {% comment %} Logic: Show plate caption, then manifest title {% endcomment %}
             <p class="card-text small text-muted flex-grow-1">
-              {{ plate_content.image_caption | default: entry.image_title | truncate: 100 }}
+              {{ plate.image_caption | default: man.image_title | truncate: 100 }}
             </p>
 
             {% if loc.place_city %}
@@ -114,9 +114,11 @@ we normalize the ID to a string to ensure it matches the 'name' in our maps.
             </div>
             {% endif %}
           </figcaption>
+
         </figure>
       </div>
     </div>
     {% endfor %}
+
   </div>
 </section>

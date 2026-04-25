@@ -2,6 +2,7 @@
 layout: default
 title: Colophon
 permalink: /colophon/
+
 image_id: col-da-vinci-bottega
 ---
 
@@ -82,6 +83,8 @@ image_id: col-da-vinci-bottega
   </div>
   <hr class="border-bottom my-2">
 </article>
+
+Darnell, J. C., & Darnell, D. (1993). The Luxor-Farshût desert road survey. *The Oriental Institute 1992-1993 Annual Report*, 48–55. [https://oi.uchicago.edu](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf)
 
 ### The Technology Stack & Architecture for the Book of Jack Project
 

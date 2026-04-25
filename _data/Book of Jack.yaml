@@ -142,13 +142,12 @@ references:
   citation-key: beshrStructuralCharacteristicsQena2021
   container-title: The Egyptian Journal of Remote Sensing and Space Science
   container-title-short: The Egyptian Journal of Remote Sensing and Space Science
-  date: 12/2021
+  date: '2021'
   DOI: 10.1016/j.ejrs.2021.11.005
   ISSN: '11109823'
   issue: '3'
   issued:
     - year: 2021
-      month: 12
   language: en
   page: 999–1011
   publication: The Egyptian Journal of Remote Sensing and Space Science
@@ -222,6 +221,37 @@ references:
   type: entry-encyclopedia
   URL: https://escholarship.org/uc/item/1sd2j49d
 
+- id: darnellLuxorFarshutDesertRoad1993
+  abstract: >-
+    The road to Farshut begins near the ancient limestone quarries in the
+    northern fork of the Wadyein.
+  accessed:
+    - year: 2026
+      month: 2
+      day: 12
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellLuxorFarshutDesertRoad1993
+  collection-title: Oriental Institute 1992-1993 Annual Report
+  date: '1993'
+  genre: Annual Report
+  issued:
+    - year: 1993
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: The Luxor-Farshût desert road survey.
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf
+
 - id: darnellNarrowDoorsDesert2002
   accessed:
     - year: 2026
@@ -252,37 +282,6 @@ references:
   type: chapter
   URL: >-
     https://books.google.com/books?hl=en&lr=&id=e6IHp3aug2IC&oi=fnd&pg=PA104&dq=wadi+el+h%C3%B4l+desert+road+survey&ots=p71CdEmZIg&sig=N0mejzDhCs1a-r2n0Yls6E0SYrA
-
-- id: darnellOrientalInstitute199219931993
-  abstract: >-
-    The road to Farshut begins near the ancient limestone quarries in the
-    northern fork of the Wadyein.
-  accessed:
-    - year: 2026
-      month: 2
-      day: 12
-  author:
-    - family: Darnell
-      given: John Coleman
-    - family: Darnell
-      given: Deborah
-  author_list: John Coleman Darnell, Deborah Darnell
-  chapters: Chapter 01
-  citation-key: darnellOrientalInstitute199219931993
-  collection-title: The Luxor-Farshut Desert Road Survey
-  date: '1993'
-  genre: Annual Report
-  issued:
-    - year: 1993
-  language: en
-  note: 'chapters: Chapter 01'
-  source: Zotero
-  tags: academic, chapter-01
-  title: Oriental Institute 1992-1993 Annual Report
-  title-short: Luxor-Farshut-DRS
-  type: report
-  URL: >-
-    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf
 
 - id: darnellOrientalInstitute199319941994
   accessed:
@@ -550,6 +549,35 @@ references:
   type: book
   URL: http://www.jstor.org/stable/10.2307/j.ctv2mm1xnh
 
+- id: haringHalahamOstraconEarly2015
+  accessed:
+    - year: 2026
+      month: 4
+      day: 25
+  author:
+    - family: Haring
+      given: Ben
+  author_list: Ben Haring
+  citation-key: haringHalahamOstraconEarly2015
+  container-title: Journal of Near Eastern Studies
+  container-title-short: Journal of Near Eastern Studies
+  date: 10/2015
+  DOI: 10.1086/682330
+  ISSN: 0022-2968, 1545-6978
+  issue: '2'
+  issued:
+    - year: 2015
+      month: 10
+  language: en
+  page: 189–196
+  publication: Journal of Near Eastern Studies
+  source: DOI.org (Crossref)
+  tags: academic
+  title: '*Halaḥam* on an Ostracon of the Early New Kingdom?'
+  type: article-journal
+  URL: https://www.journals.uchicago.edu/doi/10.1086/682330
+  volume: '74'
+
 - id: huntEyewitnessesReclaimingAncientn.d.
   author:
     - family: Hunt
@@ -574,6 +602,27 @@ references:
   title-short: Reclaiming Ancient Inscriptions
   type: document
   URL: http://www.inscriptifact.com/news/Biblos.pdf
+
+- id: MiningHistoryAlphabet
+  abstract: >-
+    The single richest source of information about the world’s first alphabet is
+    the ancient Egyptian mining site of Serabit el-Khadem, in west-central
+    Sinai. The Egyptians were lured to Sinai by turquoise, a semiprecious
+    blue-green stone from which artisans could fashion amulets, scarabs and
+    necklaces. The earliest Egyptian mines in Sinai date to about 2650 […]
+  accessed:
+    - year: 2026
+      month: 4
+      day: 25
+  citation-key: MiningHistoryAlphabet
+  container-title: The BAS Library
+  language: en-US
+  publication: The BAS Library
+  tags: chapter-02, narrative
+  title: Mining the History of the Alphabet at Serabit el-Khadem
+  type: post-weblog
+  URL: >-
+    https://library.biblicalarchaeology.org/sidebar/mining-the-history-of-the-alphabet-at-serabit-el-khadem/
 
 - id: museum16thCenturyCE2020
   abstract: >-
@@ -744,6 +793,62 @@ references:
   type: webpage
   URL: https://smarthistory.org/
 
+- id: talletMetallurgicalSitesSouth2011
+  abstract: >-
+    Since 2006, a joint mission from the Institut français d’archéologie
+    orientale and the Université de Paris Sorbonne (Paris IV) has been
+    investigating a speciﬁc region in the south-west of the Sinai peninsula that
+    was the scene of intense exploitation of copper resources by the Egyptians
+    from the very earliest periods of Pharaonic history. Within the context of
+    this research, the remains of numerous metallurgical workshops from
+    different periods have been surveyed. The aim of this article is to present
+    the two most signiﬁcant discoveries made in this ﬁeld. To the west of Wadi
+    Nasb, the discovery of a battery of intact furnaces that had been abandoned
+    in antiquity without ever having been used, has allowed for precise
+    observations regarding the construction techniques, ventilation system and
+    the furnace load maintenance of these copper ore smelting units.
+    Reproductions of these furnaces were then put to work as part of an
+    experiment to demonstrate the main characteristics of their functioning. A
+    second site at a locality known as Seh Nasb proved to be a major source of
+    information as to the importance of this mining zone to the Egyptian state
+    during the Old Kingdom. Here, a massive installation of some 27 batteries of
+    furnaces, of a total cumulative length of nearly one kilometre, involving at
+    least 3000 smelting units, reﬂects the nearly industrial scale of ancient
+    operations in the exploitation of copper in the region.
+  accessed:
+    - year: 2026
+      month: 4
+      day: 25
+  author:
+    - family: Tallet
+      given: Pierre
+    - family: Castel
+      given: Georges
+    - family: Fluzin
+      given: Philippe
+  author_list: Pierre Tallet, Georges Castel, Philippe Fluzin
+  citation-key: talletMetallurgicalSitesSouth2011
+  container-title: Paléorient
+  container-title-short: paleo
+  date: '2011'
+  DOI: 10.3406/paleo.2011.5424
+  ISSN: 0153-9345
+  issue: '2'
+  issued:
+    - year: 2011
+  language: en
+  page: 79–89
+  publication: Paléorient
+  source: DOI.org (Crossref)
+  tags: chapter-02, narrative
+  title: >-
+    Metallurgical sites of South Sinai (Egypt) in the Pharaonic Era: New
+    Discoveries
+  title-short: Metallurgical sites of South Sinai (Egypt) in the Pharaonic Era
+  type: article-journal
+  URL: https://www.persee.fr/doc/paleo_0153-9345_2011_num_37_2_5424
+  volume: '37'
+
 - id: ThebanHills
   citation-key: ThebanHills
   tags: images-01, chapter-01
@@ -826,6 +931,28 @@ references:
     Visible language  inventions of writing  in the ancient middle east and
     beyond
   type: book
+
+- id: WadiElHolInscription
+  abstract: >-
+    In 993 Egyptologist John Darnell discovered in the Wadi el-Hôl near Luxor,
+    Egypt, an alphabetic inscription similar to those at Serabit el-Khadem
+    discussed in the accompanying article. Initially, it was thought that this
+    inscription might be earlier than the Serabit inscriptions. If so, was the
+    alphabet invented earlier than the Serabit inscriptions and somewhere […]
+  accessed:
+    - year: 2026
+      month: 4
+      day: 25
+  citation-key: WadiElHolInscription
+  container-title: The BAS Library
+  language: en-US
+  publication: The BAS Library
+  tags: chapter-01, narrative
+  title: 'The Wadi el-Hôl Inscription: Earlier than Serabit?'
+  title-short: The Wadi el-Hôl Inscription
+  type: post-weblog
+  URL: >-
+    https://library.biblicalarchaeology.org/sidebar/the-wadi-el-hol-inscription-earlier-than-serabit/
 
 - id: walkerHousesBooksHouses2024
   abstract: "Jo inside the\_new Great Library of Alexandria (© Dr.Amr Aboulfath)This month Immortal Egypt has been busy in and around the North, once more enjoying the company of the inspirational ‘Northern Ladies’ who lunch to raise funds for multiple charities. And with some of them also volunteering at Halifax’s Old Library to keep it open to the public, our recent talk tailored to their wonderful book-filled venue once again brought home just how crucial libraries are to so many people, not just today but"

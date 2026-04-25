@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Library
-permalink: /Library/
+permalink: /library/
 ---
 
 <style>
@@ -95,6 +95,14 @@ permalink: /Library/
     color: white !important;
     border-color: var(--scribe-gold);
   }
+
+  .apa-reference {
+  padding-left: 2rem; /* The amount of the indent */
+  text-indent: -2rem; /* Pulls only the first line back to the margin */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  }
+
 </style>
 
 {% comment %}
@@ -117,6 +125,10 @@ We use manifest_map for the visual tab to match your new master CSV name.
       {{ visual_count }} Visual
     </p>
   </div>
+
+<p>Darnell, J. C., & Darnell, D. (1993). The Luxor-Farshût desert road survey. *The Oriental Institute 1992-1993 Annual
+Report*, 48–55.
+[https://oi.uchicago.edu](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf)</p>
 
   <p class="lead text-body">A consolidated index of all primary, supplemental, and visual evidence.</p>
 
@@ -150,18 +162,34 @@ We use manifest_map for the visual tab to match your new master CSV name.
 
   <div class="tab-content" id="libraryTabContent">
 
-    {% comment %} ACADEMIC PANE {% endcomment %}
+    {% comment %} ACADEMIC PANE - APA 7th Edition with Inline URL {% endcomment %}
     <div class="tab-pane fade show active" id="academic-pane" role="tabpanel">
       <div class="list-group list-group-flush border-top">
         {% for entry in site.data.academic.references %}
         <div class="evidence-row">
           <div class="list-group-item list-group-item-action py-3 position-relative">
-            <h6 class="mb-1 text-body fw-normal">{{ entry.title | default: "Untitled Work" }}</h6>
-            <p class="mb-2 text-secondary small">
-              {{ entry.author_list | default: "Unknown Author" }} ({{ entry.date | default: "n.d." }})
-              {% if entry.publication %} • <em>{{ entry.publication }}</em>{% endif %}
-            </p>
-            {% if entry.URL %}<a href="{{ entry.URL }}" target="_blank" class="stretched-link"></a>{% endif %}
+            <div class="apa-reference text-body fw-normal">
+              {% comment %} Author Loop {% endcomment %}
+              {% assign author_count = entry.author | size %}
+              {% for person in entry.author %}
+              {{ person.family }},
+              {% assign initials = person.given | split: " " %}
+              {% for initial in initials %}{{ initial | slice: 0 }}. {% endfor %}
+              {% if forloop.index < author_count %} {% assign next_to_last=author_count | minus: 1 %} {% if
+                forloop.index==next_to_last %}&amp; {% else %}, {% endif %} {% endif %} {% endfor %} {% comment %} Year and
+                Title {% endcomment %} ({{ entry.issued.[0]year | default: "n.d." }}). {{ entry.title |
+                default: "Untitled Work" }}. {% comment %} Journal/Publication Details {% endcomment %} {% if
+                entry["container-title"] %} <em>{{ entry["container-title"] }}</em>{% if entry.volume %}, <em>{{
+                entry.volume }}</em>{% endif %}{% if entry.issue %}({{ entry.issue }}){% endif %}{% if entry.page %}, {{
+                entry.page }}{% endif %}.
+                {% endif %}
+                {% comment %} URL appended immediately after {% endcomment %}
+                {% if entry.URL %}
+                <a href="{{ entry.URL }}" target="_blank" class="stretched-link text-primary text-decoration-none text-body">
+                  {{ entry.URL }}
+                </a>
+                {% endif %}
+            </div>
           </div>
         </div>
         {% endfor %}
@@ -175,7 +203,8 @@ We use manifest_map for the visual tab to match your new master CSV name.
         <div class="evidence-row">
           <div class="list-group-item list-group-item-action py-3 position-relative">
             <h6 class="mb-1 text-body fw-normal">{{ entry.title | default: "Untitled Work" }}</h6>
-            <p class="mb-2 text-secondary small">{{ entry.author_list }} ({{ entry.date }})</p>
+            <p class="mb-2 text-secondary small">{{ entry.author_list }} ({{ entry.issued.year | default: "n.d." }}).
+            </p>
             {% if entry.URL %}<a href="{{ entry.URL }}" target="_blank" class="stretched-link"></a>{% endif %}
           </div>
         </div>

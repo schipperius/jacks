@@ -45,13 +45,12 @@ references:
   citation-key: beshrStructuralCharacteristicsQena2021
   container-title: The Egyptian Journal of Remote Sensing and Space Science
   container-title-short: The Egyptian Journal of Remote Sensing and Space Science
-  date: 12/2021
+  date: '2021'
   DOI: 10.1016/j.ejrs.2021.11.005
   ISSN: '11109823'
   issue: '3'
   issued:
     - year: 2021
-      month: 12
   language: en
   page: 999–1011
   publication: The Egyptian Journal of Remote Sensing and Space Science
@@ -88,6 +87,37 @@ references:
   type: entry-encyclopedia
   URL: https://escholarship.org/uc/item/1sd2j49d
 
+- id: darnellLuxorFarshutDesertRoad1993
+  abstract: >-
+    The road to Farshut begins near the ancient limestone quarries in the
+    northern fork of the Wadyein.
+  accessed:
+    - year: 2026
+      month: 2
+      day: 12
+  author:
+    - family: Darnell
+      given: John Coleman
+    - family: Darnell
+      given: Deborah
+  author_list: John Coleman Darnell, Deborah Darnell
+  chapters: Chapter 01
+  citation-key: darnellLuxorFarshutDesertRoad1993
+  collection-title: Oriental Institute 1992-1993 Annual Report
+  date: '1993'
+  genre: Annual Report
+  issued:
+    - year: 1993
+  language: en
+  note: 'chapters: Chapter 01'
+  source: Zotero
+  tags: academic, chapter-01
+  title: The Luxor-Farshût desert road survey.
+  title-short: Luxor-Farshut-DRS
+  type: report
+  URL: >-
+    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf
+
 - id: darnellNarrowDoorsDesert2002
   accessed:
     - year: 2026
@@ -118,37 +148,6 @@ references:
   type: chapter
   URL: >-
     https://books.google.com/books?hl=en&lr=&id=e6IHp3aug2IC&oi=fnd&pg=PA104&dq=wadi+el+h%C3%B4l+desert+road+survey&ots=p71CdEmZIg&sig=N0mejzDhCs1a-r2n0Yls6E0SYrA
-
-- id: darnellOrientalInstitute199219931993
-  abstract: >-
-    The road to Farshut begins near the ancient limestone quarries in the
-    northern fork of the Wadyein.
-  accessed:
-    - year: 2026
-      month: 2
-      day: 12
-  author:
-    - family: Darnell
-      given: John Coleman
-    - family: Darnell
-      given: Deborah
-  author_list: John Coleman Darnell, Deborah Darnell
-  chapters: Chapter 01
-  citation-key: darnellOrientalInstitute199219931993
-  collection-title: The Luxor-Farshut Desert Road Survey
-  date: '1993'
-  genre: Annual Report
-  issued:
-    - year: 1993
-  language: en
-  note: 'chapters: Chapter 01'
-  source: Zotero
-  tags: academic, chapter-01
-  title: Oriental Institute 1992-1993 Annual Report
-  title-short: Luxor-Farshut-DRS
-  type: report
-  URL: >-
-    https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/ar/91-00/92-93/92-93_Desert_Road.pdf
 
 - id: darnellOrientalInstitute199319941994
   accessed:
@@ -379,6 +378,35 @@ references:
   title-short: Understanding Relations Between Scripts II
   type: book
   URL: http://www.jstor.org/stable/10.2307/j.ctv2mm1xnh
+
+- id: haringHalahamOstraconEarly2015
+  accessed:
+    - year: 2026
+      month: 4
+      day: 25
+  author:
+    - family: Haring
+      given: Ben
+  author_list: Ben Haring
+  citation-key: haringHalahamOstraconEarly2015
+  container-title: Journal of Near Eastern Studies
+  container-title-short: Journal of Near Eastern Studies
+  date: 10/2015
+  DOI: 10.1086/682330
+  ISSN: 0022-2968, 1545-6978
+  issue: '2'
+  issued:
+    - year: 2015
+      month: 10
+  language: en
+  page: 189–196
+  publication: Journal of Near Eastern Studies
+  source: DOI.org (Crossref)
+  tags: academic
+  title: '*Halaḥam* on an Ostracon of the Early New Kingdom?'
+  type: article-journal
+  URL: https://www.journals.uchicago.edu/doi/10.1086/682330
+  volume: '74'
 
 - id: huntEyewitnessesReclaimingAncientn.d.
   author:

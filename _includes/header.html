@@ -2,11 +2,11 @@
   <div class="d-flex align-items-center justify-content-between w-100">
 
     {% if page.url == '/' %}
-    {% assign brand_active_class = "btn-secondary" %}
-    {% assign text_class = "text-white" %}
+      {% assign brand_active_class = "btn-secondary" %}
+      {% assign text_class = "text-white" %}
     {% else %}
-    {% assign brand_active_class = "btn-outline-secondary" %}
-    {% assign text_class = "text-body-secondary" %}
+      {% assign brand_active_class = "btn-outline-secondary" %}
+      {% assign text_class = "text-body-secondary" %}
     {% endif %}
     
     <a class="navbar-brand d-flex align-items-center mb-0 btn {{ brand_active_class }} border-0 px-2 py-1"
@@ -19,10 +19,10 @@
     <nav class="d-flex align-items-center gap-1 gap-md-3">
       {% for link in site.data.navigation.main %}
     
-      {% if page.url == link.url contains page.url %}
-      {% assign active_class = "btn-secondary" %}
+      {% if page.url == link.url %}
+        {% assign active_class = "btn-secondary" %}
       {% else %}
-      {% assign active_class = "btn-outline-secondary" %}
+        {% assign active_class = "btn-outline-secondary" %}
       {% endif %}
     
       <a href="{{ link.url | relative_url }}" class="btn btn-sm {{ active_class }} d-flex align-items-center">

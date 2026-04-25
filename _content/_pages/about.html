@@ -4,31 +4,144 @@ title: the Book of Jack
 permalink: /
 ---
 
-<section class="book-hero py-5 my-5 text-center">
+<!-- Fix duplication of linear gradient. -->
+<style>
+  :root {
+    --deep-leather: #2e1a16;
+    --antique-gold: #b8914b;
+    --parchment: #d9c5b2;
+    --gold-shimmer: linear-gradient(45deg, #b8914b 25%, #e2c27d 50%, #b8914b 75%);
+  }
+
+  /* 1. Diffused Background Styling */
+  .book-hero {
+    position: relative;
+    background-color: var(--deep-leather);
+    color: var(--parchment);
+    border: 4px double var(--antique-gold);
+    padding: 6rem 2rem;
+    /* Increased padding for impact */
+    margin: 2rem;
+    overflow: hidden;
+    /* Keeps the blurred background inside the box */
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+    height: 80vh
+  }
+
+  /* The actual image background with blur */
+  .book-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Replace URL with your actual image path */
+    background-image: url('../images/book-cover.webp');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.4);
+    /* Diffusion and darkening */
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* Ensures content stays above the background */
+  .book-hero .container-fluid {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 2. Drop Cap Styling */
+  .drop-cap::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    line-height: 0.8;
+    padding-top: 0.1em;
+    padding-right: 0.1em;
+    padding-left: 0.05em;
+    color: var(--antique-gold);
+    background: var(--gold-shimmer);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  .gilded-text {
+    font-family: 'Playfair Display', serif;
+    background: var(--gold-shimmer);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4.5rem;
+    text-transform: lowercase;
+  }
+
+  hr.gold-rule {
+    border: 0;
+    height: 2px;
+    background: var(--gold-shimmer);
+    width: 67%;
+    margin: 3rem auto;
+    opacity: 1;
+  }
+
+  .book-hero hr {
+  /* Reset default Bootstrap styling */
+  border: none;
+  height: 2px;
+  margin: 3rem auto;
+  width: 100%;
+  /* Keeps it from hitting the gold side borders */
+
+  /* The Gold Gradient: Tapers off at the edges */
+  background: linear-gradient(to right, transparent, #d4af37 20%, #f7e08a 50%, #d4af37 80%, transparent);
+  position: relative;
+  overflow: visible;
+  opacity: 0.8;
+  }
+
+  /* The Gold Flourish/Ornament in the center */
+  .book-hero hr::after {
+  content: '❦';
+  /* An elegant four-pointed star or diamond */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 15px;
+  background-image: url("../images/pages/book-cover.webp");
+  /* Matches the background to "break" the line */
+  background-attachment: scroll;
+  color: #f7e08a;
+  /* Bright gold */
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+
+  @media (min-width: 992px) {
+    background-attachment: fixed;
+    /* Only 'fix' it on desktop */
+  }
+  }
+</style>
+
+<section class="book-hero text-center shadow-lg">
   <div class="container-fluid">
-
     <div class="row justify-content-center">
-      <div class="col-lg-8 mx-auto">
-        <h1 class="display-5 fw-light mb-4">the Book of Jack</h1>
-        <p class="lead mb-4">
-          A collection of stories about the origin and development of the alphabet, specifically through the lens of the letter J, 
-          the name Jack and the phonemic sound shift from <span class="phonemic">/j/</span> to <span class="phonemic">/dʒ/</span>.        
-        </p>
-        <hr class="my-5">
+      <div class="col-lg-9 mx-auto mb-0">
 
-        <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-          <a href="{{ '/colophon/' | relative_url }}" class="btn btn-lg px-4"
-            style="background-color: var(--scribe-gold); color: white; border: 1px solid var(--scribe-gold);">
-            What you see here was initially conceived as a coffee table book.
-          </a>
-          <a href="{{ '/chapters/' | relative_url }}" class="btn btn-lg px-4"
-            style="color: var(--scribe-gold); border: 1px solid var(--scribe-gold); background-color: transparent;">
-            Explore scenes from the first chapter
-          </a>
-        </div>
+        <h1 class="display-3 fw-light gilded-text mb-5">the Book of Jack</h1>
+
+        <!-- Drop cap applied here -->
+        <p class="lead mb-4 text-start drop-cap px-md-5">
+          A collection of stories about the origin and development of the alphabet, specifically through the lens of the
+          letter J,
+          the name Jack and the phonemic sound shift from /j/ to /dʒ/.
+        </p>
+
+        <hr class="gold-rule">
 
       </div>
     </div>
-
   </div>
 </section>
